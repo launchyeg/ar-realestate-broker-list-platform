@@ -1,0 +1,10 @@
+import { createClient } from "@supabase/supabase-js";
+
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+// ── Don't throw at module level — throw only when used ────
+export const supabaseAdmin = createClient(
+  supabaseUrl || "https://placeholder.supabase.co",
+  serviceRoleKey || "placeholder-key",
+);
