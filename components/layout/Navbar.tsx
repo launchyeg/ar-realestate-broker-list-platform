@@ -291,7 +291,7 @@ export default function Navbar() {
 
             {/* WhatsApp desktop */}
             <a
-              href={`https://wa.me/${siteConfig.contact.whatsapp}`}
+              href={`https://wa.me/+${siteConfig.contact.whatsapp.replace(/\D/g, "")}`}
               target="_blank"
               className="hidden md:flex items-center gap-2 text-white/70 text-xs font-medium hover:text-white transition-colors"
             >
@@ -426,7 +426,7 @@ export default function Navbar() {
         {/* Bottom */}
         <div className="px-6 py-8 border-t border-white/10 space-y-4">
           <a
-            href={`https://wa.me/${siteConfig.contact.whatsapp}`}
+            href={`https://wa.me/+${siteConfig.contact.whatsapp.replace(/\D/g, "")}`}
             className="flex items-center gap-3 text-white/70 hover:text-white transition-colors text-sm font-medium"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">

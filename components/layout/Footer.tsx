@@ -28,7 +28,7 @@ const Footer = () => {
                 WhatsApp
               </p>
               <a
-                href={`https://wa.me/${siteConfig.contact.whatsapp}`}
+                href={`https://wa.me/+${siteConfig.contact.whatsapp.replace(/\D/g, "")}`}
                 target="_blank"
                 className="text-white/70 hover:text-white"
               >
