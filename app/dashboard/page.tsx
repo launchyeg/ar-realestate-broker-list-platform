@@ -171,7 +171,10 @@ export default async function DashboardPage() {
                 <div>
                   <p className="text-sm font-medium text-stone-800">{r.name}</p>
                   <p className="text-xs text-stone-400">
-                    {r.unit} · {r.phone}
+                    {r.unit === "contact-page"
+                      ? "Contact Page"
+                      : r.unit || "General enquiry"}
+                    · {r.phone}
                   </p>
                 </div>
                 <span className="text-[10px] text-stone-400">

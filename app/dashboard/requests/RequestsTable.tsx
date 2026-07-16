@@ -45,7 +45,7 @@ export default function RequestsTable({ requests }: { requests: Request[] }) {
         <table className="min-w-[900px] w-full text-sm">
           <thead className="bg-stone-50 border-b border-stone-200">
             <tr>
-              {["Name", "Contact", "Unit", "Date", "Actions"].map((h) => (
+              {["Name", "Contact", "From", "Date", "Actions"].map((h) => (
                 <th
                   key={h}
                   className="text-left px-5 py-3 text-xs font-medium text-stone-400 uppercase tracking-wider"
@@ -85,7 +85,9 @@ export default function RequestsTable({ requests }: { requests: Request[] }) {
                     target="_blank"
                     className="text-[10px] text-[#C9A96E] font-medium uppercase tracking-wide hover:underline"
                   >
-                    {req.unit}
+                    {req.unit === "contact-page"
+                      ? "Contact Page"
+                      : req.unit || "General enquiry"}
                   </Link>
                 </td>
                 <td className="px-5 py-4 text-stone-400 text-xs">
@@ -202,7 +204,7 @@ export default function RequestsTable({ requests }: { requests: Request[] }) {
                 { label: "Phone", value: selected.phone },
                 { label: "Email", value: selected.email || "—" },
                 {
-                  label: "Unit",
+                  label: "From",
                   value: selected.unit || "—",
                 },
                 {

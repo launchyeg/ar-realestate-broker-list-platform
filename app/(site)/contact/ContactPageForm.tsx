@@ -8,14 +8,13 @@ export default function ContactPageForm() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
-  const [interest, setInterest] = useState("Buying");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<Status>("idle");
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setStatus("sending");
-    const payload = { name, phone, email, interest, message };
+    const payload = { name, phone, email, message };
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -100,22 +99,6 @@ export default function ContactPageForm() {
           placeholder="you@email.com"
           className="w-full px-4 py-3 border border-stone-200 text-sm focus:outline-none focus:border-[#C9A96E] transition"
         />
-      </div>
-      <div>
-        <label className="block text-xs font-medium text-stone-500 mb-1">
-          I am interested in
-        </label>
-        <select
-          value={interest}
-          onChange={(e) => setInterest(e.target.value)}
-          className="w-full px-4 py-3 border border-stone-200 text-sm focus:outline-none focus:border-[#C9A96E] transition bg-white"
-        >
-          <option>Buying</option>
-          <option>Renting</option>
-          <option>Selling my property</option>
-          <option>Investment advice</option>
-          <option>General enquiry</option>
-        </select>
       </div>
       <div>
         <label className="block text-xs font-medium text-stone-500 mb-1">
