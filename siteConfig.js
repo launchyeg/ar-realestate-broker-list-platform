@@ -1,6 +1,6 @@
 const siteConfig = {
   // ── Broker Identity ────────────────────────────────────────
-  brokerName: "Prestige Properties",
+  brokerName: "AR Realestate Redsea",
   brokerTagline: "Curated Homes. Trusted Expertise.",
   brokerLicense: "RE-2024-00123",
 
