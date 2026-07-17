@@ -4,6 +4,8 @@ import { join } from "path";
 import { supabaseAdmin } from "@/lib/supabase-admin";
 import siteConfig from "@/siteConfig";
 
+export const dynamic = "force-dynamic";
+
 function readJSON(file: string) {
   try {
     return JSON.parse(readFileSync(join(process.cwd(), "data", file), "utf-8"));
