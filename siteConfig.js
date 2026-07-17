@@ -7,10 +7,10 @@ const siteConfig = {
   // ── Logo ───────────────────────────────────────────────────
   logo: {
     src: "/images/logo.png",
-    alt: "Prestige Properties",
+    alt: "AR Realestate Redsea",
     width: 160,
     height: 40,
-    textFallback: "PRESTIGE", // shown when src is null
+    textFallback: "AR Realestate", // shown when src is null
   },
 
   // ── Contact Details ────────────────────────────────────────
