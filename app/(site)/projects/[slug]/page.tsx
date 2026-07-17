@@ -6,8 +6,7 @@ import { mapUnit } from "@/lib/mapUnit";
 import siteConfig from "@/siteConfig";
 import UnitsGrid from "@/components/ui/UnitsGrid";
 
-export const revalidate = 1800;
-
+export const revalidate = 60;
 interface PaymentPlan {
   downPayment: string;
   installments: string;

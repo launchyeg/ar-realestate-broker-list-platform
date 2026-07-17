@@ -7,7 +7,7 @@ import HeroSection from "@/components/HeroSection";
 import DestinationsGrid from "@/components/DestinationsGrid";
 import PropertySlider from "@/components/ui/PropertySlider";
 
-export const revalidate = 3600;
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Real Estate in Egypt — Buy, Rent & Invest",

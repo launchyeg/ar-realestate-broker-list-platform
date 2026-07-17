@@ -24,6 +24,8 @@ interface Destination {
   whyInvest: string;
 }
 
+export const revalidate = 60;
+
 export async function generateStaticParams() {
   return siteConfig.destinations.map((d) => ({ slug: d.slug }));
 }

@@ -14,7 +14,7 @@ import {
   CalendarDays,
 } from "lucide-react";
 
-export const revalidate = 1800;
+export const revalidate = 60;
 
 // ── Static Params ─────────────────────────────────────────────────────────────
 
