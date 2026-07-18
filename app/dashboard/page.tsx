@@ -165,7 +165,7 @@ export default async function DashboardPage() {
           </p>
         ) : (
           <div className="space-y-3">
-            {allRequests.slice(0, 6).map((r) => (
+            {allRequests.slice(0, 10).map((r) => (
               <div
                 key={r.id}
                 className="flex items-center justify-between py-3 border-b border-stone-100 last:border-0"

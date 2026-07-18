@@ -89,7 +89,7 @@ export default function ContactPage() {
                   WhatsApp
                 </p>
                 <a
-                  href={`https://wa.me/${siteConfig.contact.whatsapp}`}
+                  href={`https://wa.me/+${siteConfig.contact.whatsapp.replace(/\D/g, "")}`}
                   target="_blank"
                   className="text-stone-800 font-medium hover:text-[#C9A96E] transition-colors"
                 >

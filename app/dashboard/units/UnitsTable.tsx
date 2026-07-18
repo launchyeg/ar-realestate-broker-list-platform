@@ -90,13 +90,16 @@ export default function UnitsTable({ units }: { units: Unit[] }) {
             </tr>
           </thead>
           <tbody>
-            {filtered.map((unit) => (
+            {filtered.map((unit, index) => (
               <tr
                 key={unit.id}
                 className="border-b border-stone-100 hover:bg-stone-50 transition-colors"
               >
                 <td className="px-5 py-4">
                   <div className="flex items-center gap-3">
+                    <span className="text-xs font-medium text-stone-400 w-2.5 text-center flex-shrink-0">
+                      {index + 1}
+                    </span>
                     <div
                       className="w-10 h-10 rounded-lg bg-cover bg-center bg-stone-200 flex-shrink-0"
                       style={{ backgroundImage: `url(${unit.coverImage})` }}

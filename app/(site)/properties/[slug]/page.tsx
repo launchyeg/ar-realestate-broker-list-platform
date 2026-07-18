@@ -224,7 +224,7 @@ export default async function PropertyPage({
             {/* WhatsApp CTA */}
             {siteConfig.features.enableWhatsApp && (
               <a
-                href={`https://wa.me/${siteConfig.contact.whatsapp}?text=Hi, I'm interested in ${unit.name} (${unit.slug})`}
+                href={`https://wa.me/+${siteConfig.contact.whatsapp.replace(/\D/g, "")}?text=Hi, I'm interested in ${unit.name} (${unit.slug})`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-3 flex items-center justify-center gap-2 w-full py-3 rounded-xl border border-emerald-500 text-emerald-600 text-sm font-medium hover:bg-emerald-50 transition-colors"

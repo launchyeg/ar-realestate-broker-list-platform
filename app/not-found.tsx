@@ -27,7 +27,7 @@ export default function NotFound() {
           Browse destinations
         </Link>
         <a
-          href={`https://wa.me/${siteConfig.contact.whatsapp}`}
+          href={`https://wa.me/+${siteConfig.contact.whatsapp.replace(/\D/g, "")}`}
           className="px-8 py-3 border border-white/30 text-white text-xs font-medium tracking-widest uppercase hover:border-white hover:bg-white/5 transition-colors"
         >
           Contact us

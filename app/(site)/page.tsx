@@ -96,7 +96,7 @@ export default async function HomePage() {
             View Destinations
           </Link>
         </div>
-        <PropertySlider units={villas} />
+        <PropertySlider units={villas} limit={8} />
         <div className="mt-8 md:hidden">
           <Link
             href="/destinations"
@@ -162,7 +162,7 @@ export default async function HomePage() {
             View Projects
           </Link>
         </div>
-        <PropertySlider units={apartments} />
+        <PropertySlider units={apartments} limit={10} />
       </section>
 
       {/* ── FEATURED PROPERTY BANNER ───────────────────────────── */}

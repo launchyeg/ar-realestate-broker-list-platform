@@ -4,9 +4,17 @@ import { useState, useEffect } from "react";
 import type { Unit } from "@/types/unit";
 import PropertyCard from "@/components/ui/PropertyCard";
 
-export default function PropertySlider({ units }: { units: Unit[] }) {
+interface Props {
+  units: Unit[];
+  limit?: number;
+}
+
+export default function PropertySlider({ units, limit = 6 }: Props) {
   const [current, setCurrent] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+
+  // ── Apply limit ───────────────────────────────────────────
+  const displayedUnits = units.slice(0, limit);
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 768);
@@ -17,8 +25,10 @@ export default function PropertySlider({ units }: { units: Unit[] }) {
 
   const slideWidth = isMobile ? 100 : 50;
 
-  const prev = () => setCurrent((i) => (i === 0 ? units.length - 1 : i - 1));
-  const next = () => setCurrent((i) => (i === units.length - 1 ? 0 : i + 1));
+  const prev = () =>
+    setCurrent((i) => (i === 0 ? displayedUnits.length - 1 : i - 1));
+  const next = () =>
+    setCurrent((i) => (i === displayedUnits.length - 1 ? 0 : i + 1));
 
   return (
     <div className="relative">
@@ -27,7 +37,7 @@ export default function PropertySlider({ units }: { units: Unit[] }) {
           className="flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${current * slideWidth}%)` }}
         >
-          {units.map((unit) => (
+          {displayedUnits.map((unit) => (
             <div key={unit.id} className="min-w-full md:min-w-[50%] px-3">
               <PropertyCard unit={unit} />
             </div>
@@ -73,7 +83,7 @@ export default function PropertySlider({ units }: { units: Unit[] }) {
 
       {/* Dots */}
       <div className="flex justify-center gap-2 mt-6">
-        {units.map((_, i) => (
+        {displayedUnits.map((_, i) => (
           <button
             key={i}
             onClick={() => setCurrent(i)}
