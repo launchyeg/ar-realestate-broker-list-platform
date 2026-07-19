@@ -7,22 +7,6 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        display: ["Playfair Display SC", "serif"],
-        sans: ["Inter", "sans-serif"],
-      },
-      colors: {
-        brand: {
-          primary: "#1B2B3A",
-          primaryLight: "#2D4258",
-          accent: "#CDAA81",
-          accentLight: "#B49168",
-          bg: "#FAFAF8",
-          surface: "#f7f6f4",
-          text: "#0a0915",
-          muted: "#52525a",
-        },
-      },
       animation: {
         "fade-up": "fadeUp 0.7s ease forwards",
         "fade-in": "fadeIn 0.7s ease forwards",

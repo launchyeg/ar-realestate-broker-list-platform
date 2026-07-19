@@ -5,6 +5,15 @@
 @theme {
   --font-display: "Playfair Display SC", serif;
   --font-sans: "Inter", sans-serif;
+
+  --color-brand-primary: #1b2b3a;
+  --color-brand-primaryLight: #2d4258;
+  --color-brand-accent: #cdaa81;
+  --color-brand-accentLight: #b49168;
+  --color-brand-bg: #fafaf8;
+  --color-brand-surface: #f7f6f4;
+  --color-brand-text: #0a0915;
+  --color-brand-muted: #52525a;
 }
 
 /* ── Animation keyframes ─────────────────────────────────── */

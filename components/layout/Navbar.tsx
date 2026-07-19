@@ -36,9 +36,9 @@ function NavDropdown({
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className={`flex items-center gap-1 text-base font-base transition-colors ${
+        className={`flex items-center gap-1 text-base font-medium transition-colors ${
           scrolled
-            ? "text-[#0a0915]/70 hover:text-[#0a0915]"
+            ? "text-brand-text/70 hover:text-brand-text"
             : "text-white hover:text-white/80"
         }`}
       >
@@ -83,7 +83,7 @@ function NavDropdown({
                   setOpen(false);
                   onClose();
                 }}
-                className="flex items-center gap-3 px-4 py-2.5 text-[#52525a] hover:text-[#0a0915]  transition-colors text-sm"
+                className="flex items-center gap-3 px-4 py-2.5 text-brand-muted hover:text-brand-text transition-colors text-sm"
               >
                 {item.emoji && (
                   <span className="text-base w-5 text-center">
@@ -101,7 +101,7 @@ function NavDropdown({
                 setOpen(false);
                 onClose();
               }}
-              className="flex items-center justify-between px-4 py-2.5 text-[#CDAA81] hover:text-[#B49168] transition-colors text-xs font-semibold uppercase tracking-widest"
+              className="flex items-center justify-between px-4 py-2.5 text-brand-accent hover:text-brand-accentLight transition-colors text-xs font-semibold uppercase tracking-widest"
             >
               View all
               <svg
@@ -143,7 +143,7 @@ function MobileAccordion({
     <div>
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center justify-between w-full text-[#0a0915] text-sm font-medium py-4 border-b border-stone-100 hover:text-[#CDAA81] transition-colors"
+        className="flex items-center justify-between w-full text-brand-text text-sm font-medium py-4 border-b border-stone-100 hover:text-brand-accent transition-colors"
       >
         {label}
         <svg
@@ -174,7 +174,7 @@ function MobileAccordion({
                 key={item.href}
                 href={item.href}
                 onClick={onClose}
-                className="flex items-center gap-3 py-2.5 text-[#52525a] hover:text-[#CDAA81] text-sm transition-colors"
+                className="flex items-center gap-3 py-2.5 text-brand-muted hover:text-brand-accent text-sm transition-colors"
               >
                 {item.emoji && <span className="text-base">{item.emoji}</span>}
                 {item.label}
@@ -186,7 +186,7 @@ function MobileAccordion({
           <Link
             href={items[0]?.href.split("/").slice(0, -1).join("/") || "/"}
             onClick={onClose}
-            className="flex items-center gap-2 py-2.5 text-[#CDAA81] text-xs font-bold uppercase tracking-widest hover:text-[#B49168] transition-colors border-t border-stone-100 mt-1 pt-3"
+            className="flex items-center gap-2 py-2.5 text-brand-accent text-xs font-bold uppercase tracking-widest hover:text-brand-accentLight transition-colors border-t border-stone-100 mt-1 pt-3"
           >
             View all
             <svg
@@ -261,7 +261,7 @@ export default function Navbar() {
               href="/about"
               className={`text-base font-medium transition-colors ${
                 scrolled
-                  ? "text-[#0a0915]/70 hover:text-[#0a0915]"
+                  ? "text-brand-text/70 hover:text-brand-text"
                   : "text-white hover:text-white/80"
               }`}
             >
@@ -285,9 +285,9 @@ export default function Navbar() {
 
             <Link
               href="/properties"
-              className={`text-base font-base transition-colors ${
+              className={`text-base font-medium transition-colors ${
                 scrolled
-                  ? "text-[#0a0915]/70 hover:text-[#0a0915]"
+                  ? "text-brand-text/70 hover:text-brand-text"
                   : "text-white hover:text-white/80"
               }`}
             >
@@ -296,9 +296,9 @@ export default function Navbar() {
 
             <Link
               href="/contact"
-              className={`text-base font-base transition-colors ${
+              className={`text-base font-medium transition-colors ${
                 scrolled
-                  ? "text-[#0a0915]/70 hover:text-[#0a0915]"
+                  ? "text-brand-text/70 hover:text-brand-text"
                   : "text-white hover:text-white/80"
               }`}
             >
@@ -314,7 +314,7 @@ export default function Navbar() {
               target="_blank"
               className={`hidden md:flex transition-colors ${
                 scrolled
-                  ? "text-[#52525a] hover:text-[#0a0915]"
+                  ? "text-brand-muted hover:text-brand-text"
                   : "text-white hover:text-white/80"
               }`}
               title="Admin"
@@ -325,7 +325,7 @@ export default function Navbar() {
             {/* CTA pill button */}
             <Link
               href="/properties"
-              className="hidden md:inline-flex items-center gap-2 bg-[#CDAA81] text-white text-base font-medium px-6 py-3 rounded-full hover:bg-[#B49168] transition-colors"
+              className="hidden md:inline-flex items-center gap-2 bg-brand-accent text-white text-base font-medium px-6 py-3 rounded-full hover:bg-brand-accentLight transition-colors"
             >
               Explore Properties
             </Link>
@@ -334,7 +334,7 @@ export default function Navbar() {
             <button
               onClick={() => setSidebarOpen(true)}
               className={`md:hidden transition-colors ${
-                scrolled ? "text-[#0a0915]" : "text-white"
+                scrolled ? "text-brand-text" : "text-white"
               }`}
               aria-label="Open menu"
             >
@@ -391,7 +391,7 @@ export default function Navbar() {
           </Link>
           <button
             onClick={() => setSidebarOpen(false)}
-            className="text-[#52525a] hover:text-[#0a0915] transition-colors"
+            className="text-brand-muted hover:text-brand-text transition-colors"
           >
             <svg
               width="28"
@@ -415,7 +415,7 @@ export default function Navbar() {
           <Link
             href="/about"
             onClick={() => setSidebarOpen(false)}
-            className="block text-[#0a0915] text-sm font-medium py-4 border-b border-stone-100 hover:text-[#CDAA81] transition-colors"
+            className="block text-brand-text text-sm font-medium py-4 border-b border-stone-100 hover:text-brand-accent transition-colors"
           >
             About
           </Link>
@@ -435,7 +435,7 @@ export default function Navbar() {
           <Link
             href="/properties"
             onClick={() => setSidebarOpen(false)}
-            className="block text-[#0a0915] text-sm font-medium py-4 border-b border-stone-100 hover:text-[#CDAA81] transition-colors"
+            className="block text-brand-text text-sm font-medium py-4 border-b border-stone-100 hover:text-brand-accent transition-colors"
           >
             Properties
           </Link>
@@ -443,7 +443,7 @@ export default function Navbar() {
           <Link
             href="/contact"
             onClick={() => setSidebarOpen(false)}
-            className="block text-[#0a0915] text-sm font-medium py-4 border-b border-stone-100 hover:text-[#CDAA81] transition-colors"
+            className="block text-brand-text text-sm font-medium py-4 border-b border-stone-100 hover:text-brand-accent transition-colors"
           >
             Contact
           </Link>
@@ -455,7 +455,7 @@ export default function Navbar() {
           <Link
             href="/properties"
             onClick={() => setSidebarOpen(false)}
-            className="flex items-center justify-center gap-2 w-full py-3 bg-[#1B2B3A] text-white text-xs font-medium tracking-wider rounded-full hover:bg-[#2D4258] transition-colors"
+            className="flex items-center justify-center gap-2 w-full py-3 bg-brand-primary text-white text-xs font-medium tracking-wider rounded-full hover:bg-brand-primaryLight transition-colors"
           >
             Explore Properties
           </Link>
@@ -464,7 +464,7 @@ export default function Navbar() {
           <a
             href={`https://wa.me/${siteConfig.contact.whatsapp.replace(/\D/g, "")}`}
             target="_blank"
-            className="flex items-center justify-center gap-2 w-full py-3 border border-stone-200 text-[#52525a] text-xs font-medium rounded-full hover:border-[#CDAA81] hover:text-[#CDAA81] transition-colors"
+            className="flex items-center justify-center gap-2 w-full py-3 border border-stone-200 text-brand-muted text-xs font-medium rounded-full hover:border-brand-accent hover:text-brand-accent transition-colors"
           >
             <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
@@ -478,7 +478,7 @@ export default function Navbar() {
             href="/dashboard"
             target="_blank"
             onClick={() => setSidebarOpen(false)}
-            className="flex items-center justify-center gap-2 text-[#52525a] hover:text-[#0a0915] text-xs transition-colors py-2"
+            className="flex items-center justify-center gap-2 text-brand-muted hover:text-brand-text text-xs transition-colors py-2"
           >
             <CircleUserRound size={16} />
             Admin Dashboard

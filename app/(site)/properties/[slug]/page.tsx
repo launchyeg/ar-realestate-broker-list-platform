@@ -91,7 +91,7 @@ function StatusBadge({ status }: { status: Unit["status"] }) {
 function StatPill({ icon: Icon, label }: { icon: LucideIcon; label: string }) {
   return (
     <div className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-stone-50 border border-stone-200">
-      <Icon size={20} color={siteConfig.theme.accent} />
+      <Icon size={20} className="text-brand-accent" />
       <span className="text-sm font-medium text-stone-700">{label}</span>
     </div>
   );
