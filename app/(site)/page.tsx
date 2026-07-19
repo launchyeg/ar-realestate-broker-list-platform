@@ -4,6 +4,7 @@ import siteConfig from "@/siteConfig";
 import { supabase } from "@/lib/supabase";
 import { mapUnit } from "@/lib/mapUnit";
 import HeroSection from "@/components/HeroSection";
+import TrustBar from "@/components/sections/TrustBar";
 import DestinationsGrid from "@/components/DestinationsGrid";
 import PropertySlider from "@/components/ui/PropertySlider";
 
@@ -41,6 +42,9 @@ export default async function HomePage() {
     <div className="min-h-screen bg-white font-sans">
       {/* ── HERO ───────────────────────────────────────────────── */}
       <HeroSection />
+
+      {/* ── TRUST Bar ───────────────────────────────────────────────── */}
+      <TrustBar />
 
       {/* ── WELCOME SECTION ────────────────────────────────────── */}
       <section className="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-16 items-start">

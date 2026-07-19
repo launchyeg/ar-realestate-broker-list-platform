@@ -182,7 +182,7 @@ export default function HeroSection() {
             <div className="flex items-end">
               <button
                 onClick={handleSearch}
-                className="w-full md:w-auto px-6 py-2.5 bg-[#C9A96E] text-white text-xs font-medium tracking-widest uppercase rounded-xl hover:bg-[#E8C98A] transition-colors whitespace-nowrap"
+                className="w-full md:w-auto px-6 py-2.5 bg-brand-accent text-white text-xs font-medium tracking-widest uppercase rounded-xl hover:bg-brand-accentLight transition-colors whitespace-nowrap"
               >
                 Search
               </button>
@@ -198,7 +198,7 @@ export default function HeroSection() {
               onClick={() => goTo(i)}
               className={`h-1 rounded-full transition-all duration-300 ${
                 i === current
-                  ? "w-8 bg-[#C9A96E]"
+                  ? "w-8 bg-brand-accent"
                   : "w-2 bg-white/30 hover:bg-white/60"
               }`}
             />
