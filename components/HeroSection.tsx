@@ -8,21 +8,31 @@ import siteConfig from "@/siteConfig";
 const SLIDES = [
   {
     image:
-      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1600&q=80",
-    label: "Sahl Hasheesh",
-    heading: "Your new home\nin Egypt awaits",
+      "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/hero/ar-adu-3.png",
+    title: "AR Realestate Find Your Dream Home in Red Sea",
+    subtitle:
+      "Stop wasting time with complicated search filters and discover your perfect coastal retreat through our intuitive, lightning-fast discovery tool.",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=1600&q=80",
-    label: "El Gouna",
-    heading: "Life on the\nRed Sea coast",
+      "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/hero/Cam-05-copy-min-scaled.jpg",
+    title: "Find Your Dream Home in the Red Sea",
+    subtitle:
+      "Skip the stress of navigating the market alone and let our sophisticated, modern platform guide you directly to the region's finest properties.",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1600&q=80",
-    label: "Hurghada",
-    heading: "Invest where\nothers vacation",
+      "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/hero/Screenshot-2025-11-16-151702.png",
+    title: "Find Your Dream Home in the Red Sea",
+    subtitle:
+      "Leave behind the cluttered and outdated listings; we provide a refined, user-centered experience that makes finding your ideal getaway simple.",
+  },
+  {
+    image:
+      "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/hero/Screenshot-2026-03-10-145747.png",
+    title: "Find Your Dream Home in the Red Sea",
+    subtitle:
+      "Replace manual browsing with an effortless digital experience designed to put the absolute best of the Red Sea coast right at your fingertips.",
   },
 ];
 
@@ -86,29 +96,16 @@ export default function HeroSection() {
 
       {/* ── CONTENT ────────────────────────────────────────────── */}
       <div className="relative max-w-6xl mx-auto px-6 w-full">
-        {/* Label */}
-        <div
-          className="transition-all duration-500"
-          style={{
-            opacity: animating ? 0 : 1,
-            transform: animating ? "translateY(10px)" : "translateY(0)",
-          }}
-        >
-          <p className="text-[#C9A96E] text-[10px] font-bold tracking-widest uppercase mb-4">
-            {slide.label}
-          </p>
-        </div>
-
         {/* Heading */}
         <div
-          className="transition-all duration-500 delay-75"
+          className="transition-all duration-500 delay-75 max-w-[890px]"
           style={{
             opacity: animating ? 0 : 1,
             transform: animating ? "translateY(16px)" : "translateY(0)",
           }}
         >
-          <h1 className="font-display text-5xl md:text-7xl text-white leading-tight mb-6 whitespace-pre-line">
-            {slide.heading}
+          <h1 className="font-display text-5xl md:text-[84px] text-white leading-tight mb-6 whitespace-pre-line">
+            {slide.title}
           </h1>
         </div>
 
@@ -120,9 +117,8 @@ export default function HeroSection() {
             transform: animating ? "translateY(16px)" : "translateY(0)",
           }}
         >
-          <p className="text-white/60 text-sm leading-relaxed max-w-xs mb-10">
-            Discover stylish homes for purchase or rent in Egypt's best
-            locations.
+          <p className="text-white text-xl leading-10 max-w-[700px] mb-10">
+            {slide.subtitle}
           </p>
         </div>
 
