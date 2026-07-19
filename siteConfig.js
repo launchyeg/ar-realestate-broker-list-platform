@@ -37,22 +37,21 @@ const siteConfig = {
   ],
 
   // ── Theme Colors ───────────────────────────────────────────
-  theme: {
-    primary: "#1B2B3A", // deep navy — main brand color
-    primaryLight: "#2D4258", // hover states
-    accent: "#C9A96E", // warm gold — CTAs, highlights
-    accentLight: "#E8C98A", // lighter gold for hover
-    background: "#FAFAF8", // off-white site background
-    surface: "#FFFFFF", // card/panel surfaces
-    text: "#1A1A1A", // primary text
-    textMuted: "#6B7280", // secondary/muted text
-    border: "#E5E0D8", // subtle warm borders
-  },
+  // theme: {
+  //   primary: "#1B2B3A", // deep navy — main brand color
+  //   primaryLight: "#2D4258", // hover states
+  //   accent: "#CDAA81", // warm gold — CTAs, highlights
+  //   accentLight: "#B49168", // lighter gold for hover
+  //   background: "#FAFAF8", // off-white site background
+  //   surface: "#f7f6f4", // card/panel surfaces
+  //   text: "#0a0915", // primary text
+  //   textMuted: "#52525a", // secondary/muted text
+  // },
 
   // ── Typography ─────────────────────────────────────────────
   fonts: {
-    display: "Cormorant Garamond", // headings — elegant serif
-    body: "DM Sans", // body text — clean humanist sans
+    display: "Playfair Display SC",
+    body: "Inter",
   },
 
   // ── SEO & Meta ─────────────────────────────────────────────

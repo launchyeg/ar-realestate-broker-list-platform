@@ -2,19 +2,22 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import Image from "next/image";
 import siteConfig from "@/siteConfig";
+import { CircleUserRound } from "lucide-react";
 
-// ── Dropdown Component ────────────────────────────────────────────────────────
+// ── Dropdown ──────────────────────────────────────────────────────────────────
 
 function NavDropdown({
   label,
   items,
   onClose,
+  scrolled,
 }: {
   label: string;
   items: { href: string; label: string; emoji?: string }[];
   onClose: () => void;
+  scrolled: boolean;
 }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -33,7 +36,11 @@ function NavDropdown({
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-1 text-white/70 text-xs font-medium tracking-widest uppercase hover:text-white transition-colors"
+        className={`flex items-center gap-1 text-base font-base transition-colors ${
+          scrolled
+            ? "text-[#0a0915]/70 hover:text-[#0a0915]"
+            : "text-white hover:text-white/80"
+        }`}
       >
         {label}
         <svg
@@ -53,17 +60,21 @@ function NavDropdown({
         </svg>
       </button>
 
-      {/* Dropdown panel */}
+      {/* Panel — always white regardless of scroll */}
       <div
         className={`
-        absolute top-full left-1/2 -translate-x-1/2 mt-3 w-52
-        bg-white rounded-xl shadow-2xl border border-stone-100
+        absolute top-full left-1/2 -translate-x-1/2 mt-4 w-52
+        bg-white rounded-2xl shadow-xl border border-stone-100
         transition-all duration-200 origin-top z-50
-        ${open ? "opacity-100 scale-100 pointer-events-auto" : "opacity-0 scale-95 pointer-events-none"}
+        ${
+          open
+            ? "opacity-100 scale-100 pointer-events-auto"
+            : "opacity-0 scale-95 pointer-events-none"
+        }
       `}
       >
         <div className="py-2">
-          <div className="max-h-[210px] overflow-y-auto scrollbar-thin">
+          <div className="max-h-[210px] overflow-y-auto">
             {items.map((item) => (
               <Link
                 key={item.href}
@@ -72,7 +83,7 @@ function NavDropdown({
                   setOpen(false);
                   onClose();
                 }}
-                className="flex items-center gap-3 px-4 py-2.5 text-stone-600 hover:text-[#1B2B3A] hover:bg-stone-50 transition-colors text-sm"
+                className="flex items-center gap-3 px-4 py-2.5 text-[#52525a] hover:text-[#0a0915]  transition-colors text-sm"
               >
                 {item.emoji && (
                   <span className="text-base w-5 text-center">
@@ -90,7 +101,7 @@ function NavDropdown({
                 setOpen(false);
                 onClose();
               }}
-              className="flex items-center justify-between px-4 py-2.5 text-[#C9A96E] hover:text-[#1B2B3A] hover:bg-stone-50 transition-colors text-xs font-medium uppercase tracking-widest"
+              className="flex items-center justify-between px-4 py-2.5 text-[#CDAA81] hover:text-[#B49168] transition-colors text-xs font-semibold uppercase tracking-widest"
             >
               View all
               <svg
@@ -132,7 +143,7 @@ function MobileAccordion({
     <div>
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center justify-between w-full text-white/70 text-sm font-medium tracking-widest uppercase py-4 border-b border-white/5 transition-colors hover:text-white"
+        className="flex items-center justify-between w-full text-[#0a0915] text-sm font-medium py-4 border-b border-stone-100 hover:text-[#CDAA81] transition-colors"
       >
         {label}
         <svg
@@ -152,26 +163,30 @@ function MobileAccordion({
         </svg>
       </button>
 
-      {/* Sub items */}
       <div
         className={`overflow-hidden transition-all duration-300 ${open ? "max-h-96" : "max-h-0"}`}
       >
-        <div className="py-2 pl-4 space-y-0.5">
-          {items.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              onClick={onClose}
-              className="flex items-center gap-3 py-2.5 text-white/50 hover:text-white text-sm transition-colors"
-            >
-              {item.emoji && <span className="text-base">{item.emoji}</span>}
-              {item.label}
-            </Link>
-          ))}
+        <div className="py-2 pl-4">
+          {/* ── Scrollable items ────────────────────────── */}
+          <div className="max-h-48 overflow-y-auto space-y-0.5">
+            {items.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={onClose}
+                className="flex items-center gap-3 py-2.5 text-[#52525a] hover:text-[#CDAA81] text-sm transition-colors"
+              >
+                {item.emoji && <span className="text-base">{item.emoji}</span>}
+                {item.label}
+              </Link>
+            ))}
+          </div>
+
+          {/* View all — always visible */}
           <Link
             href={items[0]?.href.split("/").slice(0, -1).join("/") || "/"}
             onClick={onClose}
-            className="flex items-center gap-2 py-2.5 text-[#C9A96E] text-xs font-bold uppercase tracking-widest hover:text-[#E8C98A] transition-colors"
+            className="flex items-center gap-2 py-2.5 text-[#CDAA81] text-xs font-bold uppercase tracking-widest hover:text-[#B49168] transition-colors border-t border-stone-100 mt-1 pt-3"
           >
             View all
             <svg
@@ -199,7 +214,14 @@ function MobileAccordion({
 
 export default function Navbar() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+
+  // ── Scroll shadow ─────────────────────────────────────────
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const destinationItems = (siteConfig.destinations as any[]).map((d) => ({
     href: `/destinations/${d.slug}`,
@@ -214,108 +236,111 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#111]/95 backdrop-blur-sm">
-        <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-20">
-          {/* ── LOGO ─────────────────────────────────────────── */}
-          <Link href="/">
-            <div className="text-center">
-              <div className="font-display text-[#C9A96E] text-xl font-medium tracking-[0.2em]">
-                {siteConfig.logo.textFallback}
-              </div>
-              <div className="text-white/40 text-[8px] tracking-[0.3em] uppercase">
-                Real Estate
-              </div>
-            </div>
+      <header
+        className={`
+          fixed top-0 left-0 right-0 z-50 transition-all duration-300
+          ${scrolled ? "bg-white shadow-sm" : "bg-transparent"}
+        `}
+      >
+        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-[72px] md:h-[85px]">
+          {/* ── LOGO ─────────────────────────────────────── */}
+          <Link href="/" className="flex-shrink-0">
+            <Image
+              src={scrolled ? "/ARLogo-3.png" : "/ARLogo-1.png"}
+              alt={siteConfig.brokerName}
+              width={140}
+              height={40}
+              className="h-10 md:h-12 w-auto object-contain transition-all duration-300"
+              priority
+            />
           </Link>
 
-          {/* ── DESKTOP NAV ──────────────────────────────────── */}
+          {/* ── DESKTOP NAV ──────────────────────────────── */}
           <nav className="hidden md:flex items-center gap-8">
             <Link
               href="/about"
-              className="text-white/70 text-xs font-medium tracking-widest uppercase hover:text-white transition-colors"
+              className={`text-base font-medium transition-colors ${
+                scrolled
+                  ? "text-[#0a0915]/70 hover:text-[#0a0915]"
+                  : "text-white hover:text-white/80"
+              }`}
             >
               About
             </Link>
 
+            {/* Replace NavDropdown trigger text color too */}
             <NavDropdown
               label="Destinations"
               items={destinationItems}
               onClose={() => {}}
+              scrolled={scrolled}
             />
 
             <NavDropdown
               label="Projects"
               items={projectItems}
               onClose={() => {}}
+              scrolled={scrolled}
             />
 
             <Link
               href="/properties"
-              className="text-white/70 text-xs font-medium tracking-widests uppercase hover:text-white transition-colors"
+              className={`text-base font-base transition-colors ${
+                scrolled
+                  ? "text-[#0a0915]/70 hover:text-[#0a0915]"
+                  : "text-white hover:text-white/80"
+              }`}
             >
               Properties
             </Link>
 
             <Link
               href="/contact"
-              className="text-white/70 text-xs font-medium tracking-widest uppercase hover:text-white transition-colors"
+              className={`text-base font-base transition-colors ${
+                scrolled
+                  ? "text-[#0a0915]/70 hover:text-[#0a0915]"
+                  : "text-white hover:text-white/80"
+              }`}
             >
               Contact
             </Link>
           </nav>
 
-          {/* ── RIGHT SIDE ───────────────────────────────────── */}
+          {/* ── RIGHT SIDE ───────────────────────────────── */}
           <div className="flex items-center gap-5">
             {/* Admin icon */}
             <Link
               href="/dashboard"
               target="_blank"
-              className="text-white/50 hover:text-white transition-colors"
+              className={`hidden md:flex transition-colors ${
+                scrolled
+                  ? "text-[#52525a] hover:text-[#0a0915]"
+                  : "text-white hover:text-white/80"
+              }`}
               title="Admin"
             >
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
-                />
-              </svg>
+              <CircleUserRound />
             </Link>
 
-            {/* WhatsApp desktop */}
-            <a
-              href={`https://wa.me/+${siteConfig.contact.whatsapp.replace(/\D/g, "")}`}
-              target="_blank"
-              className="hidden md:flex items-center gap-2 text-white/70 text-xs font-medium hover:text-white transition-colors"
+            {/* CTA pill button */}
+            <Link
+              href="/properties"
+              className="hidden md:inline-flex items-center gap-2 bg-[#CDAA81] text-white text-base font-medium px-6 py-3 rounded-full hover:bg-[#B49168] transition-colors"
             >
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
-                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.558 4.11 1.535 5.832L.057 23.527a.75.75 0 00.916.916l5.695-1.478A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.714 9.714 0 01-5.01-1.392l-.36-.213-3.723.967.984-3.622-.234-.373A9.712 9.712 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z" />
-              </svg>
-              {siteConfig.contact.phone}
-            </a>
+              Explore Properties
+            </Link>
 
             {/* Burger mobile */}
             <button
               onClick={() => setSidebarOpen(true)}
-              className="md:hidden text-white/70 hover:text-white transition-colors"
+              className={`md:hidden transition-colors ${
+                scrolled ? "text-[#0a0915]" : "text-white"
+              }`}
               aria-label="Open menu"
             >
               <svg
-                width="22"
-                height="22"
+                width="32"
+                height="32"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -332,12 +357,12 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* ── MOBILE SIDEBAR ───────────────────────────────────────── */}
+      {/* ── MOBILE SIDEBAR ───────────────────────────────────── */}
 
       {/* Overlay */}
       <div
         onClick={() => setSidebarOpen(false)}
-        className={`fixed inset-0 bg-black/60 z-50 md:hidden transition-opacity duration-300 ${
+        className={`fixed inset-0 bg-black/40 backdrop-blur-sm z-50 md:hidden transition-opacity duration-300 ${
           sidebarOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
@@ -347,29 +372,30 @@ export default function Navbar() {
       {/* Drawer */}
       <div
         className={`
-        fixed top-0 right-0 h-full w-72 bg-[#111] z-50
+        fixed top-0 right-0 h-full w-80 bg-white z-50
         transform transition-transform duration-300 ease-in-out
-        md:hidden flex flex-col
+        md:hidden flex flex-col shadow-2xl
         ${sidebarOpen ? "translate-x-0" : "translate-x-full"}
       `}
       >
-        {/* Sidebar header */}
-        <div className="flex items-center justify-between px-6 h-20 border-b border-white/10">
+        {/* Header */}
+        <div className="flex items-center justify-between px-6 h-[72px] border-b border-stone-100">
           <Link href="/" onClick={() => setSidebarOpen(false)}>
-            <div className="font-display text-[#C9A96E] text-lg font-medium tracking-[0.2em]">
-              {siteConfig.logo.textFallback}
-            </div>
-            <div className="text-white/40 text-[8px] tracking-[0.3em] uppercase">
-              Real Estate
-            </div>
+            <Image
+              src="/ARLogo-3.png"
+              alt={siteConfig.brokerName}
+              width={120}
+              height={36}
+              className="h-10 w-auto object-contain"
+            />
           </Link>
           <button
             onClick={() => setSidebarOpen(false)}
-            className="text-white/50 hover:text-white transition-colors"
+            className="text-[#52525a] hover:text-[#0a0915] transition-colors"
           >
             <svg
-              width="20"
-              height="20"
+              width="28"
+              height="28"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -384,12 +410,12 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile nav */}
-        <nav className="flex-1 overflow-y-auto px-6 py-6 space-y-0">
+        {/* Nav links */}
+        <nav className="flex-1 overflow-y-auto px-6 py-4">
           <Link
             href="/about"
             onClick={() => setSidebarOpen(false)}
-            className="block text-white/70 hover:text-white text-sm font-medium tracking-widest uppercase py-4 border-b border-white/5 transition-colors"
+            className="block text-[#0a0915] text-sm font-medium py-4 border-b border-stone-100 hover:text-[#CDAA81] transition-colors"
           >
             About
           </Link>
@@ -409,7 +435,7 @@ export default function Navbar() {
           <Link
             href="/properties"
             onClick={() => setSidebarOpen(false)}
-            className="block text-white/70 hover:text-white text-sm font-medium tracking-widest uppercase py-4 border-b border-white/5 transition-colors"
+            className="block text-[#0a0915] text-sm font-medium py-4 border-b border-stone-100 hover:text-[#CDAA81] transition-colors"
           >
             Properties
           </Link>
@@ -417,44 +443,44 @@ export default function Navbar() {
           <Link
             href="/contact"
             onClick={() => setSidebarOpen(false)}
-            className="block text-white/70 hover:text-white text-sm font-medium tracking-widests uppercase py-4 border-b border-white/5 transition-colors"
+            className="block text-[#0a0915] text-sm font-medium py-4 border-b border-stone-100 hover:text-[#CDAA81] transition-colors"
           >
             Contact
           </Link>
         </nav>
 
         {/* Bottom */}
-        <div className="px-6 py-8 border-t border-white/10 space-y-4">
-          <a
-            href={`https://wa.me/+${siteConfig.contact.whatsapp.replace(/\D/g, "")}`}
-            className="flex items-center gap-3 text-white/70 hover:text-white transition-colors text-sm font-medium"
+        <div className="px-6 py-6 border-t border-stone-100 space-y-3">
+          {/* Explore CTA */}
+          <Link
+            href="/properties"
+            onClick={() => setSidebarOpen(false)}
+            className="flex items-center justify-center gap-2 w-full py-3 bg-[#1B2B3A] text-white text-xs font-medium tracking-wider rounded-full hover:bg-[#2D4258] transition-colors"
           >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            Explore Properties
+          </Link>
+
+          {/* WhatsApp */}
+          <a
+            href={`https://wa.me/${siteConfig.contact.whatsapp.replace(/\D/g, "")}`}
+            target="_blank"
+            className="flex items-center justify-center gap-2 w-full py-3 border border-stone-200 text-[#52525a] text-xs font-medium rounded-full hover:border-[#CDAA81] hover:text-[#CDAA81] transition-colors"
+          >
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
               <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.558 4.11 1.535 5.832L.057 23.527a.75.75 0 00.916.916l5.695-1.478A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.714 9.714 0 01-5.01-1.392l-.36-.213-3.723.967.984-3.622-.234-.373A9.712 9.712 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z" />
             </svg>
-            {siteConfig.contact.phone}
+            WhatsApp
           </a>
 
+          {/* Admin */}
           <Link
             href="/dashboard"
+            target="_blank"
             onClick={() => setSidebarOpen(false)}
-            className="flex items-center gap-3 text-white/70 hover:text-white transition-colors text-sm font-medium"
+            className="flex items-center justify-center gap-2 text-[#52525a] hover:text-[#0a0915] text-xs transition-colors py-2"
           >
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-            </svg>
+            <CircleUserRound size={16} />
             Admin Dashboard
           </Link>
         </div>
