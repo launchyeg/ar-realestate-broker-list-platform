@@ -104,7 +104,7 @@ export default function HeroSection() {
             transform: animating ? "translateY(16px)" : "translateY(0)",
           }}
         >
-          <h1 className="font-display text-5xl md:text-[84px] text-white leading-tight mb-6 whitespace-pre-line">
+          <h1 className="font-display text-4xl md:text-[84px] text-white leading-tight mb-6 whitespace-pre-line">
             {slide.title}
           </h1>
         </div>
@@ -117,7 +117,7 @@ export default function HeroSection() {
             transform: animating ? "translateY(16px)" : "translateY(0)",
           }}
         >
-          <p className="text-white text-xl leading-10 max-w-[700px] mb-10">
+          <p className="text-white text-l md:text-xl leading-7 md:leading-10 max-w-[700px] mb-10">
             {slide.subtitle}
           </p>
         </div>
