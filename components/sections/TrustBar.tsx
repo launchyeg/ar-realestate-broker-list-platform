@@ -42,7 +42,7 @@ export default function TrustBar() {
 
   return (
     <section className="relative z-10 -mt-8 rounded-t-3xl bg-brand-accent py-8 md:py-14 overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6 flex items-center gap-7 md:gap-12 flex-wrap md:flex-nowrap">
+      <div className="max-w-[1380px] mx-auto px-6 md:px-8 flex items-center gap-7 md:gap-36 flex-wrap md:flex-nowrap">
         {/* ── Label — fixed left ────────────────────────────── */}
         <p className="text-brand-text text-xl font-medium w-full md:w-auto text-center md:text-left md:whitespace-nowrap flex-shrink-0">
           Trusted by leading companies

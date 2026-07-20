@@ -197,7 +197,7 @@ export default function PropertiesClient({
       </section>
 
       {/* ── RESULTS ──────────────────────────────────────────────── */}
-      <section className="max-w-6xl mx-auto px-6 py-16">
+      <section className="max-w-[1380px] mx-auto px-6 py-16">
         {/* Count */}
         {!hasFilters && (
           <p className="text-stone-400 text-sm mb-8">

@@ -95,7 +95,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
       {/* ── CONTENT ────────────────────────────────────────────── */}
-      <div className="relative max-w-6xl mx-auto px-6 w-full">
+      <div className="relative max-w-[1380px] mx-auto px-6 md:px-8 w-full">
         {/* Heading */}
         <div
           className="transition-all duration-500 delay-75 max-w-[890px]"

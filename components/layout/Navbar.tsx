@@ -242,7 +242,7 @@ export default function Navbar() {
           ${scrolled ? "bg-white shadow-sm" : "bg-transparent"}
         `}
       >
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-[72px] md:h-[85px]">
+        <div className="max-w-[1380px] mx-auto px-6 md:px-8 flex items-center justify-between h-[72px] md:h-[85px]">
           {/* ── LOGO ─────────────────────────────────────── */}
           <Link href="/" className="flex-shrink-0">
             <Image

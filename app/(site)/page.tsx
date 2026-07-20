@@ -3,10 +3,12 @@ import { Metadata } from "next";
 import siteConfig from "@/siteConfig";
 import { supabase } from "@/lib/supabase";
 import { mapUnit } from "@/lib/mapUnit";
-import HeroSection from "@/components/HeroSection";
+import HeroSection from "@/components/sections/HeroSection";
 import TrustBar from "@/components/sections/TrustBar";
 import DestinationsGrid from "@/components/DestinationsGrid";
 import PropertySlider from "@/components/ui/PropertySlider";
+import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
+import PropertyCard from "@/components/ui/PropertyCard";
 
 export const revalidate = 60;
 
@@ -45,6 +47,36 @@ export default async function HomePage() {
 
       {/* ── TRUST Bar ───────────────────────────────────────────────── */}
       <TrustBar />
+
+      {/* ── PROPERTIES GRID ────────────────────────────────────── */}
+      <section className="max-w-[1380px] mx-auto px-6 md:px-8 py-14 md:py-20 lg:py-32 flex flex-col gap-10 md:gap-16">
+        <AnimateOnScroll type="fade-up">
+          <div className="text-center">
+            <h2 className="font-display text-4xl md:text-5xl text-brand-text">
+              Exclusive properties by {siteConfig.brokerName}
+            </h2>
+          </div>
+        </AnimateOnScroll>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          {allUnits.slice(0, 6).map((unit, i) => (
+            <AnimateOnScroll key={unit.id} type="fade-up" delay={i * 100}>
+              <PropertyCard unit={unit} />
+            </AnimateOnScroll>
+          ))}
+        </div>
+
+        <AnimateOnScroll type="fade-up" delay={200}>
+          <div className="text-center mt-[18px]">
+            <Link
+              href="/properties"
+              className="bg-brand-primary text-white text-base font-medium px-8 py-[18px] rounded-xl hover:bg-brand-primaryLight transition-colors"
+            >
+              Explore All Listings
+            </Link>
+          </div>
+        </AnimateOnScroll>
+      </section>
 
       {/* ── WELCOME SECTION ────────────────────────────────────── */}
       <section className="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-16 items-start">
