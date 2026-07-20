@@ -62,13 +62,13 @@ export default function TrustBar() {
             {logos.map((src, i) => (
               <div
                 key={i}
-                className="flex-shrink-0 h-12 w-28 relative opacity-80 hover:opacity-100 transition-opacity"
+                className="flex-shrink-0 h-12 w-32 relative transition-opacity"
               >
                 <Image
                   src={src}
                   alt={`Partner ${(i % PARTNERS.length) + 1}`}
                   fill
-                  className="object-contain"
+                  className="w-full"
                 />
               </div>
             ))}

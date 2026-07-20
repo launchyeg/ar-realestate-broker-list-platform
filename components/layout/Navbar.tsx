@@ -325,7 +325,7 @@ export default function Navbar() {
             {/* CTA pill button */}
             <Link
               href="/properties"
-              className="hidden md:inline-flex items-center gap-2 bg-brand-accent text-white text-base font-medium px-6 py-3 rounded-full hover:bg-brand-accentLight transition-colors"
+              className="hidden md:inline-flex bg-brand-accent text-white text-base font-medium px-6 py-3 rounded-full hover:bg-brand-accentLight transition-colors"
             >
               Explore Properties
             </Link>

@@ -9,6 +9,7 @@ import DestinationsGrid from "@/components/DestinationsGrid";
 import PropertySlider from "@/components/ui/PropertySlider";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import PropertyCard from "@/components/ui/PropertyCard";
+import CeoSection from "@/components/sections/CeoSection";
 
 export const revalidate = 60;
 
@@ -42,17 +43,14 @@ export default async function HomePage() {
 
   return (
     <div className="min-h-screen bg-white font-sans">
-      {/* ── HERO ───────────────────────────────────────────────── */}
       <HeroSection />
 
-      {/* ── TRUST Bar ─────────────────────────────────────────────*/}
       <TrustBar />
 
-      {/* ── PROPERTIES GRID ────────────────────────────────────── */}
       <section className="max-w-[1380px] mx-auto px-6 md:px-8 py-14 md:py-20 lg:py-32 flex flex-col gap-10 md:gap-16">
         <AnimateOnScroll type="fade-up">
           <div className="text-center">
-            <h2 className="font-display text-4xl md:text-5xl text-brand-text">
+            <h2 className="font-display text-4xl md:text-5xl leading-11 md:leading-16 text-brand-text">
               Exclusive properties by {siteConfig.brokerName}
             </h2>
           </div>
@@ -76,6 +74,43 @@ export default async function HomePage() {
             </Link>
           </div>
         </AnimateOnScroll>
+      </section>
+
+      <CeoSection />
+
+      <section className="relative z-10 -mt-8">
+        <div
+          className="absolute inset-0 bg-cover bg-center rounded-t-3xl"
+          style={{
+            backgroundImage:
+              "url(https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/pensee-royal-azur-tourist-resort-pools-1-min-2048x1367.jpg)",
+          }}
+        />
+        <div className="absolute inset-0 bg-black/50 rounded-t-3xl" />
+        <div className="max-w-[1380px] mx-auto px-6 md:px-8 pt-14 md:pt-20 pb-20 md:pb-44">
+          <div className="relative max-w-xl bg-white p-5 md:px-10 md:py-12 rounded-2xl">
+            <h2 className="font-display text-4xl md:text-5xl leading-11 md:leading-16 text-brand-text mb-4">
+              Unlocking your Red Sea coastal lifestyle!
+            </h2>
+            <p className="text-brand-muted text-lg leading-7 mt-4 mb-8">
+              Looking for expert guidance or ready to invest? Whether you are
+              buying, selling, or exploring properties.
+            </p>
+            <Link
+              href="/about"
+              className="bg-transparent text-brand-accent border border-[#1629321a] text-sm font-medium px-6 py-3 rounded-full hover:border-[#16293237] transition-colors"
+            >
+              Explore More
+            </Link>
+            <h3 className="font-display text-xl text-brand-text mt-12 md:mt-24 mb-3">
+              Guiding your investments across Redsea.
+            </h3>
+            <p className="text-brand-muted text-sm leading-7">
+              Need expert assistance or ready for your next chapter? Whether you
+              are buying, selling, or reviewing market options.
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* ── WELCOME SECTION ────────────────────────────────────── */}
@@ -199,26 +234,6 @@ export default async function HomePage() {
           </Link>
         </div>
         <PropertySlider units={apartments} limit={10} />
-      </section>
-
-      {/* ── FEATURED PROPERTY BANNER ───────────────────────────── */}
-      <section className="relative h-[800px] flex items-end overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url(https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=1600&q=80)",
-          }}
-        />
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="relative px-8 pb-8">
-          <p className="font-display text-3xl md:text-5xl text-white font-light">
-            5,000,000 – 18,000,000 EGP
-          </p>
-          <p className="text-white/60 text-xs tracking-widest uppercase mt-1">
-            Blanca Project
-          </p>
-        </div>
       </section>
 
       {/* ── DESTINATIONS GRID ──────────────────────────────────── */}

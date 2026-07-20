@@ -8,28 +8,28 @@ import siteConfig from "@/siteConfig";
 const SLIDES = [
   {
     image:
-      "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/hero/ar-adu-3.png",
+      "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/ar-adu-3.png",
     title: "AR Realestate Find Your Dream Home in Red Sea",
     subtitle:
       "Stop wasting time with complicated search filters and discover your perfect coastal retreat through our intuitive, lightning-fast discovery tool.",
   },
   {
     image:
-      "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/hero/Cam-05-copy-min-scaled.jpg",
+      "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Cam-05-copy-min-scaled.jpg",
     title: "Find Your Dream Home in the Red Sea",
     subtitle:
       "Skip the stress of navigating the market alone and let our sophisticated, modern platform guide you directly to the region's finest properties.",
   },
   {
     image:
-      "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/hero/Screenshot-2025-11-16-151702.png",
+      "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Screenshot-2025-11-16-151702.png",
     title: "Find Your Dream Home in the Red Sea",
     subtitle:
       "Leave behind the cluttered and outdated listings; we provide a refined, user-centered experience that makes finding your ideal getaway simple.",
   },
   {
     image:
-      "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/hero/Screenshot-2026-03-10-145747.png",
+      "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Screenshot-2026-03-10-145747.png",
     title: "Find Your Dream Home in the Red Sea",
     subtitle:
       "Replace manual browsing with an effortless digital experience designed to put the absolute best of the Red Sea coast right at your fingertips.",
