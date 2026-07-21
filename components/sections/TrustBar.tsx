@@ -42,7 +42,7 @@ export default function TrustBar() {
   const logos = [...PARTNERS, ...PARTNERS];
 
   return (
-    <section className="relative z-10 -mt-8 rounded-t-3xl bg-brand-accent py-[30px] md:pt-14 md:pb-[60px] overflow-hidden">
+    <section className="relative z-10 -mt-6 rounded-t-3xl bg-brand-accent py-[30px] md:pt-14 md:pb-[60px] overflow-hidden">
       <AnimateOnScroll type="fade-in">
         <div className="max-w-[1380px] mx-auto px-6 md:px-8 flex items-center gap-7 md:gap-36 flex-wrap md:flex-nowrap">
           <p className="text-brand-text text-xl font-medium w-full md:w-auto text-center md:text-left md:whitespace-nowrap flex-shrink-0">

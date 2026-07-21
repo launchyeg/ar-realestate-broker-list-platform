@@ -3,14 +3,15 @@ import siteConfig from "@/siteConfig";
 import { Metadata } from "next";
 import { supabase } from "@/lib/supabase";
 import { mapUnit } from "@/lib/mapUnit";
+import { ChevronRight } from "lucide-react";
 import HeroSection from "@/components/sections/HeroSection";
 import TrustBar from "@/components/sections/TrustBar";
 import PropertyCard from "@/components/ui/PropertyCard";
 import CeoSection from "@/components/sections/CeoSection";
-import ContactPageForm from "./contact/ContactPageForm";
+import DestinationSlider from "@/components/ui/DestinationSlider";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
+import ContactPageForm from "./contact/ContactPageForm";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
-import PropertySlider from "@/components/ui/PropertySlider";
 import DestinationsGrid from "@/components/DestinationsGrid";
 
 export const revalidate = 60;
@@ -36,12 +37,7 @@ export default async function HomePage() {
 
   const allUnits = (rawUnits || []).map(mapUnit);
 
-  const villas = allUnits.filter(
-    (u) => u.type === "Villa" || u.type === "Penthouse",
-  );
-  const apartments = allUnits.filter(
-    (u) => u.type === "Apartment" || u.type === "Studio",
-  );
+  const destination = (siteConfig.destinations as any[]).filter((p) => p.slug);
 
   return (
     <div className="min-h-screen bg-white font-sans">
@@ -72,7 +68,7 @@ export default async function HomePage() {
               href="/properties"
               className="bg-brand-primary text-white text-base font-medium px-8 py-[18px] rounded-xl hover:bg-brand-primaryLight transition-colors"
             >
-              Explore All Listings
+              Explore All Properties
             </Link>
           </div>
         </AnimateOnScroll>
@@ -117,7 +113,27 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Destination */}
+      <section className=" bg-brand-surface z-10 -mt-6 rounded-t-3xl">
+        <div className="max-w-[1380px] mx-auto px-6 md:px-8 pt-[50px] pb-[60px] md:py-[70px] lg:py-[120px] flex flex-col gap-10 md:gap-16">
+          <AnimateOnScroll type="fade-up">
+            <div className="flex items-center justify-between flex-wrap gap-6">
+              <h2 className="font-display text-4xl md:text-5xl leading-11 md:leading-16 text-brand-text">
+                Your trusted real estate partner
+              </h2>
+              <Link
+                href="/destinations"
+                className="text-brand-text/60 hover:text-brand-text text-base font-medium transition-colors flex gap-2"
+              >
+                All Destinations
+                <ChevronRight />
+              </Link>
+            </div>
+          </AnimateOnScroll>
+
+          <DestinationSlider destinations={destination} />
+        </div>
+      </section>
+
       <section className="max-w-[1380px] z-10 -mt-6 mx-auto px-6 md:px-8 py-[60px] md:py-[70px] lg:py-[120px] rounded-t-3xl">
         <div className="mb-10 md:mb-[60px] lg:mb-[74px]">
           <AnimateOnScroll type="fade-up">
@@ -128,10 +144,9 @@ export default async function HomePage() {
         </div>
 
         <TestimonialsSection />
-        {/* <PropertySlider units={villas} limit={8} /> */}
       </section>
 
-      <section className=" bg-brand-accent z-10 -mt-8 rounded-t-3xl">
+      <section className=" bg-brand-accent z-10 -mt-6 rounded-t-3xl">
         <div className="max-w-[1380px] mx-auto px-6 md:px-8 pt-10 pb-[90px] md:pt-[70px] lg:py-[120px] flex flex-row justify-between flex-wrap gap-10 md:gap-16">
           <div className="lg:basis-[480px]">
             <h2 className="font-display text-4xl md:text-5xl leading-11 md:leading-16 text-white mb-4">

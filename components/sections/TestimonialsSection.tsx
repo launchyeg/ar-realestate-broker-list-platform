@@ -67,10 +67,10 @@ export default function TestimonialsSection() {
   ];
 
   return (
-    <section className="">
+    <div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 md:mb-14">
         {visible.map((t, i) => (
-          <AnimateOnScroll key={`${t.id}-${i}`} type="fade-up" delay={i * 150}>
+          <AnimateOnScroll key={`${t.id}-${i}`} type="fade-up" delay={i * 100}>
             <div
               className={`
                 bg-brand-surface rounded-3xl p-7 flex flex-col justify-between min-h-[450px]
@@ -107,22 +107,16 @@ export default function TestimonialsSection() {
         ))}
       </div>
 
-      <AnimateOnScroll type="fade-up">
+      <AnimateOnScroll type="fade-in" delay={100}>
         <div className="flex justify-center gap-4">
-          <button
-            onClick={prev}
-            className="border-stone-200 text-brand-muted hover:text-brand-accent transition-all"
-          >
+          <button onClick={prev} className="text-brand-text cursor-pointer">
             <ChevronLeft size={32} />
           </button>
-          <button
-            onClick={next}
-            className="border-stone-200 text-brand-muted hover:text-brand-accent transition-all"
-          >
+          <button onClick={next} className="text-brand-text cursor-pointer">
             <ChevronRight size={32} />
           </button>
         </div>
       </AnimateOnScroll>
-    </section>
+    </div>
   );
 }

@@ -40,8 +40,7 @@ export default function CeoSection() {
       </AnimateOnScroll>
 
       <AnimateOnScroll type="scale-in" delay={100}>
-        <div className="relative rounded-2xl overflow-hidden aspect-video max-w-4xl mx-auto shadow-2xl">
-          {/* ── SLIDING BACKGROUND ───────────────────────── */}
+        <div className="relative rounded-3xl overflow-hidden aspect-video max-w-6xl mx-auto shadow-2xl">
           {BG_SLIDES.map((src, i) => (
             <div
               key={i}
@@ -55,11 +54,11 @@ export default function CeoSection() {
 
           <div className="absolute inset-0 bg-black/30" />
 
-          <div className="absolute bottom-6 left-6 right-6">
-            <p className="text-white font-display text-xl md:text-2xl font-medium mb-1">
+          <div className="absolute bottom-8 left-6 md:bottom-14 md:left-10">
+            <p className="text-white font-display text-xl md:text-3xl leading-7 font-medium mb-2">
               "Owning a home is a keystone of wealth..."
             </p>
-            <p className="text-white/70 text-sm">
+            <p className="text-white/70 text-base md:text-lg leading-7">
               Ahmed Rashad · CEO & Founder
             </p>
           </div>
