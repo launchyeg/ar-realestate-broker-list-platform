@@ -1,9 +1,10 @@
 "use client";
 
+import siteConfig from "@/siteConfig";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import CustomSelect from "@/components/dashboard/CustomSelect";
-import siteConfig from "@/siteConfig";
+import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 
 const SLIDES = [
   {
@@ -96,118 +97,116 @@ export default function HeroSection() {
 
       {/* ── CONTENT ────────────────────────────────────────────── */}
       <div className="relative max-w-[1380px] mx-auto px-6 md:px-8 w-full">
-        {/* Heading */}
-        <div
-          className="transition-all duration-500 delay-75 max-w-[890px]"
-          style={{
-            opacity: animating ? 0 : 1,
-            transform: animating ? "translateY(16px)" : "translateY(0)",
-          }}
-        >
-          <h1 className="font-display text-4xl md:text-[84px] text-white leading-tight mb-6 whitespace-pre-line">
-            {slide.title}
-          </h1>
-        </div>
+        <AnimateOnScroll type="fade-up">
+          <div
+            className="transition-all duration-500 delay-75 max-w-[890px]"
+            style={{
+              opacity: animating ? 0 : 1,
+              transform: animating ? "translateY(16px)" : "translateY(0)",
+            }}
+          >
+            <h1 className="font-display text-4xl md:text-[84px] text-white leading-tight mb-6 whitespace-pre-line">
+              {slide.title}
+            </h1>
+          </div>
 
-        {/* Subtext */}
-        <div
-          className="transition-all duration-500 delay-100"
-          style={{
-            opacity: animating ? 0 : 1,
-            transform: animating ? "translateY(16px)" : "translateY(0)",
-          }}
-        >
-          <p className="text-white text-l md:text-xl leading-7 md:leading-10 max-w-[700px] mb-10">
-            {slide.subtitle}
-          </p>
-        </div>
+          <div
+            className="transition-all duration-500 delay-100"
+            style={{
+              opacity: animating ? 0 : 1,
+              transform: animating ? "translateY(16px)" : "translateY(0)",
+            }}
+          >
+            <p className="text-white text-l md:text-xl leading-7 md:leading-10 max-w-[700px] mb-10">
+              {slide.subtitle}
+            </p>
+          </div>
 
-        {/* ── SEARCH BAR ─────────────────────────────────────────── */}
-        <div
-          className="transition-all duration-500 delay-150"
-          style={{
-            opacity: animating ? 0 : 1,
-            transform: animating ? "translateY(16px)" : "translateY(0)",
-          }}
-        >
-          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 flex flex-wrap md:flex-nowrap gap-3 max-w-2xl">
-            <div className="flex-1 min-w-[140px]">
-              <p className="text-white/50 text-[9px] font-medium uppercase tracking-widest mb-1.5 px-1">
-                Destination
-              </p>
-              <CustomSelect
-                value={destination}
-                placeholder="Any Destination"
-                onChange={setDestination}
-                options={[
-                  ...(siteConfig.destinations as any[]).map((d) => ({
-                    value: d.slug,
-                    label: d.label,
-                  })),
-                ]}
-              />
-            </div>
-            <div className="flex-1 min-w-[140px]">
-              <p className="text-white/50 text-[9px] font-medium uppercase tracking-widest mb-1.5 px-1">
-                Project
-              </p>
-              <CustomSelect
-                value={project}
-                placeholder="Any Project"
-                onChange={setProject}
-                options={[
-                  ...(siteConfig.projects as any[]).map((p) => ({
-                    value: p.slug,
-                    label: p.label,
-                  })),
-                ]}
-              />
-            </div>
-            <div className="flex-1 min-w-[140px]">
-              <p className="text-white/50 text-[9px] font-medium uppercase tracking-widest mb-1.5 px-1">
-                Price
-              </p>
-              <CustomSelect
-                value={price}
-                placeholder="Any Price"
-                onChange={setPrice}
-                options={[
-                  { value: "0-2000000", label: "Under EGP 2M" },
-                  { value: "2000000-5000000", label: "EGP 2M – 5M" },
-                  { value: "5000000-10000000", label: "EGP 5M – 10M" },
-                  { value: "10000000-999999999", label: "Above EGP 10M" },
-                ]}
-              />
-            </div>
-            <div className="flex items-end">
-              <button
-                onClick={handleSearch}
-                className="w-full md:w-auto px-6 py-2.5 bg-brand-accent text-white text-xs font-medium tracking-widest uppercase rounded-xl hover:bg-brand-accentLight transition-colors whitespace-nowrap"
-              >
-                Search
-              </button>
+          <div
+            className="transition-all duration-500 delay-150"
+            style={{
+              opacity: animating ? 0 : 1,
+              transform: animating ? "translateY(16px)" : "translateY(0)",
+            }}
+          >
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 flex flex-wrap md:flex-nowrap gap-3 max-w-2xl">
+              <div className="flex-1 min-w-[140px]">
+                <p className="text-white/50 text-[9px] font-medium uppercase tracking-widest mb-1.5 px-1">
+                  Destination
+                </p>
+                <CustomSelect
+                  value={destination}
+                  placeholder="Any Destination"
+                  onChange={setDestination}
+                  options={[
+                    ...(siteConfig.destinations as any[]).map((d) => ({
+                      value: d.slug,
+                      label: d.label,
+                    })),
+                  ]}
+                />
+              </div>
+              <div className="flex-1 min-w-[140px]">
+                <p className="text-white/50 text-[9px] font-medium uppercase tracking-widest mb-1.5 px-1">
+                  Project
+                </p>
+                <CustomSelect
+                  value={project}
+                  placeholder="Any Project"
+                  onChange={setProject}
+                  options={[
+                    ...(siteConfig.projects as any[]).map((p) => ({
+                      value: p.slug,
+                      label: p.label,
+                    })),
+                  ]}
+                />
+              </div>
+              <div className="flex-1 min-w-[140px]">
+                <p className="text-white/50 text-[9px] font-medium uppercase tracking-widest mb-1.5 px-1">
+                  Price
+                </p>
+                <CustomSelect
+                  value={price}
+                  placeholder="Any Price"
+                  onChange={setPrice}
+                  options={[
+                    { value: "0-2000000", label: "Under EGP 2M" },
+                    { value: "2000000-5000000", label: "EGP 2M – 5M" },
+                    { value: "5000000-10000000", label: "EGP 5M – 10M" },
+                    { value: "10000000-999999999", label: "Above EGP 10M" },
+                  ]}
+                />
+              </div>
+              <div className="flex items-end">
+                <button
+                  onClick={handleSearch}
+                  className="w-full md:w-auto px-6 py-2.5 bg-brand-accent text-white text-xs font-medium tracking-widest uppercase rounded-xl hover:bg-brand-accentLight transition-colors whitespace-nowrap"
+                >
+                  Search
+                </button>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* ── SLIDE DOTS ─────────────────────────────────────────── */}
-        <div className="flex items-center gap-2 mt-8">
-          {SLIDES.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => goTo(i)}
-              className={`h-1 rounded-full transition-all duration-300 ${
-                i === current
-                  ? "w-8 bg-brand-accent"
-                  : "w-2 bg-white/30 hover:bg-white/60"
-              }`}
-            />
-          ))}
-          <span className="ml-3 text-white/30 text-xs font-mono">
-            {String(current + 1).padStart(2, "0")} /{" "}
-            {String(SLIDES.length).padStart(2, "0")}
-          </span>
-        </div>
+          <div className="flex items-center gap-2 mt-8">
+            {SLIDES.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => goTo(i)}
+                className={`h-1 rounded-full transition-all duration-300 ${
+                  i === current
+                    ? "w-8 bg-brand-accent"
+                    : "w-2 bg-white/30 hover:bg-white/60"
+                }`}
+              />
+            ))}
+            <span className="ml-3 text-white/30 text-xs font-mono">
+              {String(current + 1).padStart(2, "0")} /{" "}
+              {String(SLIDES.length).padStart(2, "0")}
+            </span>
+          </div>
+        </AnimateOnScroll>
       </div>
     </section>
   );
