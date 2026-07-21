@@ -41,7 +41,7 @@ export default function TrustBar() {
   const logos = [...PARTNERS, ...PARTNERS];
 
   return (
-    <section className="relative z-10 -mt-8 rounded-t-3xl bg-brand-accent py-8 md:py-14 overflow-hidden">
+    <section className="relative z-10 -mt-8 rounded-t-3xl bg-brand-accent py-[30px] md:pt-14 md:pb-[60px] overflow-hidden">
       <div className="max-w-[1380px] mx-auto px-6 md:px-8 flex items-center gap-7 md:gap-36 flex-wrap md:flex-nowrap">
         {/* ── Label — fixed left ────────────────────────────── */}
         <p className="text-brand-text text-xl font-medium w-full md:w-auto text-center md:text-left md:whitespace-nowrap flex-shrink-0">

@@ -10,6 +10,7 @@ import PropertySlider from "@/components/ui/PropertySlider";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import PropertyCard from "@/components/ui/PropertyCard";
 import CeoSection from "@/components/sections/CeoSection";
+import ContactPageForm from "./contact/ContactPageForm";
 
 export const revalidate = 60;
 
@@ -47,7 +48,7 @@ export default async function HomePage() {
 
       <TrustBar />
 
-      <section className="max-w-[1380px] mx-auto px-6 md:px-8 py-14 md:py-20 lg:py-32 flex flex-col gap-10 md:gap-16">
+      <section className="max-w-[1380px] mx-auto px-6 md:px-8 py-[50px] md:py-[70px] lg:py-[120px] flex flex-col gap-10 md:gap-16">
         <AnimateOnScroll type="fade-up">
           <div className="text-center">
             <h2 className="font-display text-4xl md:text-5xl leading-11 md:leading-16 text-brand-text">
@@ -87,25 +88,25 @@ export default async function HomePage() {
           }}
         />
         <div className="absolute inset-0 bg-black/50 rounded-t-3xl" />
-        <div className="max-w-[1380px] mx-auto px-6 md:px-8 pt-14 md:pt-20 pb-20 md:pb-44">
+        <div className="max-w-[1380px] mx-auto px-6 md:px-8 pt-[50px] md:pt-[70px] pb-20 md:pb-[170px]">
           <div className="relative max-w-xl bg-white p-5 md:px-10 md:py-12 rounded-2xl">
             <h2 className="font-display text-4xl md:text-5xl leading-11 md:leading-16 text-brand-text mb-4">
               Unlocking your Red Sea coastal lifestyle!
             </h2>
-            <p className="text-brand-muted text-lg leading-7 mt-4 mb-8">
+            <p className="text-brand-muted text-lg leading-7 mt-5 mb-10">
               Looking for expert guidance or ready to invest? Whether you are
               buying, selling, or exploring properties.
             </p>
             <Link
               href="/about"
-              className="bg-transparent text-brand-accent border border-[#1629321a] text-sm font-medium px-6 py-3 rounded-full hover:border-[#16293237] transition-colors"
+              className="bg-transparent text-brand-accent border border-[#1629321a] text-base font-medium leading-8 px-6 py-3 rounded-full hover:border-[#16293237] transition-colors"
             >
               Explore More
             </Link>
-            <h3 className="font-display text-xl text-brand-text mt-12 md:mt-24 mb-3">
+            <h3 className="font-display text-2xl text-brand-text mt-12 md:mt-24 mb-3">
               Guiding your investments across Redsea.
             </h3>
-            <p className="text-brand-muted text-sm leading-7">
+            <p className="text-brand-muted text-base leading-7">
               Need expert assistance or ready for your next chapter? Whether you
               are buying, selling, or reviewing market options.
             </p>
@@ -113,38 +114,50 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ── WELCOME SECTION ────────────────────────────────────── */}
-      <section className="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-16 items-start">
-        <div>
-          <p className="text-[10px] font-bold tracking-widest uppercase text-stone-400 border-b border-stone-200 pb-3 mb-6">
-            Welcome to {siteConfig.brokerName}
-          </p>
-          <h2 className="font-display text-3xl md:text-4xl text-stone-900 leading-snug mb-8">
-            Welcome to the Red Sea — where vibrant living meets endless
-            horizons.
-          </h2>
-          <Link
-            href="/about"
-            className="inline-block bg-[#1B2B3A] text-white text-xs font-medium tracking-widest uppercase px-6 py-3 hover:bg-[#2D4258] transition-colors"
-          >
-            About us
-          </Link>
-        </div>
-        <div className="space-y-5 pt-12">
-          <p className="text-stone-500 text-sm leading-relaxed">
-            Our carefully curated selection of exclusive properties includes
-            villas, houses and apartments — from quiet villas with sea views to
-            modern residences in exclusive resorts and stylish apartments in the
-            best locations around Hurghada.
-          </p>
-          <p className="text-stone-500 text-sm leading-relaxed">
-            With us, finding your new home means more than just luxury — it
-            means finding a place where you can enjoy quality of life, comfort
-            and investment security. As an officially registered real estate
-            company in Egypt with an experienced team that has been successfully
-            operating in the market for many years, we accompany you
-            professionally, transparently and reliably at every step.
-          </p>
+      {/* Destination */}
+      {/* Testimonial */}
+
+      <section className=" bg-brand-accent z-10 -mt-8 rounded-t-3xl">
+        <div className="max-w-[1380px] mx-auto px-6 md:px-8 pt-10 pb-[90px] md:pt-[70px] lg:py-[120px] flex flex-row justify-between flex-wrap gap-10 md:gap-16">
+          <div className="lg:basis-[480px]">
+            <h2 className="font-display text-4xl md:text-5xl leading-11 md:leading-16 text-white mb-4">
+              Let’s find your next perfect property
+            </h2>
+            <p className="text-[#fffc] text-lg font-medium leading-7 mt-5 mb-8 md:mb-12 lg:mb-28">
+              Have questions or ready to take the next step? Whether you’re
+              buying, selling, or just exploring options.
+            </p>
+
+            <div className="flex flex-wrap gap-5 sm:gap-16">
+              <div>
+                <h2 className="text-[#fffc] text-base font-medium leading-7 mb-1">
+                  Email Address
+                </h2>
+                <Link
+                  href={`mailto:${siteConfig.contact.email}`}
+                  target="_blank"
+                  className="text-white text-base font-medium leading-7"
+                >
+                  {siteConfig.contact.email}
+                </Link>
+              </div>
+              <div>
+                <h2 className="text-[#fffc] text-base font-medium leading-7 mb-1">
+                  Phone Call
+                </h2>
+                <Link
+                  href={`tel:+${siteConfig.contact.phone.replace(/\D/g, "")}`}
+                  target="_blank"
+                  className="text-white text-base font-medium leading-7"
+                >
+                  {siteConfig.contact.phone}
+                </Link>
+              </div>
+            </div>
+          </div>
+          <div className="basis-full lg:basis-xl">
+            <ContactPageForm />
+          </div>
         </div>
       </section>
 
