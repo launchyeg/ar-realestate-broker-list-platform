@@ -45,7 +45,7 @@ export default function CustomSelect({
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className={`w-full flex items-center justify-between gap-2 px-3 py-2 bg-white border rounded-lg text-sm transition-all ${
+        className={`w-full flex items-center justify-between gap-2 px-4 py-3 bg-white border rounded-lg text-sm transition-all ${
           open ? "border-[#C9A96E] " : "border-stone-200 hover:border-stone-300"
         }`}
       >

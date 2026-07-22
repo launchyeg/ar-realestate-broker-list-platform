@@ -161,7 +161,7 @@ const siteConfig = {
       slug: "makadina",
       label: "Makadina",
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR29sUFlKisfeJfsgwitKS00Cg27gGeSlLwDZK7X8VGvC3tFF8T9htcmYv4&s=10",
+        "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/properties/Screenshot-2026-03-10-131215.png",
       heroImage:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpCLQRXwSljXbfnwZ1arU00535Fz6LUf71gZ0HIh9BTw&s=10",
       tagline: "A peninsula of pure luxury.",

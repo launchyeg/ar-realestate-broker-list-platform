@@ -7,6 +7,7 @@ const BG_SLIDES = [
   "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/WhatsApp-Image-2023-10-02-at-12.23.59-PM.jpeg",
   "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/WhatsApp-Image-2023-10-30-at-6.15.27-PM-5.jpeg",
   "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/WhatsApp-Image-2023-10-30-at-6.15.28-PM.jpeg",
+  "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/CEONEW.jpeg",
   "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/WhatsApp-Image-2023-10-30-at-6.16.18-PM-1.jpeg",
   "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/WhatsApp-Image-2023-10-30-at-6.16.18-PM-2.jpeg",
   "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/WhatsApp-Image-2023-10-30-at-6.16.19-PM-1.jpeg",

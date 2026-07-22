@@ -3,10 +3,10 @@ import { Bath, BedDouble, Scaling } from "lucide-react";
 import type { Unit } from "@/types/unit";
 
 const PropertyCard = ({ unit }: { unit: Unit }) => {
-  const badgeMap: Record<string, { label: string; className: string }> = {
-    primary: { label: "Primary", className: "bg-white text-brand-text" },
-    resale: { label: "Sale", className: "bg-white text-brand-text" },
-    rent: { label: "Rent", className: "bg-white text-brand-text" },
+  const badgeMap: Record<string, { label: string }> = {
+    primary: { label: "Primary" },
+    resale: { label: "Resale" },
+    rent: { label: "Rent" },
   };
 
   const badge = badgeMap[unit.listingType] ?? badgeMap["primary"];
@@ -19,9 +19,7 @@ const PropertyCard = ({ unit }: { unit: Unit }) => {
           style={{ backgroundImage: `url(${unit.coverImage})` }}
         />
 
-        <span
-          className={`absolute top-3 left-3 text-base leading-7 px-3 py-1 rounded-[10px] shadow-sm ${badge.className}`}
-        >
+        <span className="absolute bg-[#f7f6f4] top-3 left-3 text-base text-brand-text leading-7 px-3 py-1 rounded-[10px] shadow-sm">
           For {badge.label}
         </span>
       </div>
@@ -30,9 +28,13 @@ const PropertyCard = ({ unit }: { unit: Unit }) => {
         {unit.currency} {unit.price.toLocaleString("en-US")}
       </p>
 
-      <h3 className="font-display text-2xl md:text-3xl font-medium text-brand-text leading-9">
+      <h3 className="font-display text-2xl md:text-3xl font-medium text-brand-text leading-9 mb-1">
         {unit.name}
       </h3>
+
+      <p className="text-brand-muted text-base font-medium leading-7">
+        {unit.destinationLabel}, {unit.projectLabel}
+      </p>
 
       <div className="flex items-center gap-4 text-brand-muted text-base font-medium mt-4">
         <span className="flex items-center gap-1.5">

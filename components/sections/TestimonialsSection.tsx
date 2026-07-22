@@ -40,16 +40,16 @@ const TESTIMONIALS = [
     name: "Maria Hoffmann",
     role: "Customer",
     image:
-      "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/WhatsApp-Image-2023-10-11-at-4.34.09-PM.jpeg",
+      "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/WhatsApp%20Image%202026-07-22%20at%2015.12.38.jpeg",
   },
   {
     id: 5,
     quote:
       "Exceptional service from start to finish. They handled everything — from viewings to legal paperwork — with complete professionalism.",
-    name: "James Wilson",
+    name: "Mahmoud Menefie",
     role: "Customer",
     image:
-      "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/WhatsApp-Image-2023-10-11-at-4.34.09-PM.jpeg",
+      "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/WhatsApp-Image-2023-10-30-at-6.15.28-PM.jpeg",
   },
 ];
 

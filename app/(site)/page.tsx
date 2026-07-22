@@ -78,7 +78,7 @@ export default async function HomePage() {
 
       <section className="relative -mt-6">
         <div
-          className="absolute inset-0 bg-cover bg-center rounded-t-3xl"
+          className="absolute inset-0 bg-cover bg-bottom rounded-t-3xl"
           style={{
             backgroundImage:
               "url(https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/pensee-royal-azur-tourist-resort-pools-1-min-2048x1367.jpg)",
@@ -90,7 +90,7 @@ export default async function HomePage() {
           delay={100}
           className="max-w-[1380px] mx-auto px-6 md:px-8 pt-[50px] md:pt-[70px] pb-20 md:pb-[170px]"
         >
-          <div className="relative max-w-xl bg-white p-5 md:px-10 md:py-12 rounded-2xl">
+          <div className="relative max-w-xl bg-white p-5 md:px-10 md:py-12 rounded-2xl shadow-2xl">
             <h2 className="font-display text-4xl md:text-5xl leading-11 md:leading-16 text-brand-text mb-4">
               Unlocking your Red Sea coastal lifestyle!
             </h2>
@@ -154,44 +154,47 @@ export default async function HomePage() {
       <section className="relative bg-brand-accent z-10 -mt-6 rounded-t-3xl">
         <div className="max-w-[1380px] mx-auto px-6 md:px-8 pt-10 pb-[90px] md:pt-[70px] lg:py-[120px] flex flex-row justify-between flex-wrap gap-10 md:gap-16">
           <div className="lg:basis-[480px]">
-            <h2 className="font-display text-4xl md:text-5xl leading-11 md:leading-16 text-white mb-4">
-              Let’s find your next perfect property
-            </h2>
-            <p className="text-[#fffc] text-lg font-medium leading-7 mt-5 mb-8 md:mb-12 lg:mb-28">
-              Have questions or ready to take the next step? Whether you’re
-              buying, selling, or just exploring options.
-            </p>
+            <AnimateOnScroll type="fade-up">
+              <h2 className="font-display text-4xl md:text-5xl leading-11 md:leading-16 text-white mb-4">
+                Let’s find your next perfect property
+              </h2>
+              <p className="text-[#fffc] text-lg font-medium leading-7 mt-5 mb-8 md:mb-12 lg:mb-28">
+                Have questions or ready to take the next step? Whether you’re
+                buying, selling, or just exploring options.
+              </p>
 
-            <div className="flex flex-wrap gap-5 sm:gap-16">
-              <div>
-                <h2 className="text-[#fffc] text-base font-medium leading-7 mb-1">
-                  Email Address
-                </h2>
-                <Link
-                  href={`mailto:${siteConfig.contact.email}`}
-                  target="_blank"
-                  className="text-white text-base font-medium leading-7"
-                >
-                  {siteConfig.contact.email}
-                </Link>
+              <div className="flex flex-wrap gap-5 sm:gap-16">
+                <div>
+                  <h2 className="text-[#fffc] text-base font-medium leading-7 mb-1">
+                    Email Address
+                  </h2>
+                  <Link
+                    href={`mailto:${siteConfig.contact.email}`}
+                    target="_blank"
+                    className="text-white text-base font-medium leading-7"
+                  >
+                    {siteConfig.contact.email}
+                  </Link>
+                </div>
+                <div>
+                  <h2 className="text-[#fffc] text-base font-medium leading-7 mb-1">
+                    Phone Call
+                  </h2>
+                  <Link
+                    href={`tel:+${siteConfig.contact.phone.replace(/\D/g, "")}`}
+                    target="_blank"
+                    className="text-white text-base font-medium leading-7"
+                  >
+                    {siteConfig.contact.phone}
+                  </Link>
+                </div>
               </div>
-              <div>
-                <h2 className="text-[#fffc] text-base font-medium leading-7 mb-1">
-                  Phone Call
-                </h2>
-                <Link
-                  href={`tel:+${siteConfig.contact.phone.replace(/\D/g, "")}`}
-                  target="_blank"
-                  className="text-white text-base font-medium leading-7"
-                >
-                  {siteConfig.contact.phone}
-                </Link>
-              </div>
-            </div>
+            </AnimateOnScroll>
           </div>
-
           <div className="basis-full lg:basis-xl">
-            <ContactPageForm />
+            <AnimateOnScroll type="fade-up">
+              <ContactPageForm />
+            </AnimateOnScroll>
           </div>
         </div>
       </section>

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import siteConfig from "@/siteConfig";
+import Image from "next/image";
 
 // ── Nav items ─────────────────────────────────────────────────────────────────
 
@@ -83,13 +84,15 @@ function LoginScreen({ onLogin }: { onLogin: () => void }) {
     <div className="min-h-screen bg-[#111] flex items-center justify-center px-4">
       <div className="w-full max-w-sm">
         {/* Logo */}
-        <div className="text-center mb-8">
-          <div className="font-display text-[#C9A96E] text-3xl tracking-[0.2em] mb-1">
-            {siteConfig.logo.textFallback}
-          </div>
-          <p className="text-white/30 text-[9px] tracking-[0.3em] uppercase">
-            Admin Dashboard
-          </p>
+        <div className="flex justify-center mb-8">
+          <Image
+            src="/ARLogo-2.png"
+            alt={siteConfig.brokerName}
+            width={140}
+            height={40}
+            className="h-10 md:h-12 w-auto object-contain"
+            priority
+          />
         </div>
 
         {/* Form */}
@@ -194,12 +197,14 @@ export default function DashboardShell({
         {/* Logo */}
         <div className="px-6 py-6 border-b border-white/10">
           <Link href="/dashboard" onClick={() => setSidebarOpen(false)}>
-            <div className="font-display text-[#C9A96E] text-lg tracking-[0.2em]">
-              {siteConfig.logo.textFallback}
-            </div>
-            <div className="text-white/30 text-[9px] tracking-[0.3em] uppercase mt-0.5">
-              Admin Dashboard
-            </div>
+            <Image
+              src="/ARLogo-2.png"
+              alt={siteConfig.brokerName}
+              width={140}
+              height={40}
+              className="h-8 md:h-10 w-auto object-contain"
+              priority
+            />
           </Link>
         </div>
 

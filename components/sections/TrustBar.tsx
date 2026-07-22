@@ -5,11 +5,18 @@ import Image from "next/image";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 
 const PARTNERS = [
-  "https://cdn.prod.website-files.com/66f262050f96e0f9e1e4568c/680ddc15f2f6d2dda42a14e4_Logos%20(5).svg",
-  "https://cdn.prod.website-files.com/66f262050f96e0f9e1e4568c/680ddc1515e15addebdbe776_Logos%20(7).svg",
-  "https://cdn.prod.website-files.com/66f262050f96e0f9e1e4568c/680ddc1585c88770bf80e6ad_Logos%20(10).svg",
-  "https://cdn.prod.website-files.com/66f262050f96e0f9e1e4568c/680ddc1576983715104eebf2_Logos%20(9).svg",
-  "https://cdn.prod.website-files.com/66f262050f96e0f9e1e4568c/680ddc1562ee533af9214ee4_Logos%20(8).svg",
+  "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Cala.svg",
+  "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Coves.svg",
+  "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Il%20Bayou.svg",
+  "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Majra.svg",
+  "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Makadi%20Heights.svg",
+  "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Makadina.svg",
+  "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Mesca.svg",
+  "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Miramar%20Residences.svg",
+  "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Nautilus.svg",
+  "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Ras%20Soma.svg",
+  "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Reeftown.svg",
+  "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Shedwan.svg",
 ];
 
 export default function TrustBar() {
@@ -45,7 +52,7 @@ export default function TrustBar() {
     <section className="relative z-10 -mt-6 rounded-t-3xl bg-brand-accent py-[30px] md:pt-14 md:pb-[60px] overflow-hidden">
       <AnimateOnScroll type="fade-in">
         <div className="max-w-[1380px] mx-auto px-6 md:px-8 flex items-center gap-7 md:gap-36 flex-wrap md:flex-nowrap">
-          <p className="text-brand-text text-xl font-medium w-full md:w-auto text-center md:text-left md:whitespace-nowrap flex-shrink-0">
+          <p className="font-display text-brand-text text-2xl font-medium w-full md:w-auto text-center md:text-left md:whitespace-nowrap flex-shrink-0">
             Trusted by leading companies
           </p>
 
