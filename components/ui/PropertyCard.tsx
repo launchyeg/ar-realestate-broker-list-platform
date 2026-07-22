@@ -12,8 +12,7 @@ const PropertyCard = ({ unit }: { unit: Unit }) => {
   const badge = badgeMap[unit.listingType] ?? badgeMap["primary"];
 
   return (
-    <Link href={`/properties/${unit.slug}`} className="">
-      {/* ── IMAGE ──────────────────────────────────────────────── */}
+    <Link href={`/properties/${unit.slug}`}>
       <div className="relative overflow-hidden h-[315px] md:h-[337px]">
         <div
           className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105 rounded-2xl"
@@ -27,7 +26,6 @@ const PropertyCard = ({ unit }: { unit: Unit }) => {
         </span>
       </div>
 
-      {/* ── INFO ───────────────────────────────────────────────── */}
       <p className="text-brand-muted text-base font-medium leading-7 mt-6 mb-2">
         {unit.currency} {unit.price.toLocaleString("en-US")}
       </p>

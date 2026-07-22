@@ -1,9 +1,9 @@
 import "../globals.css";
-import Navbar from "@/components/layout/Navbar";
-import CtaBanner from "@/components/CtaBanner";
-import Footer from "@/components/layout/Footer";
 import { Metadata } from "next";
 import siteConfig from "@/siteConfig";
+import Navbar from "@/components/layout/Navbar";
+import CtaBanner from "@/components/sections/CtaBanner";
+import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
   // ── Core ──────────────────────────────────────────────────

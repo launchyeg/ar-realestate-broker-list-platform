@@ -39,7 +39,8 @@ const TESTIMONIALS = [
       "The team found us a stunning apartment in El Gouna that perfectly matched our budget and lifestyle. We couldn't be happier.",
     name: "Maria Hoffmann",
     role: "Customer",
-    image: "/public/testimonial1.jpg",
+    image:
+      "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/WhatsApp-Image-2023-10-11-at-4.34.09-PM.jpeg",
   },
   {
     id: 5,
@@ -47,7 +48,8 @@ const TESTIMONIALS = [
       "Exceptional service from start to finish. They handled everything — from viewings to legal paperwork — with complete professionalism.",
     name: "James Wilson",
     role: "Customer",
-    image: "/public/testimonial2.jpg",
+    image:
+      "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/WhatsApp-Image-2023-10-11-at-4.34.09-PM.jpeg",
   },
 ];
 

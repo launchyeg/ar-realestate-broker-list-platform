@@ -243,7 +243,6 @@ export default function Navbar() {
         `}
       >
         <div className="max-w-[1380px] mx-auto px-6 md:px-8 flex items-center justify-between h-[72px] md:h-[85px]">
-          {/* ── LOGO ─────────────────────────────────────── */}
           <Link href="/" className="flex-shrink-0">
             <Image
               src={scrolled ? "/ARLogo-3.png" : "/ARLogo-1.png"}
@@ -255,7 +254,6 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* ── DESKTOP NAV ──────────────────────────────── */}
           <nav className="hidden md:flex items-center gap-8">
             <Link
               href="/about"
@@ -306,9 +304,7 @@ export default function Navbar() {
             </Link>
           </nav>
 
-          {/* ── RIGHT SIDE ───────────────────────────────── */}
           <div className="flex items-center gap-5">
-            {/* Admin icon */}
             <Link
               href="/dashboard"
               target="_blank"
@@ -322,7 +318,6 @@ export default function Navbar() {
               <CircleUserRound />
             </Link>
 
-            {/* CTA pill button */}
             <Link
               href="/properties"
               className="hidden md:inline-flex bg-brand-accent text-white text-base font-medium px-6 py-3 rounded-full hover:bg-brand-accentLight transition-colors"
@@ -330,7 +325,6 @@ export default function Navbar() {
               Explore Properties
             </Link>
 
-            {/* Burger mobile */}
             <button
               onClick={() => setSidebarOpen(true)}
               className={`md:hidden transition-colors ${

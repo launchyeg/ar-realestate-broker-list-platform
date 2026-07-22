@@ -11,8 +11,8 @@ import CeoSection from "@/components/sections/CeoSection";
 import DestinationSlider from "@/components/ui/DestinationSlider";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import ContactPageForm from "./contact/ContactPageForm";
+import FaqSection from "@/components/sections/FaqSection";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
-import DestinationsGrid from "@/components/DestinationsGrid";
 
 export const revalidate = 60;
 
@@ -76,7 +76,7 @@ export default async function HomePage() {
 
       <CeoSection />
 
-      <section className="relative z-10 -mt-6">
+      <section className="relative -mt-6">
         <div
           className="absolute inset-0 bg-cover bg-center rounded-t-3xl"
           style={{
@@ -85,35 +85,37 @@ export default async function HomePage() {
           }}
         />
         <div className="absolute inset-0 bg-black/50 rounded-t-3xl" />
-        <div className="max-w-[1380px] mx-auto px-6 md:px-8 pt-[50px] md:pt-[70px] pb-20 md:pb-[170px]">
-          <AnimateOnScroll type="fade-up" delay={100}>
-            <div className="relative max-w-xl bg-white p-5 md:px-10 md:py-12 rounded-2xl">
-              <h2 className="font-display text-4xl md:text-5xl leading-11 md:leading-16 text-brand-text mb-4">
-                Unlocking your Red Sea coastal lifestyle!
-              </h2>
-              <p className="text-brand-muted text-lg leading-7 mt-5 mb-10">
-                Looking for expert guidance or ready to invest? Whether you are
-                buying, selling, or exploring properties.
-              </p>
-              <Link
-                href="/about"
-                className="bg-transparent text-brand-accent border border-[#1629321a] text-base font-medium leading-8 px-6 py-3 rounded-full hover:border-[#16293237] transition-colors"
-              >
-                Explore More
-              </Link>
-              <h3 className="font-display text-2xl text-brand-text mt-12 md:mt-24 mb-3">
-                Guiding your investments across Redsea.
-              </h3>
-              <p className="text-brand-muted text-base leading-7">
-                Need expert assistance or ready for your next chapter? Whether
-                you are buying, selling, or reviewing market options.
-              </p>
-            </div>
-          </AnimateOnScroll>
-        </div>
+        <AnimateOnScroll
+          type="fade-up"
+          delay={100}
+          className="max-w-[1380px] mx-auto px-6 md:px-8 pt-[50px] md:pt-[70px] pb-20 md:pb-[170px]"
+        >
+          <div className="relative max-w-xl bg-white p-5 md:px-10 md:py-12 rounded-2xl">
+            <h2 className="font-display text-4xl md:text-5xl leading-11 md:leading-16 text-brand-text mb-4">
+              Unlocking your Red Sea coastal lifestyle!
+            </h2>
+            <p className="text-brand-muted text-lg leading-7 mt-5 mb-10">
+              Looking for expert guidance or ready to invest? Whether you are
+              buying, selling, or exploring properties.
+            </p>
+            <Link
+              href="/about"
+              className="bg-transparent text-brand-accent border border-[#1629321a] text-base font-medium px-6 py-4 rounded-full hover:border-[#16293237] transition-colors"
+            >
+              Explore More
+            </Link>
+            <h3 className="font-display text-2xl text-brand-text mt-12 md:mt-24 mb-3">
+              Guiding your investments across Redsea.
+            </h3>
+            <p className="text-brand-muted text-base leading-7">
+              Need expert assistance or ready for your next chapter? Whether you
+              are buying, selling, or reviewing market options.
+            </p>
+          </div>
+        </AnimateOnScroll>
       </section>
 
-      <section className=" bg-brand-surface z-10 -mt-6 rounded-t-3xl">
+      <section className="relative bg-brand-surface z-10 -mt-6 rounded-t-3xl">
         <div className="max-w-[1380px] mx-auto px-6 md:px-8 pt-[50px] pb-[60px] md:py-[70px] lg:py-[120px] flex flex-col gap-10 md:gap-16">
           <AnimateOnScroll type="fade-up">
             <div className="flex items-center justify-between flex-wrap gap-6">
@@ -134,19 +136,22 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="max-w-[1380px] z-10 -mt-6 mx-auto px-6 md:px-8 py-[60px] md:py-[70px] lg:py-[120px] rounded-t-3xl">
-        <div className="mb-10 md:mb-[60px] lg:mb-[74px]">
-          <AnimateOnScroll type="fade-up">
-            <h2 className="font-display text-4xl md:text-5xl leading-11 md:leading-16 text-brand-text mb-4">
+      <section className="relative bg-white z-10 -mt-6 rounded-t-3xl">
+        <div className="max-w-[1380px] mx-auto px-6 md:px-8 py-[60px] md:py-[70px] lg:py-[120px]">
+          <AnimateOnScroll
+            type="fade-up"
+            className="mb-10 md:mb-[60px] lg:mb-[74px]"
+          >
+            <h2 className="font-display text-4xl md:text-5xl leading-11 md:leading-16 text-brand-text">
               Customers love our findings
             </h2>
           </AnimateOnScroll>
-        </div>
 
-        <TestimonialsSection />
+          <TestimonialsSection />
+        </div>
       </section>
 
-      <section className=" bg-brand-accent z-10 -mt-6 rounded-t-3xl">
+      <section className="relative bg-brand-accent z-10 -mt-6 rounded-t-3xl">
         <div className="max-w-[1380px] mx-auto px-6 md:px-8 pt-10 pb-[90px] md:pt-[70px] lg:py-[120px] flex flex-row justify-between flex-wrap gap-10 md:gap-16">
           <div className="lg:basis-[480px]">
             <h2 className="font-display text-4xl md:text-5xl leading-11 md:leading-16 text-white mb-4">
@@ -184,13 +189,14 @@ export default async function HomePage() {
               </div>
             </div>
           </div>
+
           <div className="basis-full lg:basis-xl">
             <ContactPageForm />
           </div>
         </div>
       </section>
 
-      <DestinationsGrid />
+      <FaqSection />
     </div>
   );
 }

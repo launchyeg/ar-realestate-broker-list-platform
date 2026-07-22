@@ -1,17 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
-import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
-
-interface Destination {
-  slug: string;
-  label: string;
-  image: string;
-  tagline: string;
-  destinationLabel?: string;
-}
+import DestinationCard, { Destination } from "@/components/ui/DestinationCard";
 
 export default function DestinationSlider({
   destinations,
@@ -41,29 +33,7 @@ export default function DestinationSlider({
             delay={i * 100}
             className="min-w-full"
           >
-            <Link href={`/destinations/${destinations.slug}`}>
-              <div className="relative h-80 md:h-[500px] overflow-hidden rounded-2xl">
-                <div
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                  style={{ backgroundImage: `url(${destinations.image})` }}
-                />
-
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-
-                <div className="absolute top-6 right-6 md:top-8 md:right-8 w-fit p-3 bg-white rounded-full">
-                  <ArrowUpRight />
-                </div>
-
-                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                  <h3 className="font-display text-2xl md:text-3xl text-white mb-2">
-                    {destinations.label}
-                  </h3>
-                  <p className="text-white/60 text-sm max-w-lg">
-                    {destinations.tagline}
-                  </p>
-                </div>
-              </div>
-            </Link>
+            <DestinationCard destinations={destinations} />
           </AnimateOnScroll>
         ))}
       </div>
