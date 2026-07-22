@@ -14,7 +14,7 @@ const CtaBanner = () => {
       <div className="absolute inset-0 bg-black/20 rounded-t-3xl" />
       <div className="relative max-w-3xl">
         <AnimateOnScroll type="fade-up">
-          <h2 className="font-display text-5xl md:text-6xl lg:text-7xl text-white">
+          <h2 className="font-display text-4xl md:text-6xl lg:text-7xl text-white">
             Ready to make a move?
           </h2>
         </AnimateOnScroll>
