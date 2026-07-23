@@ -40,7 +40,7 @@ const TESTIMONIALS = [
     name: "Maria Hoffmann",
     role: "Customer",
     image:
-      "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/WhatsApp%20Image%202026-07-22%20at%2015.12.38.jpeg",
+      "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/CEONEW.jpeg",
   },
   {
     id: 5,

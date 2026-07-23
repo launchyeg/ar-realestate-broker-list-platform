@@ -132,15 +132,15 @@ const siteConfig = {
         "Hurghada offers the widest range of property types and price points in Egypt. Its established infrastructure and growing tourism numbers make it a reliable and liquid real estate market.",
     },
     {
-      slug: "makadi-bay",
-      label: "Makadi Bay",
+      slug: "makadi-heights",
+      label: "Makadi Heights",
       image:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSG-7A15v0xHibScfdK7Sme23O468duFZtndn0boDWz4w&s=10",
       heroImage:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhIITg2tOnwdAt0PXox5IpULcJi_AC9OBnW74Q1k2mzCJSWpWO2w47v5g&s=10",
       tagline: "Peaceful bay living with resort-grade amenities.",
       description:
-        "Makadi Bay sits 30km south of Hurghada in a protected natural bay. Known for its calm, crystal-clear waters and spectacular coral reefs, it is home to several all-inclusive resorts and a growing residential community seeking tranquility.",
+        "Makadi Heights sits 30km south of Hurghada in a protected natural bay. Known for its calm, crystal-clear waters and spectacular coral reefs, it is home to several all-inclusive resorts and a growing residential community seeking tranquility.",
       stats: [
         { label: "Projects", value: "3" },
         { label: "Years Installment", value: "6" },
@@ -155,7 +155,7 @@ const siteConfig = {
         "Restaurants",
       ],
       whyInvest:
-        "Makadi Bay offers excellent value compared to more established destinations, with significant upside as infrastructure continues to develop. Ideal for buyers seeking affordable beachfront entry.",
+        "Makadi Heights offers excellent value compared to more established destinations, with significant upside as infrastructure continues to develop. Ideal for buyers seeking affordable beachfront entry.",
     },
     {
       slug: "makadina",
@@ -271,13 +271,13 @@ const siteConfig = {
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBD0AEBCtCNx77KAfrdN1VWvZY4rXgcsixbgoyEEd2Aopn9j1rmIUUzScX&s=10",
       heroImage:
         "https://assets.live.beyond-creation.net/makadi/336021e46700d4efb06a8331167bd19f.jpg",
-      destination: "makadi-bay",
-      destinationLabel: "Makadi Bay",
-      tagline: "Sophisticated coastal living in the heart of Makadi Bay.",
+      destination: "makadi-heights",
+      destinationLabel: "Makadi Heights",
+      tagline: "Sophisticated coastal living in the heart of Makadi Heights.",
       description:
         "Aden offers an exclusive residential experience located along the stunning Red Sea coastline. Designed with elegance and comfort in mind, every unit provides residents with seamless access to elite resort amenities, breathtaking sea vistas, and a lifestyle defined by serenity and prestige.",
       stats: [
-        { label: "Location", value: "Makadi Bay" },
+        { label: "Location", value: "Makadi Heights" },
         { label: "Delivery", value: "2027" },
         { label: "Units", value: "1" },
         { label: "Starting Price", value: "EGP 6,500,000" },
@@ -478,7 +478,7 @@ const siteConfig = {
       slug: "cala",
       label: "Cala",
       image:
-        "https://cdn.fazwaz.com/wbr/41WrKa4jIx1RcYhozoLAgG6OBOQ/1125x1050/project/160962/img-20240929-wa0013-1.jpg",
+        "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/properties/1784212366372-wz5eiv74lbh.jpg",
       heroImage:
         "https://thehorizonrealestate.com/wp-content/uploads/2025/01/Cala-sahl-hasheesh-exterior-1.jpeg",
       destination: "sahl-hasheesh",
@@ -551,27 +551,27 @@ const siteConfig = {
         "https://s3.eu-central-1.amazonaws.com/prod.images.cooingestate.com/admin/inventory/brochure_images/Orascom%20Development%20Egypt/dua/a/a.png",
       heroImage:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-Fqpqw5kYwwNEUYnDPtfoTAjcuaHLOpLBy4RprtOLg9E0EePSw6hnBZZj&s=10",
-      destination: "makadi-bay",
-      destinationLabel: "Makadi Bay",
-      tagline: "Serene architectural harmony in Makadi Bay.",
+      destination: "makadi-heights",
+      destinationLabel: "Makadi Heights",
+      tagline: "Serene architectural harmony in Makadi Heights.",
       description:
-        "DUA offers a refined residential experience where clean design meets the tranquil nature of Makadi Bay, providing a sophisticated atmosphere for those seeking peace and modern comfort.",
+        "DUA offers a refined residential experience where clean design meets the tranquil nature of Makadi Heights, providing a sophisticated atmosphere for those seeking peace and modern comfort.",
       stats: [
-        { label: "Location", value: "Makadi Bay" },
+        { label: "Location", value: "Makadi Heights" },
         { label: "Projects", value: "3" },
         { label: "Years Installment", value: "6" },
         { label: "Downpayment", value: "10%" },
       ],
       highlights: [
         "Modern minimalist architectural design",
-        "Prime access to Makadi Bay beaches",
+        "Prime access to Makadi Heights beaches",
         "Serene landscaped community gardens",
         "High-end clubhouse and leisure facilities",
         "Proximity to premier diving spots",
         "Secure gated community environment",
       ],
       whyInvest:
-        "DUA provides a unique entry point into the established Makadi Bay luxury market, offering high potential for both rental yields and property value appreciation due to its focus on design and location.",
+        "DUA provides a unique entry point into the established Makadi Heights luxury market, offering high potential for both rental yields and property value appreciation due to its focus on design and location.",
       paymentPlan: {
         downPayment: "10%",
         installments: "6 years",
@@ -690,13 +690,13 @@ const siteConfig = {
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5Bj3QO2FS69Ar_HXaUg0DV8Qdty24A8wIUljR8CW_DQwB03UF_tpWRIQ&s=10",
       heroImage:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRarr6RYQCLrjbF6GGy87iz5X2_ayQdQfxS_AjqYic_aQ&s",
-      destination: "makadi-bay",
-      destinationLabel: "Makadi Bay",
-      tagline: "Elevation, sun, and sea in Makadi Bay.",
+      destination: "makadi-heights",
+      destinationLabel: "Makadi Heights",
+      tagline: "Elevation, sun, and sea in Makadi Heights.",
       description:
-        "Makadi Heights is an integrated community built on elevated ground, offering panoramic views, diverse activities, and a self-sufficient lifestyle in the heart of Makadi Bay.",
+        "Makadi Heights is an integrated community built on elevated ground, offering panoramic views, diverse activities, and a self-sufficient lifestyle in the heart of Makadi Heights.",
       stats: [
-        { label: "Location", value: "Makadi Bay" },
+        { label: "Location", value: "Makadi Heights" },
         { label: "Projects", value: "3" },
         { label: "Years Installment", value: "6" },
         { label: "Downpayment", value: "10%" },
@@ -727,9 +727,9 @@ const siteConfig = {
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV94gD7QQO6kx43ml1QosyVdvyfqahdXxS6cCnikZvcEjyuNnJ0GeErAYb&s=10",
       destination: "makadina",
       destinationLabel: "Makadina",
-      tagline: "Boutique coastal living in Makadi Bay.",
+      tagline: "Boutique coastal living in Makadi Heights.",
       description:
-        "Makadina offers a curated residential experience in Makadi Bay, blending comfortable, modern units with access to all the recreational and leisure benefits of this renowned Red Sea destination.",
+        "Makadina offers a curated residential experience in Makadi Heights, blending comfortable, modern units with access to all the recreational and leisure benefits of this renowned Red Sea destination.",
       stats: [
         { label: "Location", value: "Makadina" },
         { label: "Projects", value: "3" },
@@ -1036,13 +1036,13 @@ const siteConfig = {
         "https://assets.live.beyond-creation.net/makadi/7afe478682166ba4f401dbb24c666909.jpg",
       heroImage:
         "https://assets.live.beyond-creation.net/makadi/a53ff134f5dd79c77ae7fdb322b6b095.jpg",
-      destination: "makadi-bay",
-      destinationLabel: "Makadi Bay",
+      destination: "makadi-heights",
+      destinationLabel: "Makadi Heights",
       tagline: "Vibrant living at Makadi Heights.",
       description:
         "A diverse residential phase within the Makadi Heights community, offering apartments, duplexes, and townhouses with modern architectural layouts.",
       stats: [
-        { label: "Location", value: "Makadi Bay" },
+        { label: "Location", value: "Makadi Heights" },
         { label: "Starting Price", value: "EGP 8.5M" },
         { label: "Unit Types", value: "Apts, Town, Duplex" },
         { label: "Phase", value: "Makadi Heights" },

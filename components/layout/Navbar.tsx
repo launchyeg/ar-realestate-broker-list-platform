@@ -256,6 +256,17 @@ export default function Navbar() {
 
           <nav className="hidden md:flex items-center gap-8">
             <Link
+              href="/"
+              className={`text-base font-medium transition-colors ${
+                scrolled
+                  ? "text-brand-text/70 hover:text-brand-text"
+                  : "text-white hover:text-white/80"
+              }`}
+            >
+              Home
+            </Link>
+
+            <Link
               href="/about"
               className={`text-base font-medium transition-colors ${
                 scrolled
@@ -266,7 +277,6 @@ export default function Navbar() {
               About
             </Link>
 
-            {/* Replace NavDropdown trigger text color too */}
             <NavDropdown
               label="Destinations"
               items={destinationItems}

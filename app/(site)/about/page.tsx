@@ -211,10 +211,10 @@ export default function AboutPage() {
               buying, selling, or exploring properties.
             </p>
             <Link
-              href="/about"
+              href="/contact"
               className="bg-transparent text-brand-accent border border-[#1629321a] text-base font-medium px-6 py-4 rounded-full hover:border-[#16293237] transition-colors"
             >
-              Explore More
+              Get in Quick
             </Link>
             <h3 className="font-display text-2xl text-brand-text mt-12 md:mt-24 mb-3">
               Guiding your investments across Redsea.

@@ -8,10 +8,9 @@ const nextConfig: NextConfig = {
         hostname: "tjwcefkkahkcxwljdbky.supabase.co",
         pathname: "/storage/v1/object/public/**",
       },
-      // Keep any existing patterns you already have
       {
         protocol: "https",
-        hostname: "images.unsplash.com",
+        hostname: "**",
       },
     ],
   },

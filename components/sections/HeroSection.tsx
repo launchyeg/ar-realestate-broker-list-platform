@@ -42,6 +42,7 @@ export default function HeroSection() {
   const [animating, setAnimating] = useState(false);
   const [destination, setDestination] = useState("");
   const [project, setProject] = useState("");
+  const [type, setType] = useState("");
   const [price, setPrice] = useState("");
   const router = useRouter();
 
@@ -142,9 +143,9 @@ export default function HeroSection() {
               </div>
               <div className="flex-1 min-w-[140px]">
                 <CustomSelect
-                  value={project}
+                  value={type}
                   placeholder="Any Project"
-                  onChange={setProject}
+                  onChange={setType}
                   options={[
                     ...(siteConfig.projects as any[]).map((p) => ({
                       value: p.slug,

@@ -77,6 +77,14 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
+                    href="/about"
+                    className="hover:text-brand-text transition-colors"
+                  >
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/destinations"
                     className="hover:text-brand-text transition-colors"
                   >
@@ -115,7 +123,7 @@ const Footer = () => {
                 Destinations
               </h4>
               <ul className="space-y-2.5 text-base font-medium text-brand-muted">
-                {siteConfig.destinations.slice(0, 5).map((d) => (
+                {siteConfig.destinations.slice(0, 6).map((d) => (
                   <li key={d.slug}>
                     <Link
                       href={`/destinations/${d.slug}`}

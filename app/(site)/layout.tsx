@@ -118,7 +118,7 @@ export default function RootLayout({
                 "Sahl Hasheesh",
                 "El Gouna",
                 "Soma Bay",
-                "Makadi Bay",
+                "Makadi Heights",
                 "Egypt",
               ],
             }),

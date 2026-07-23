@@ -12,7 +12,7 @@ export default function DestinationsPage() {
       />
 
       <section className="relative z-10 -mt-6 rounded-t-3xl bg-white">
-        <div className="max-w-[1380px] mx-auto px-6 md:px-8 py-10 md:py-[70px] lg:py-[120px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="max-w-[1380px] mx-auto px-6 md:px-8 py-10 md:py-[70px] lg:py-[120px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
           {siteConfig.destinations.map((dest, i) => (
             <AnimateOnScroll key={dest.slug} type="fade-up" delay={i * 100}>
               <DestinationCard destinations={dest} />

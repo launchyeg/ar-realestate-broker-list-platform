@@ -1,42 +1,67 @@
-import ProjectsGrid from "@/components/ProjectsGrid";
+import Link from "next/link";
+import Image from "next/image";
+import siteConfig from "@/siteConfig";
+import HeroPageSection from "@/components/sections/HeroPageSection";
+import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 
 export default function DestinationsPage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* ── HERO ───────────────────────────────────────────────── */}
-      <section className="relative h-64 md:h-96 flex items-end pb-12 pt-16">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url(https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1600&q=80)",
-          }}
-        />
-        <div className="absolute inset-0 bg-[#1B2B3A]/70" />
-        <div className="relative max-w-6xl mx-auto px-6 w-full">
-          <p className="text-[#C9A96E] text-[10px] font-bold tracking-widest uppercase mb-3">
-            Locations
-          </p>
-          <h1 className="font-display text-4xl md:text-5xl text-white leading-tight">
-            Explore our projects
-          </h1>
+      <HeroPageSection
+        image="https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/properties/1784164711844-feg8u9wo5d9.png"
+        title="Explore Projects"
+      />
+
+      <section className="relative z-10 -mt-6 rounded-t-3xl bg-white">
+        <div className="max-w-[1380px] mx-auto px-6 md:px-8 py-10 md:py-[70px] lg:py-[120px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+          {siteConfig.projects.map((pro, i) => (
+            <AnimateOnScroll key={pro.slug} type="fade-up" delay={i * 100}>
+              <Link href={`/projects/${pro.slug}`}>
+                <div className="bg-brand-surface rounded-2xl overflow-hidden">
+                  <div className="relative h-56 w-full">
+                    <Image
+                      src={pro.image}
+                      alt="contact us image office"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 400px"
+                    />
+                  </div>
+
+                  <div className="px-4 py-6">
+                    <h3 className="font-display text-xl sm:text-2xl font-bold text-brand-text mb-4">
+                      {pro.label}
+                    </h3>
+
+                    <div className="bg-white p-4 rounded-[10px] flex flex-wrap md:flex-nowrap justify-between items-center gap-2.5 md:gap-5">
+                      <div className="md:w-4/6">
+                        <h4 className="text-sm text-brand-text font-medium mb-1">
+                          {pro.destinationLabel}
+                        </h4>
+                        <p className="text-sm text-brand-muted font-medium">
+                          {pro.tagline}
+                        </p>
+                      </div>
+                      <div className="md:w-2/6">
+                        {pro.stats.slice(-1).map((stat) => (
+                          <div key={stat.label}>
+                            <p className="text-brand-text font-medium text-sm">
+                              {stat.value}
+                            </p>
+                            <p className="text-brand-muted text-xs">
+                              {stat.label}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </AnimateOnScroll>
+          ))}
         </div>
       </section>
-
-      {/* ── INTRO TEXT ─────────────────────────────────────────── */}
-      <section className="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-center">
-        <h2 className="font-display text-3xl text-stone-900 leading-snug">
-          Exclusive properties in Egypt's top locations
-        </h2>
-        <p className="text-stone-500 text-sm leading-relaxed">
-          From the crystal waters of Sahl Hasheesh to the vibrant marina of El
-          Gouna — each destination offers a unique lifestyle. Browse by location
-          to find the property that matches where you want to live.
-        </p>
-      </section>
-
-      {/* ── PROJECTS GRID ──────────────────────────────────── */}
-      <ProjectsGrid />
     </div>
   );
 }
