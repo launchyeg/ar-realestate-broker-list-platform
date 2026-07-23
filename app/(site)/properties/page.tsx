@@ -28,14 +28,12 @@ export default async function PropertiesPage() {
   const units = (rawUnits || []).map(mapUnit);
 
   return (
-    <main className="min-h-screen bg-[#FAFAF8]">
-      <Suspense fallback={<div className="h-screen bg-[#1B2B3A]" />}>
-        <PropertiesClient
-          units={units}
-          destinations={siteConfig.destinations as any[]}
-          projects={siteConfig.projects as any[]}
-        />
-      </Suspense>
+    <main>
+      <PropertiesClient
+        units={units}
+        destinations={siteConfig.destinations as any[]}
+        projects={siteConfig.projects as any[]}
+      />
     </main>
   );
 }

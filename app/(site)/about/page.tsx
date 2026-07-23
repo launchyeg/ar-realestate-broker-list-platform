@@ -4,7 +4,7 @@ import Image from "next/image";
 import siteConfig from "@/siteConfig";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
-import ContactPageForm from "../contact/ContactPageForm";
+import GeneralForm from "@/components/GeneralForm";
 
 const TRUSTED = [
   {
@@ -43,28 +43,28 @@ const NUMBERS = [
     number: "5.0",
     title: "Client Satisfaction",
     subtitle:
-      "Coastal living quality is defined by prime location, modern design, and luxury amenities.",
+      "Coastal living quality is defined by prime location, modern design, and luxury.",
   },
   {
     id: 2,
     number: "95%",
     title: "Successful Deals",
     subtitle:
-      "Smooth transactions are ensured through integrated legal checks, negotiation, and inspection.",
+      "Smooth transactions are ensured through integrated legal checks.",
   },
   {
     id: 3,
     number: "9+",
     title: "Years of Expertise",
     subtitle:
-      "Investment growth relies on accurate local market insights and strategic location choices.",
+      "Investment growth relies on accurate local market insights and strategic.",
   },
   {
     id: 4,
     number: "10K+",
     title: "Properties Explored",
     subtitle:
-      "Buying success is shaped by personal consultation, tailored options, and client care.",
+      "Buying success is shaped by personal consultation, tailored options, and client.",
   },
 ];
 
@@ -83,7 +83,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main>
       <section className="relative">
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -321,7 +321,7 @@ export default function AboutPage() {
 
           <div className="basis-full lg:basis-xl">
             <AnimateOnScroll type="fade-up">
-              <ContactPageForm />
+              <GeneralForm />
             </AnimateOnScroll>
           </div>
         </div>

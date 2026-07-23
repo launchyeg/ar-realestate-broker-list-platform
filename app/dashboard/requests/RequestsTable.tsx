@@ -86,7 +86,7 @@ export default function RequestsTable({ requests }: { requests: Request[] }) {
                     className="text-[10px] text-[#C9A96E] font-medium uppercase tracking-wide hover:underline"
                   >
                     {req.unit === "contact-page"
-                      ? "Contact Page"
+                      ? "Website Form"
                       : req.unit || "General enquiry"}
                   </Link>
                 </td>

@@ -10,7 +10,7 @@ import PropertyCard from "@/components/ui/PropertyCard";
 import CeoSection from "@/components/sections/CeoSection";
 import DestinationSlider from "@/components/ui/DestinationSlider";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
-import ContactPageForm from "./contact/ContactPageForm";
+import GeneralForm from "@/components/GeneralForm";
 import FaqSection from "@/components/sections/FaqSection";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 
@@ -194,7 +194,7 @@ export default async function HomePage() {
 
           <div className="basis-full lg:basis-xl">
             <AnimateOnScroll type="fade-up">
-              <ContactPageForm />
+              <GeneralForm />
             </AnimateOnScroll>
           </div>
         </div>

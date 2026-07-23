@@ -32,8 +32,8 @@ export default function ContactPageForm() {
 
   if (status === "success") {
     return (
-      <div className="flex flex-col items-center justify-center py-20 text-center border border-stone-200 rounded-sm">
-        <div className="w-14 h-14 rounded-full bg-emerald-50 flex items-center justify-center mb-4">
+      <div className="bg-brand-surface p-5 md:p-8 rounded-3xl flex flex-col items-center justify-center text-center">
+        <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center mb-4">
           <svg
             className="w-7 h-7 text-emerald-500"
             fill="none"
@@ -51,115 +51,59 @@ export default function ContactPageForm() {
         <p className="font-display text-2xl text-stone-900 mb-2">
           Message sent!
         </p>
-        <p className="text-stone-400 text-base">
-          We'll get back to you within 2 business hours.
+        <p className="text-stone-500 text-base">
+          We will contact you as soon as possible.
         </p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-8">
-      {/* Row 1 — Name + What do you want */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div className="bg-brand-surface p-5 md:p-8 rounded-3xl flex flex-col gap-10">
+      <div className="flex flex-col gap-4">
+        <h2 className="font-display text-4xl md:text-5xl leading-11 md:leading-16 text-brand-text">
+          Reach out for any query
+        </h2>
+        <p className="text-brand-muted text-lg font-medium leading-7">
+          Contact us today to discuss your property needs and choose the right
+          plan. We’re here to guide you through every step of the process.
+        </p>
+      </div>
+
+      <form onSubmit={handleSubmit} className="space-y-5">
         <div>
-          <label className="block text-white text-base font-medium mb-3">
-            Name
+          <label className="block text-stone-800 text-sm font-semibold mb-4">
+            Full Name{" "}
+            <span className="text-stone-500 font-normal">(required)</span>
           </label>
           <input
             required
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder="First and last name"
-            className="w-full bg-transparent border-b border-[#fffc] text-white placeholder-[#fffc] text-base py-2 focus:outline-none focus:border-white transition-colors"
+            placeholder="John Doe"
+            className="w-full bg-white border border-stone-300 rounded-2xl p-5 text-stone-800 placeholder-stone-400 text-base focus:outline-none focus:border-stone-500 transition-colors"
           />
         </div>
-        <div>
-          <label className="block text-white text-base font-medium mb-3">
-            What do you want?
-          </label>
-          <select
-            className="w-full bg-transparent border-b border-[#fffc] text-white text-base py-2 focus:outline-none focus:border-white transition-colors appearance-none cursor-pointer"
-            style={{ colorScheme: "dark" }}
-          >
-            <option className="bg-brand-primary" value="buy">
-              Buy a house
-            </option>
-            <option className="bg-brand-primary" value="rent">
-              Rent a property
-            </option>
-            <option className="bg-brand-primary" value="invest">
-              Invest
-            </option>
-            <option className="bg-brand-primary" value="sell">
-              Sell my property
-            </option>
-          </select>
-        </div>
-      </div>
 
-      {/* Row 2 — Location + Budget */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
-          <label className="block text-white text-base font-medium mb-3">
-            Your preferred location
-          </label>
-          <select
-            className="w-full bg-transparent border-b border-[#fffc] text-white text-base py-2 focus:outline-none focus:border-white transition-colors appearance-none cursor-pointer"
-            style={{ colorScheme: "dark" }}
-          >
-            <option className="bg-brand-primary" value="">
-              Select location
-            </option>
-            <option className="bg-brand-primary" value="hurghada">
-              Hurghada
-            </option>
-            <option className="bg-brand-primary" value="sahl-hasheesh">
-              Sahl Hasheesh
-            </option>
-            <option className="bg-brand-primary" value="el-gouna">
-              El Gouna
-            </option>
-            <option className="bg-brand-primary" value="makadi-bay">
-              Makadi Bay
-            </option>
-            <option className="bg-brand-primary" value="soma-bay">
-              Soma Bay
-            </option>
-          </select>
-        </div>
-        <div>
-          <label className="block text-white text-base font-medium mb-3">
-            Your desired budget
-          </label>
-          <input
-            type="text"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            placeholder="EGP 1,000,000"
-            className="w-full bg-transparent border-b border-[#fffc] text-white placeholder-[#fffc] text-base py-2 focus:outline-none focus:border-white transition-colors"
-          />
-        </div>
-      </div>
-
-      {/* Row 3 — Email + Phone */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div>
-          <label className="block text-white text-base font-medium mb-3">
-            Your email address
+          <label className="block text-stone-800 text-sm font-semibold mb-4">
+            Email Address{" "}
+            <span className="text-stone-500 font-normal">(required)</span>
           </label>
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="yourmail@email.com"
-            className="w-full bg-transparent border-b border-[#fffc] text-white placeholder-[#fffc] text-base py-2 focus:outline-none focus:border-white transition-colors"
+            placeholder="Enter your email"
+            className="w-full bg-white border border-stone-300 rounded-2xl p-5 text-stone-800 placeholder-stone-400 text-base focus:outline-none focus:border-stone-500 transition-colors"
           />
         </div>
+
         <div>
-          <label className="block text-white text-base font-medium mb-3">
-            Your phone number
+          <label className="block text-stone-800 text-sm font-semibold mb-4">
+            Phone Number{" "}
+            <span className="text-stone-500 font-normal">(required)</span>
           </label>
           <input
             required
@@ -167,27 +111,39 @@ export default function ContactPageForm() {
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
             placeholder="+20 100 000 0000"
-            className="w-full bg-transparent border-b border-[#fffc] text-white placeholder-[#fffc] text-base py-2 focus:outline-none focus:border-white transition-colors"
+            className="w-full bg-white border border-stone-300 rounded-2xl p-5 text-stone-800 placeholder-stone-400 text-base focus:outline-none focus:border-stone-500 transition-colors"
           />
         </div>
-      </div>
 
-      {status === "error" && (
-        <p className="text-xs text-red-400">
-          Something went wrong. Please try again.
-        </p>
-      )}
+        <div>
+          <label className="block text-stone-800 text-sm font-semibold mb-4">
+            Detailed inquiry
+          </label>
+          <textarea
+            rows={5}
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            placeholder="Type your opinion"
+            className="w-full bg-white border border-stone-300 rounded-2xl p-5 text-stone-800 placeholder-stone-400 text-base focus:outline-none focus:border-stone-500 transition-colors resize-none"
+          />
+        </div>
 
-      {/* Submit button */}
-      <div>
-        <button
-          type="submit"
-          disabled={status === "sending"}
-          className="px-8 py-[18px] bg-brand-primary text-white text-base font-medium rounded-full hover:bg-brand-primaryLight transition-colors disabled:opacity-60"
-        >
-          {status === "sending" ? "Sending…" : "Get a Quote"}
-        </button>
-      </div>
-    </form>
+        {status === "error" && (
+          <p className="text-xs text-red-400">
+            Something went wrong. Please try again.
+          </p>
+        )}
+
+        <div>
+          <button
+            type="submit"
+            disabled={status === "sending"}
+            className="px-8 py-3.5 bg-brand-primary text-white text-base font-medium rounded-full hover:bg-brand-primaryLight transition-colors disabled:opacity-60"
+          >
+            {status === "sending" ? "Sending…" : "Send Message"}
+          </button>
+        </div>
+      </form>
+    </div>
   );
 }

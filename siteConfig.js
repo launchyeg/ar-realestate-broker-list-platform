@@ -109,7 +109,7 @@ const siteConfig = {
       slug: "hurghada",
       label: "Hurghada",
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRTxefSg_8KHfegTdyzTenIs3iLhTF0-W7vFoapBWZsw&s=10",
+        "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/sunset-8627419_1280.jpg",
       heroImage:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHQnWFGGT8BcAiv-G7c05f63cZynGBPqdp93KjcuTXIw&s=10",
       tagline: "Egypt's most connected Red Sea city.",
