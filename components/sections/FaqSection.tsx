@@ -75,7 +75,7 @@ export default function FaqSection() {
                     open === i ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
                   }`}
                 >
-                  <p className="px-4 pt-4 pb-6 text-brand-muted text-base leading-relaxed">
+                  <p className="px-4 pt-4 pb-6 text-brand-muted text-base font-medium leading-7">
                     {faq.answer}
                   </p>
                 </div>

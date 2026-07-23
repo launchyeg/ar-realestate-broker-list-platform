@@ -32,7 +32,7 @@ export default function CeoSection() {
           <h2 className="font-display text-4xl md:text-5xl leading-11 md:leading-16 text-brand-text mb-4">
             Interested in selling or buying?
           </h2>
-          <p className="text-brand-muted text-base leading-relaxed">
+          <p className="text-brand-muted text-base font-medium leading-relaxed">
             Buy or sell your home with us. House prices, expert inspections,
             skilled negotiations, and other essential professional services are
             included in the transparent house price.

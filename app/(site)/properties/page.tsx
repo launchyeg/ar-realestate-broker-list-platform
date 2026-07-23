@@ -29,11 +29,19 @@ export default async function PropertiesPage() {
 
   return (
     <main>
-      <PropertiesClient
-        units={units}
-        destinations={siteConfig.destinations as any[]}
-        projects={siteConfig.projects as any[]}
-      />
+      <Suspense
+        fallback={
+          <div className="min-h-screen flex items-center justify-center bg-brand-bg">
+            <div className="w-8 h-8 border-2 border-brand-accent border-t-transparent rounded-full animate-spin" />
+          </div>
+        }
+      >
+        <PropertiesClient
+          units={units}
+          destinations={siteConfig.destinations as any[]}
+          projects={siteConfig.projects as any[]}
+        />
+      </Suspense>
     </main>
   );
 }
