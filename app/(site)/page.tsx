@@ -191,6 +191,7 @@ export default async function HomePage() {
               </div>
             </AnimateOnScroll>
           </div>
+
           <div className="basis-full lg:basis-xl">
             <AnimateOnScroll type="fade-up">
               <ContactPageForm />

@@ -96,7 +96,7 @@ export default function UnitsTable({ units }: { units: Unit[] }) {
                 className="border-b border-stone-100 hover:bg-stone-50 transition-colors"
               >
                 <td className="px-5 py-4">
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-4">
                     <span className="text-xs font-medium text-stone-400 w-2.5 text-center flex-shrink-0">
                       {index + 1}
                     </span>

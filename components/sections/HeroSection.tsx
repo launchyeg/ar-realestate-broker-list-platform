@@ -78,7 +78,6 @@ export default function HeroSection() {
 
   return (
     <section className="relative h-dvh min-h-[600px] flex items-center pb-16 pt-16 overflow-hidden">
-      {/* ── BACKGROUND SLIDES ──────────────────────────────────── */}
       {SLIDES.map((s, i) => (
         <div
           key={i}
@@ -91,11 +90,9 @@ export default function HeroSection() {
         />
       ))}
 
-      {/* Gradient */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
-      {/* ── CONTENT ────────────────────────────────────────────── */}
       <div className="relative max-w-[1380px] mx-auto px-6 md:px-8 w-full">
         <AnimateOnScroll type="fade-up">
           <div
@@ -129,11 +126,8 @@ export default function HeroSection() {
               transform: animating ? "translateY(16px)" : "translateY(0)",
             }}
           >
-            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 flex flex-wrap md:flex-nowrap gap-3 max-w-2xl">
+            <div className="max-w-3xl bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 flex flex-wrap md:flex-nowrap gap-3">
               <div className="flex-1 min-w-[140px]">
-                <p className="text-white/50 text-[9px] font-medium uppercase tracking-widest mb-1.5 px-1">
-                  Destination
-                </p>
                 <CustomSelect
                   value={destination}
                   placeholder="Any Destination"
@@ -147,9 +141,6 @@ export default function HeroSection() {
                 />
               </div>
               <div className="flex-1 min-w-[140px]">
-                <p className="text-white/50 text-[9px] font-medium uppercase tracking-widest mb-1.5 px-1">
-                  Project
-                </p>
                 <CustomSelect
                   value={project}
                   placeholder="Any Project"
@@ -163,9 +154,6 @@ export default function HeroSection() {
                 />
               </div>
               <div className="flex-1 min-w-[140px]">
-                <p className="text-white/50 text-[9px] font-medium uppercase tracking-widest mb-1.5 px-1">
-                  Price
-                </p>
                 <CustomSelect
                   value={price}
                   placeholder="Any Price"
@@ -181,7 +169,7 @@ export default function HeroSection() {
               <div className="flex items-end">
                 <button
                   onClick={handleSearch}
-                  className="w-full md:w-auto px-6 py-2.5 bg-brand-accent text-white text-xs font-medium tracking-widest uppercase rounded-xl hover:bg-brand-accentLight transition-colors whitespace-nowrap"
+                  className="w-full md:w-auto px-6 py-3 bg-brand-accent text-white text-sm font-medium tracking-widest rounded-[10px] hover:bg-brand-accentLight transition-colors whitespace-nowrap"
                 >
                   Search
                 </button>

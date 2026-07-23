@@ -102,14 +102,14 @@ export default function PropertiesClient({
 
         <div className="max-w-[1380px] mx-auto px-6 md:px-8 py-[80px] md:pt-[150px] md:pb-[100px] lg:pt-[205px] lg:pb-[155px]">
           <AnimateOnScroll type="fade-up">
-            <div className="text-center mb-10 md:mb-16">
+            <div className="max-w-4xl mx-auto text-center mb-10 md:mb-16">
               <h2 className="font-display text-4xl md:text-7xl lg:text-[80px] leading-11 md:leading-[92px] text-white">
-                Find Your Dream Property <br /> in the Red Sea
+                Find Your Dream Property in the Red Sea
               </h2>
             </div>
           </AnimateOnScroll>
 
-          <AnimateOnScroll type="fade-up" delay={100}>
+          <AnimateOnScroll className="relative z-20" type="fade-up" delay={100}>
             <div className="bg-white p-5 md:px-10 md:py-12 rounded-2xl shadow-2xl">
               <div className="mb-5">
                 <div className="relative">
@@ -134,7 +134,7 @@ export default function PropertiesClient({
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
                     placeholder="Search by name or destination..."
-                    className="w-full pl-10 pr-5 py-3.5 border border-stone-200 rounded-xl text-sm focus:outline-none focus:border-[#C9A96E] transition bg-stone-50"
+                    className="w-full pl-10 pr-5 py-3.5 border border-stone-200 rounded-[10px] text-sm focus:outline-none focus:border-[#C9A96E] transition bg-stone-50"
                   />
                 </div>
               </div>

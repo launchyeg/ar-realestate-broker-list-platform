@@ -4,6 +4,7 @@ import siteConfig from "@/siteConfig";
 import Navbar from "@/components/layout/Navbar";
 import CtaBanner from "@/components/sections/CtaBanner";
 import Footer from "@/components/layout/Footer";
+import ContactFloat from "@/components/ui/ContactFloat";
 
 export const metadata: Metadata = {
   // ── Core ──────────────────────────────────────────────────
@@ -129,6 +130,7 @@ export default function RootLayout({
         <main>{children}</main>
         <CtaBanner />
         <Footer />
+        <ContactFloat />
       </body>
     </html>
   );

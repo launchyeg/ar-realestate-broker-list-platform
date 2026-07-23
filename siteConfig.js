@@ -238,7 +238,7 @@ const siteConfig = {
       slug: "ras-soma-travco",
       label: "Ras Soma Travco",
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ-cA2tklgX21dDuPDhxT7jJF_rgSZta-eS7Iutg6wmF4cJARYBN0Vmcz1&s=10",
+        "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/3.png",
       heroImage:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaBBZHmEhKu5nKZE7zpuFilmPrXbqsfjGxRK0jkCyY1Q&s=10",
       tagline: "A peninsula of pure luxury.",
