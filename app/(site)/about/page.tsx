@@ -1,10 +1,10 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import siteConfig from "@/siteConfig";
+import HeroPageSection from "@/components/sections/HeroPageSection";
+import GeneralFormSection from "@/components/sections/GeneralFormSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
-import GeneralForm from "@/components/GeneralForm";
 
 const TRUSTED = [
   {
@@ -84,26 +84,10 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <main>
-      <section className="relative">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url(https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/3.png)",
-          }}
-        />
-        <div className="absolute inset-0 bg-black/50" />
-
-        <div className="max-w-[1380px] mx-auto px-6 md:px-8 py-[80px] md:pt-[150px] md:pb-[100px] lg:pt-[205px] lg:pb-[155px]">
-          <AnimateOnScroll type="fade-up">
-            <div className="text-center">
-              <h2 className="font-display text-4xl md:text-7xl lg:text-[80px] leading-11 md:leading-[92px] text-white">
-                Our Story
-              </h2>
-            </div>
-          </AnimateOnScroll>
-        </div>
-      </section>
+      <HeroPageSection
+        image="https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/3.png"
+        title="Our Story"
+      />
 
       <section className="relative bg-white z-10 -mt-6 rounded-t-3xl">
         <div className="max-w-[1380px] mx-auto px-6 md:px-8 py-10 md:py-[70px] lg:py-[120px]">
@@ -278,69 +262,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="relative bg-brand-accent z-10 -mt-6 rounded-t-3xl">
-        <div className="max-w-[1380px] mx-auto px-6 md:px-8 pt-10 pb-[90px] md:pt-[70px] lg:py-[120px] flex flex-row justify-between flex-wrap gap-10 md:gap-16">
-          <div className="lg:basis-[480px]">
-            <AnimateOnScroll type="fade-up">
-              <h2 className="font-display text-4xl md:text-5xl leading-11 md:leading-16 text-white mb-4">
-                Let’s find your next perfect property
-              </h2>
-              <p className="text-[#fffc] text-lg font-medium leading-7 mt-5 mb-8 md:mb-12 lg:mb-28">
-                Have questions or ready to take the next step? Whether you’re
-                buying, selling, or just exploring options.
-              </p>
+      <GeneralFormSection />
 
-              <div className="flex flex-wrap gap-5 sm:gap-16">
-                <div>
-                  <h2 className="text-[#fffc] text-base font-medium leading-7 mb-1">
-                    Email Address
-                  </h2>
-                  <Link
-                    href={`mailto:${siteConfig.contact.email}`}
-                    target="_blank"
-                    className="text-white text-base font-medium leading-7"
-                  >
-                    {siteConfig.contact.email}
-                  </Link>
-                </div>
-                <div>
-                  <h2 className="text-[#fffc] text-base font-medium leading-7 mb-1">
-                    Phone Call
-                  </h2>
-                  <Link
-                    href={`tel:+${siteConfig.contact.phone.replace(/\D/g, "")}`}
-                    target="_blank"
-                    className="text-white text-base font-medium leading-7"
-                  >
-                    {siteConfig.contact.phone}
-                  </Link>
-                </div>
-              </div>
-            </AnimateOnScroll>
-          </div>
-
-          <div className="basis-full lg:basis-xl">
-            <AnimateOnScroll type="fade-up">
-              <GeneralForm />
-            </AnimateOnScroll>
-          </div>
-        </div>
-      </section>
-
-      <section className="relative bg-white z-10 -mt-6 rounded-t-3xl">
-        <div className="max-w-[1380px] mx-auto px-6 md:px-8 py-[60px] md:py-[70px] lg:py-[120px]">
-          <AnimateOnScroll
-            type="fade-up"
-            className="mb-10 md:mb-[60px] lg:mb-[74px]"
-          >
-            <h2 className="font-display text-4xl md:text-5xl leading-11 md:leading-16 text-brand-text">
-              Customers love our findings
-            </h2>
-          </AnimateOnScroll>
-
-          <TestimonialsSection />
-        </div>
-      </section>
+      <TestimonialsSection />
     </main>
   );
 }

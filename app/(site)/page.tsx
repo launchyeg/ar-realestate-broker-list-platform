@@ -10,7 +10,7 @@ import PropertyCard from "@/components/ui/PropertyCard";
 import CeoSection from "@/components/sections/CeoSection";
 import DestinationSlider from "@/components/ui/DestinationSlider";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
-import GeneralForm from "@/components/GeneralForm";
+import GeneralFormSection from "@/components/sections/GeneralFormSection";
 import FaqSection from "@/components/sections/FaqSection";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 
@@ -136,69 +136,9 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="relative bg-white z-10 -mt-6 rounded-t-3xl">
-        <div className="max-w-[1380px] mx-auto px-6 md:px-8 py-[60px] md:py-[70px] lg:py-[120px]">
-          <AnimateOnScroll
-            type="fade-up"
-            className="mb-10 md:mb-[60px] lg:mb-[74px]"
-          >
-            <h2 className="font-display text-4xl md:text-5xl leading-11 md:leading-16 text-brand-text">
-              Customers love our findings
-            </h2>
-          </AnimateOnScroll>
+      <TestimonialsSection />
 
-          <TestimonialsSection />
-        </div>
-      </section>
-
-      <section className="relative bg-brand-accent z-10 -mt-6 rounded-t-3xl">
-        <div className="max-w-[1380px] mx-auto px-6 md:px-8 pt-10 pb-[90px] md:pt-[70px] lg:py-[120px] flex flex-row justify-between flex-wrap gap-10 md:gap-16">
-          <div className="lg:basis-[480px]">
-            <AnimateOnScroll type="fade-up">
-              <h2 className="font-display text-4xl md:text-5xl leading-11 md:leading-16 text-white mb-4">
-                Let’s find your next perfect property
-              </h2>
-              <p className="text-[#fffc] text-lg font-medium leading-7 mt-5 mb-8 md:mb-12 lg:mb-28">
-                Have questions or ready to take the next step? Whether you’re
-                buying, selling, or just exploring options.
-              </p>
-
-              <div className="flex flex-wrap gap-5 sm:gap-16">
-                <div>
-                  <h2 className="text-[#fffc] text-base font-medium leading-7 mb-1">
-                    Email Address
-                  </h2>
-                  <Link
-                    href={`mailto:${siteConfig.contact.email}`}
-                    target="_blank"
-                    className="text-white text-base font-medium leading-7"
-                  >
-                    {siteConfig.contact.email}
-                  </Link>
-                </div>
-                <div>
-                  <h2 className="text-[#fffc] text-base font-medium leading-7 mb-1">
-                    Phone Call
-                  </h2>
-                  <Link
-                    href={`tel:+${siteConfig.contact.phone.replace(/\D/g, "")}`}
-                    target="_blank"
-                    className="text-white text-base font-medium leading-7"
-                  >
-                    {siteConfig.contact.phone}
-                  </Link>
-                </div>
-              </div>
-            </AnimateOnScroll>
-          </div>
-
-          <div className="basis-full lg:basis-xl">
-            <AnimateOnScroll type="fade-up">
-              <GeneralForm />
-            </AnimateOnScroll>
-          </div>
-        </div>
-      </section>
+      <GeneralFormSection />
 
       <FaqSection />
     </div>

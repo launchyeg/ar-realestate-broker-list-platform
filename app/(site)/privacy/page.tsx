@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import siteConfig from "@/siteConfig";
+import HeroPageSection from "@/components/sections/HeroPageSection";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 
 export const metadata: Metadata = {
@@ -12,26 +13,10 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <main>
-      <section className="relative">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url(https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/properties/1784164994508-1jfzi7wl588.png)",
-          }}
-        />
-        <div className="absolute inset-0 bg-black/50" />
-
-        <div className="max-w-[1380px] mx-auto px-6 md:px-8 py-[80px] md:pt-[150px] md:pb-[100px] lg:pt-[205px] lg:pb-[155px]">
-          <AnimateOnScroll type="fade-up">
-            <div className="text-center">
-              <h2 className="font-display text-4xl md:text-7xl lg:text-[80px] leading-11 md:leading-[92px] text-white">
-                Privacy Policy
-              </h2>
-            </div>
-          </AnimateOnScroll>
-        </div>
-      </section>
+      <HeroPageSection
+        image="https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/properties/1784164994508-1jfzi7wl588.png"
+        title="Privacy Policy"
+      />
 
       <div className="relative bg-white z-10 -mt-6 rounded-t-3xl">
         <div className="max-w-5xl mx-auto px-6 md:px-8 py-10 md:py-[70px] lg:py-[120px]">
@@ -82,19 +67,21 @@ export default function PrivacyPage() {
               title: "8. Contact",
               content: `If you have any questions about this Privacy Policy, please contact us at ${siteConfig.contact.email} or call us at ${siteConfig.contact.phone}.`,
             },
-          ].map((section) => (
-            <div
-              key={section.title}
-              className={`${section.style} p-8 rounded-2xl`}
-            >
-              <h2 className="font-display text-3xl text-brand-text">
-                {section.title}
-              </h2>
-              <div className="my-4 border-t border-[#52525a33]" />
-              <p className="text-brand-muted text-base font-medium leading-7">
-                {section.content}
-              </p>
-            </div>
+          ].map((section, i) => (
+            <AnimateOnScroll type="fade-up">
+              <div
+                key={section.title}
+                className={`${section.style} p-5 md:p-8 rounded-2xl`}
+              >
+                <h2 className="font-display text-[28px] md:text-4xl text-brand-text">
+                  {section.title}
+                </h2>
+                <div className="my-4 border-t border-[#52525a33]" />
+                <p className="text-brand-muted text-base font-medium leading-7">
+                  {section.content}
+                </p>
+              </div>
+            </AnimateOnScroll>
           ))}
         </div>
       </div>

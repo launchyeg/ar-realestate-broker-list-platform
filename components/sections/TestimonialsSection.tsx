@@ -69,56 +69,71 @@ export default function TestimonialsSection() {
   ];
 
   return (
-    <div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 md:mb-14">
-        {visible.map((t, i) => (
-          <AnimateOnScroll key={`${t.id}-${i}`} type="fade-up" delay={i * 100}>
-            <div
-              className={`
+    <section className="relative bg-white z-10 -mt-6 rounded-t-3xl">
+      <div className="max-w-[1380px] mx-auto px-6 md:px-8 py-[60px] md:py-[70px] lg:py-[120px]">
+        <AnimateOnScroll
+          type="fade-up"
+          className="mb-10 md:mb-[60px] lg:mb-[74px]"
+        >
+          <h2 className="font-display text-4xl md:text-5xl leading-11 md:leading-16 text-brand-text">
+            Customers love our findings
+          </h2>
+        </AnimateOnScroll>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 md:mb-14">
+          {visible.map((t, i) => (
+            <AnimateOnScroll
+              key={`${t.id}-${i}`}
+              type="fade-up"
+              delay={i * 100}
+            >
+              <div
+                className={`
                 bg-brand-surface rounded-3xl p-7 flex flex-col justify-between min-h-[450px]
                 transition-transform duration-300
                 ${i === 1 ? "md:translate-y-4" : ""}
               `}
-            >
-              <div className="mb-14">
-                <div className="w-16 h-16 rounded-full overflow-hidden bg-stone-200">
-                  <Image
-                    src={t.image}
-                    alt={t.name}
-                    width={64}
-                    height={64}
-                    className="w-full h-full object-cover"
-                  />
+              >
+                <div className="mb-14">
+                  <div className="w-16 h-16 rounded-full overflow-hidden bg-stone-200">
+                    <Image
+                      src={t.image}
+                      alt={t.name}
+                      width={64}
+                      height={64}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+
+                <p className="text-brand-muted text-xl leading-relaxed flex-1">
+                  “{t.quote}”
+                </p>
+
+                <div>
+                  <p className="font-semibold text-brand-text text-xl leading-7">
+                    {t.name}
+                  </p>
+                  <p className="text-brand-muted text-base leading-7 mt-1">
+                    {t.role}
+                  </p>
                 </div>
               </div>
-
-              <p className="text-brand-muted text-xl leading-relaxed flex-1">
-                “{t.quote}”
-              </p>
-
-              <div>
-                <p className="font-semibold text-brand-text text-xl leading-7">
-                  {t.name}
-                </p>
-                <p className="text-brand-muted text-base leading-7 mt-1">
-                  {t.role}
-                </p>
-              </div>
-            </div>
-          </AnimateOnScroll>
-        ))}
-      </div>
-
-      <AnimateOnScroll type="fade-in" delay={100}>
-        <div className="flex justify-center gap-4">
-          <button onClick={prev} className="text-brand-text cursor-pointer">
-            <ChevronLeft size={32} />
-          </button>
-          <button onClick={next} className="text-brand-text cursor-pointer">
-            <ChevronRight size={32} />
-          </button>
+            </AnimateOnScroll>
+          ))}
         </div>
-      </AnimateOnScroll>
-    </div>
+
+        <AnimateOnScroll type="fade-in" delay={100}>
+          <div className="flex justify-center gap-4">
+            <button onClick={prev} className="text-brand-text cursor-pointer">
+              <ChevronLeft size={32} />
+            </button>
+            <button onClick={next} className="text-brand-text cursor-pointer">
+              <ChevronRight size={32} />
+            </button>
+          </div>
+        </AnimateOnScroll>
+      </div>
+    </section>
   );
 }

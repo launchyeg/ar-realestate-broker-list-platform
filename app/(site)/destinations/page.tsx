@@ -1,42 +1,25 @@
-import DestinationsGrid from "@/components/DestinationsGrid";
+import siteConfig from "@/siteConfig";
+import HeroPageSection from "@/components/sections/HeroPageSection";
+import DestinationCard from "@/components/ui/DestinationCard";
+import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 
 export default function DestinationsPage() {
   return (
-    <div className="min-h-screen bg-white">
-      {/* ── HERO ───────────────────────────────────────────────── */}
-      <section className="relative h-64 md:h-96 flex items-end pb-12 pt-16">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url(https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1600&q=80)",
-          }}
-        />
-        <div className="absolute inset-0 bg-[#1B2B3A]/70" />
-        <div className="relative max-w-6xl mx-auto px-6 w-full">
-          <p className="text-[#C9A96E] text-[10px] font-bold tracking-widest uppercase mb-3">
-            Locations
-          </p>
-          <h1 className="font-display text-4xl md:text-5xl text-white leading-tight">
-            Explore our destinations
-          </h1>
+    <main>
+      <HeroPageSection
+        image="https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/properties/1784212598344-41qpj7az1zg.jpg"
+        title="Explore Destinations"
+      />
+
+      <section className="relative z-10 -mt-6 rounded-t-3xl bg-white">
+        <div className="max-w-[1380px] mx-auto px-6 md:px-8 py-10 md:py-[70px] lg:py-[120px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          {siteConfig.destinations.map((dest, i) => (
+            <AnimateOnScroll key={dest.slug} type="fade-up" delay={i * 100}>
+              <DestinationCard destinations={dest} />
+            </AnimateOnScroll>
+          ))}
         </div>
       </section>
-
-      {/* ── INTRO TEXT ─────────────────────────────────────────── */}
-      <section className="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-center">
-        <h2 className="font-display text-3xl text-stone-900 leading-snug">
-          Exclusive properties in Egypt's top locations
-        </h2>
-        <p className="text-stone-500 text-sm leading-relaxed">
-          From the crystal waters of Sahl Hasheesh to the vibrant marina of El
-          Gouna — each destination offers a unique lifestyle. Browse by location
-          to find the property that matches where you want to live.
-        </p>
-      </section>
-
-      {/* ── DESTINATIONS GRID ──────────────────────────────────── */}
-      <DestinationsGrid />
-    </div>
+    </main>
   );
 }
