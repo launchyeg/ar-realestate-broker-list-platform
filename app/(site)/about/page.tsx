@@ -69,11 +69,16 @@ const NUMBERS = [
 ];
 
 export const metadata: Metadata = {
-  title: "About Us",
+  title: "About Us | AR Real Estate Redsea",
   description:
-    "Meet the team behind Prestige Properties — local experts helping international buyers find their dream home in Egypt.",
+    "Meet the team behind AR Real Estate Redsea — local experts helping buyers find their dream coastal home with transparent, all-inclusive pricing.",
   alternates: { canonical: "/about" },
-  openGraph: { url: "/about" },
+  openGraph: {
+    title: "About Us | AR Real Estate Redsea",
+    description:
+      "Meet the team behind AR Real Estate Redsea — local experts helping buyers find their dream coastal home.",
+    url: "/about",
+  },
 };
 
 export default function AboutPage() {

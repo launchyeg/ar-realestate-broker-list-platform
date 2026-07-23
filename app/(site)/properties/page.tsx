@@ -7,9 +7,16 @@ import PropertiesClient from "./PropertiesClient";
 export const revalidate = 60;
 
 export const metadata = {
-  title: "All Properties",
+  title: "All Properties | AR Real Estate Redsea",
   description:
-    "Browse all available properties across Egypt's top destinations.",
+    "Browse all available exclusive properties, beachfront villas, and resort apartments across the Red Sea's top destinations.",
+  alternates: { canonical: "/properties" },
+  openGraph: {
+    title: "All Properties | AR Real Estate Redsea",
+    description:
+      "Browse all available properties across Egypt's top Red Sea destinations.",
+    url: "/properties",
+  },
 };
 
 export default async function PropertiesPage() {

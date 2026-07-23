@@ -17,14 +17,14 @@ import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "Real Estate in Egypt — Buy, Rent & Invest",
+  title: "AR Real Estate Redsea — Buy & Invest in Coastal Properties",
   description:
-    "Browse luxury villas, apartments and penthouses across Hurghada, Sahl Hasheesh, El Gouna and the Red Sea coast.",
+    "Browse luxury villas, apartments, and penthouses across Hurghada, Sahl Hasheesh, El Gouna, and the Red Sea coast with AR Real Estate.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Real Estate in Egypt — Buy, Rent & Invest",
+    title: "AR Real Estate Redsea — Buy & Invest in Coastal Properties",
     description:
-      "Browse luxury villas, apartments and penthouses across Egypt's Red Sea coast.",
+      "Browse luxury villas, apartments, and penthouses across Egypt's stunning Red Sea coast.",
     url: "/",
   },
 };
