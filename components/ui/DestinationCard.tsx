@@ -28,7 +28,7 @@ const DestinationCard = ({ destinations }: { destinations: Destination }) => {
           <h3 className="font-display text-2xl md:text-3xl text-white mb-2">
             {destinations.label}
           </h3>
-          <p className="max-w-lg text-white/60 text-base font-medium">
+          <p className="max-w-lg text-[#fffc] text-base font-medium">
             {destinations.tagline}
           </p>
         </div>

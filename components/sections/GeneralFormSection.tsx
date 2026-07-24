@@ -79,7 +79,7 @@ export default function GeneralFormSection() {
               buying, selling, or just exploring options.
             </p>
 
-            <div className="flex flex-wrap gap-5 sm:gap-16">
+            <div className="flex flex-wrap justify-between gap-5">
               <div>
                 <h2 className="text-[#fffc] text-base font-medium leading-7 mb-1">
                   Email Address
@@ -87,7 +87,7 @@ export default function GeneralFormSection() {
                 <Link
                   href={`mailto:${siteConfig.contact.email}`}
                   target="_blank"
-                  className="text-white text-base font-medium leading-7"
+                  className="text-white text-lg font-medium leading-7"
                 >
                   {siteConfig.contact.email}
                 </Link>
@@ -99,7 +99,7 @@ export default function GeneralFormSection() {
                 <Link
                   href={`tel:+${siteConfig.contact.phone.replace(/\D/g, "")}`}
                   target="_blank"
-                  className="text-white text-base font-medium leading-7"
+                  className="text-white text-lg font-medium leading-7"
                 >
                   {siteConfig.contact.phone}
                 </Link>
@@ -114,12 +114,12 @@ export default function GeneralFormSection() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                   <label className="block text-white text-base font-medium mb-3">
-                    Full name
+                    Full name *
                   </label>
                   <input
-                    required
                     type="text"
                     value={name}
+                    required
                     onChange={(e) => setName(e.target.value)}
                     placeholder="First and last name"
                     className="w-full bg-transparent border-b border-[#fffc] text-white placeholder-[#fffc] text-base py-2 focus:outline-none focus:border-white transition-colors"
@@ -127,11 +127,12 @@ export default function GeneralFormSection() {
                 </div>
                 <div>
                   <label className="block text-white text-base font-medium mb-3">
-                    Your email address
+                    Your email address *
                   </label>
                   <input
                     type="email"
                     value={email}
+                    required
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="yourmail@email.com"
                     className="w-full bg-transparent border-b border-[#fffc] text-white placeholder-[#fffc] text-base py-2 focus:outline-none focus:border-white transition-colors"
@@ -140,7 +141,7 @@ export default function GeneralFormSection() {
               </div>
               <div>
                 <label className="block text-white text-base font-medium mb-3">
-                  Your phone number
+                  Your phone number *
                 </label>
                 <PhoneInput
                   value={phone}

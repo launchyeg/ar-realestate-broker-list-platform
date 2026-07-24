@@ -100,6 +100,7 @@ export default function ContactPageForm() {
           <input
             type="email"
             value={email}
+            required
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"
             className="w-full bg-white border border-stone-300 rounded-2xl p-5 text-brand-text placeholder-stone-400 text-base focus:outline-none focus:border-brand-accent transition-colors"
@@ -116,7 +117,7 @@ export default function ContactPageForm() {
             onChange={setPhone}
             placeholder="100 000 0000"
             required
-            inputClassName="ml-2 w-full bg-white border border-stone-300 rounded-2xl p-5 text-brand-text placeholder-stone-400 text-base focus:outline-none focus:border-brand-accent transition-colors"
+            inputClassName="w-full bg-white border border-stone-300 rounded-2xl ml-3 p-5 text-brand-text placeholder-stone-400 text-base focus:outline-none focus:border-brand-accent transition-colors"
             triggerClassName="bg-white text-brand-text border border-stone-300 rounded-2xl p-4 hover:border-brand-accent transition-colors"
           />
         </div>
