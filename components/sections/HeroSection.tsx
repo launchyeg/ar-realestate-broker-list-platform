@@ -41,8 +41,7 @@ export default function HeroSection() {
   const [current, setCurrent] = useState(0);
   const [animating, setAnimating] = useState(false);
   const [destination, setDestination] = useState("");
-  const [project, setProject] = useState("");
-  const [type, setType] = useState("");
+  const [listingType, setListingType] = useState("");
   const [price, setPrice] = useState("");
   const router = useRouter();
 
@@ -70,7 +69,7 @@ export default function HeroSection() {
   function handleSearch() {
     const params = new URLSearchParams();
     if (destination) params.set("destination", destination);
-    if (project) params.set("project", project);
+    if (listingType) params.set("listingType", listingType);
     if (price) params.set("price", price);
     router.push(`/properties?${params.toString()}`);
   }
@@ -143,14 +142,13 @@ export default function HeroSection() {
               </div>
               <div className="flex-1 min-w-[140px]">
                 <CustomSelect
-                  value={type}
-                  placeholder="Any Project"
-                  onChange={setType}
+                  value={listingType}
+                  placeholder="Any Listing"
+                  onChange={setListingType}
                   options={[
-                    ...(siteConfig.projects as any[]).map((p) => ({
-                      value: p.slug,
-                      label: p.label,
-                    })),
+                    { value: "primary", label: "Primary" },
+                    { value: "resale", label: "Resale" },
+                    { value: "rent", label: "Rent" },
                   ]}
                 />
               </div>

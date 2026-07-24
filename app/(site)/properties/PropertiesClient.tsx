@@ -46,7 +46,9 @@ export default function PropertiesClient({
   const [project, setProject] = useState(searchParams.get("project") || "");
   const [priceRange, setPriceRange] = useState(searchParams.get("price") || "");
   const [type, setType] = useState("");
-  const [listingType, setListingType] = useState("");
+  const [listingType, setListingType] = useState(
+    searchParams.get("listingType") || "",
+  );
   const [search, setSearch] = useState("");
 
   const filtered = useMemo(() => {

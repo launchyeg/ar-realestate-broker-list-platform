@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import PhoneInput from "@/components/ui/PhoneInput";
+import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 
 type Status = "idle" | "sending" | "success" | "error";
 
@@ -32,28 +34,32 @@ export default function ContactPageForm() {
 
   if (status === "success") {
     return (
-      <div className="bg-brand-surface p-5 md:p-8 rounded-3xl flex flex-col items-center justify-center text-center">
-        <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center mb-4">
-          <svg
-            className="w-7 h-7 text-emerald-500"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M5 13l4 4L19 7"
-            />
-          </svg>
-        </div>
-        <p className="font-display text-2xl text-stone-900 mb-2">
-          Message sent!
-        </p>
-        <p className="text-stone-500 text-base">
-          We will contact you as soon as possible.
-        </p>
+      <div className="bg-brand-surface p-5 md:p-8 rounded-3xl">
+        <AnimateOnScroll type="fade-up">
+          <div className="flex flex-col items-center justify-center">
+            <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center mb-4">
+              <svg
+                className="w-7 h-7 text-emerald-500"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+            </div>
+            <p className="font-display text-2xl text-brand-text mb-2">
+              Message sent!
+            </p>
+            <p className="text-brand-muted text-base">
+              We will contact you as soon as possible.
+            </p>
+          </div>
+        </AnimateOnScroll>
       </div>
     );
   }
@@ -72,7 +78,7 @@ export default function ContactPageForm() {
 
       <form onSubmit={handleSubmit} className="space-y-5">
         <div>
-          <label className="block text-stone-800 text-sm font-semibold mb-4">
+          <label className="block text-brand-text text-sm font-semibold mb-4">
             Full Name{" "}
             <span className="text-stone-500 font-normal">(required)</span>
           </label>
@@ -82,12 +88,12 @@ export default function ContactPageForm() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="John Doe"
-            className="w-full bg-white border border-stone-300 rounded-2xl p-5 text-stone-800 placeholder-stone-400 text-base focus:outline-none focus:border-stone-500 transition-colors"
+            className="w-full bg-white border border-stone-300 rounded-2xl p-5 text-brand-text placeholder-stone-400 text-base focus:outline-none focus:border-brand-accent transition-colors"
           />
         </div>
 
         <div>
-          <label className="block text-stone-800 text-sm font-semibold mb-4">
+          <label className="block text-brand-text text-sm font-semibold mb-4">
             Email Address{" "}
             <span className="text-stone-500 font-normal">(required)</span>
           </label>
@@ -96,27 +102,27 @@ export default function ContactPageForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"
-            className="w-full bg-white border border-stone-300 rounded-2xl p-5 text-stone-800 placeholder-stone-400 text-base focus:outline-none focus:border-stone-500 transition-colors"
+            className="w-full bg-white border border-stone-300 rounded-2xl p-5 text-brand-text placeholder-stone-400 text-base focus:outline-none focus:border-brand-accent transition-colors"
           />
         </div>
 
         <div>
-          <label className="block text-stone-800 text-sm font-semibold mb-4">
+          <label className="block text-brand-text text-sm font-semibold mb-4">
             Phone Number{" "}
             <span className="text-stone-500 font-normal">(required)</span>
           </label>
-          <input
-            required
-            type="tel"
+          <PhoneInput
             value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            placeholder="+20 100 000 0000"
-            className="w-full bg-white border border-stone-300 rounded-2xl p-5 text-stone-800 placeholder-stone-400 text-base focus:outline-none focus:border-stone-500 transition-colors"
+            onChange={setPhone}
+            placeholder="100 000 0000"
+            required
+            inputClassName="ml-2 w-full bg-white border border-stone-300 rounded-2xl p-5 text-brand-text placeholder-stone-400 text-base focus:outline-none focus:border-brand-accent transition-colors"
+            triggerClassName="bg-white text-brand-text border border-stone-300 rounded-2xl p-4 hover:border-brand-accent transition-colors"
           />
         </div>
 
         <div>
-          <label className="block text-stone-800 text-sm font-semibold mb-4">
+          <label className="block text-brand-text text-sm font-semibold mb-4">
             Detailed inquiry
           </label>
           <textarea
@@ -124,7 +130,7 @@ export default function ContactPageForm() {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             placeholder="Type your opinion"
-            className="w-full bg-white border border-stone-300 rounded-2xl p-5 text-stone-800 placeholder-stone-400 text-base focus:outline-none focus:border-stone-500 transition-colors resize-none"
+            className="w-full bg-white border border-stone-300 rounded-2xl p-5 text-brand-text placeholder-stone-400 text-base focus:outline-none focus:border-brand-accent transition-colors resize-none"
           />
         </div>
 

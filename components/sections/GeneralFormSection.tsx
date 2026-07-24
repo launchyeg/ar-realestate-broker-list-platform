@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import siteConfig from "@/siteConfig";
+import PhoneInput from "../ui/PhoneInput";
 import AnimateOnScroll from "../ui/AnimateOnScroll";
 
 type Status = "idle" | "sending" | "success" | "error";
@@ -35,26 +36,32 @@ export default function GeneralFormSection() {
 
   if (status === "success") {
     return (
-      <div className="flex flex-col items-center justify-center py-20 text-center">
-        <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center mb-4">
-          <svg
-            className="w-7 h-7 text-emerald-500"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M5 13l4 4L19 7"
-            />
-          </svg>
-        </div>
-        <p className="font-display text-2xl text-white mb-2">Message sent!</p>
-        <p className="text-white text-base">
-          We will contact you as soon as possible.
-        </p>
+      <div className="relative bg-brand-accent z-10 -mt-6 rounded-t-3xl">
+        <AnimateOnScroll type="fade-up">
+          <div className="max-w-[1380px] mx-auto px-6 md:px-8 pt-10 pb-[90px] md:pt-[70px] lg:py-[120px] flex flex-col items-center justify-center">
+            <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center mb-4">
+              <svg
+                className="w-7 h-7 text-emerald-500"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+            </div>
+            <p className="font-display text-2xl text-white mb-2">
+              Message sent!
+            </p>
+            <p className="text-white text-base">
+              We will contact you as soon as possible.
+            </p>
+          </div>
+        </AnimateOnScroll>
       </div>
     );
   }
@@ -135,13 +142,13 @@ export default function GeneralFormSection() {
                 <label className="block text-white text-base font-medium mb-3">
                   Your phone number
                 </label>
-                <input
-                  required
-                  type="tel"
+                <PhoneInput
                   value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  placeholder="+20 100 000 0000"
-                  className="w-full bg-transparent border-b border-[#fffc] text-white placeholder-[#fffc] text-base py-2 focus:outline-none focus:border-white transition-colors"
+                  onChange={setPhone}
+                  placeholder="100 000 0000"
+                  required
+                  inputClassName="text-white placeholder-[#fffc] text-base px-[10px] py-2 border-b border-[#fffc] focus:border-white transition-colors"
+                  triggerClassName="text-white border-b border-[#fffc] hover:border-[#fffc] py-2 pr-3 transition-colors"
                 />
               </div>
               <div>

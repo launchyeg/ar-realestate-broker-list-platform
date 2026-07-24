@@ -80,19 +80,21 @@ export default async function ProjectPage({
   const projectUnits = (rawUnits || []).map(mapUnit);
 
   return (
-    <main className="min-h-screen bg-white">
-      <section className="relative h-[90vh] min-h-[600px] flex items-end pb-20 pt-16">
+    <main>
+      <section className="relative md:h-[90vh] min-h-[600px] flex items-center">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${project.heroImage})` }}
         />
         <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-black/75 via-black/40 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
-        <div className="relative max-w-[1380px] mx-auto my-auto text-center px-6 md:px-8 w-full">
-          <h1 className="font-display text-4xl md:text-7xl lg:text-[80px] leading-11 md:leading-[92px] text-white mb-4">
-            {project.label}
-          </h1>
-          <p className="text-white text-xl">{project.tagline}</p>
+        <div className="relative max-w-[1380px] mx-auto text-center px-6 md:px-8 py-[80px] md:pt-[150px] md:pb-[100px] lg:pt-[205px] lg:pb-[155px] w-full">
+          <AnimateOnScroll type="fade-up">
+            <h1 className="font-display text-4xl md:text-7xl lg:text-[80px] leading-11 md:leading-[92px] text-white mb-4">
+              {project.label}
+            </h1>
+            <p className="text-white text-xl">{project.tagline}</p>
+          </AnimateOnScroll>
         </div>
       </section>
 

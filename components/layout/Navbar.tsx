@@ -1,10 +1,10 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { CircleUserRound } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import siteConfig from "@/siteConfig";
-import { CircleUserRound } from "lucide-react";
 
 // ── Dropdown ──────────────────────────────────────────────────────────────────
 
@@ -13,11 +13,13 @@ function NavDropdown({
   items,
   onClose,
   scrolled,
+  vewAllCta,
 }: {
   label: string;
   items: { href: string; label: string; emoji?: string }[];
   onClose: () => void;
   scrolled: boolean;
+  vewAllCta: string;
 }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -96,7 +98,7 @@ function NavDropdown({
           </div>
           <div className="border-t border-stone-100 mt-1 pt-1">
             <Link
-              href={items[0]?.href.split("/").slice(0, -1).join("/") || "/"}
+              href={vewAllCta}
               onClick={() => {
                 setOpen(false);
                 onClose();
@@ -132,9 +134,11 @@ function MobileAccordion({
   label,
   items,
   onClose,
+  vewAllCta,
 }: {
   label: string;
   items: { href: string; label: string; emoji?: string }[];
+  vewAllCta: string;
   onClose: () => void;
 }) {
   const [open, setOpen] = useState(false);
@@ -184,7 +188,7 @@ function MobileAccordion({
 
           {/* View all — always visible */}
           <Link
-            href={items[0]?.href.split("/").slice(0, -1).join("/") || "/"}
+            href={vewAllCta}
             onClick={onClose}
             className="flex items-center gap-2 py-2.5 text-brand-accent text-xs font-bold uppercase tracking-widest hover:text-brand-accentLight transition-colors border-t border-stone-100 mt-1 pt-3"
           >
@@ -229,10 +233,11 @@ export default function Navbar() {
     emoji: d.emoji,
   }));
 
-  const projectItems = (siteConfig.projects as any[]).map((p) => ({
-    href: `/projects/${p.slug}`,
-    label: p.label,
-  }));
+  const listingItems = [
+    { href: "/properties?listingType=primary", label: "Primary" },
+    { href: "/properties?listingType=resale", label: "Resale" },
+    { href: "/properties?listingType=rent", label: "Rent" },
+  ];
 
   return (
     <>
@@ -282,13 +287,15 @@ export default function Navbar() {
               items={destinationItems}
               onClose={() => {}}
               scrolled={scrolled}
+              vewAllCta="/destinations"
             />
 
             <NavDropdown
-              label="Projects"
-              items={projectItems}
+              label="All Listing"
+              items={listingItems}
               onClose={() => {}}
               scrolled={scrolled}
+              vewAllCta="/properties"
             />
 
             <Link
@@ -427,12 +434,14 @@ export default function Navbar() {
           <MobileAccordion
             label="Destinations"
             items={destinationItems}
+            vewAllCta="/destinations"
             onClose={() => setSidebarOpen(false)}
           />
 
           <MobileAccordion
-            label="Projects"
-            items={projectItems}
+            label="All Listing"
+            items={listingItems}
+            vewAllCta="/properties"
             onClose={() => setSidebarOpen(false)}
           />
 
