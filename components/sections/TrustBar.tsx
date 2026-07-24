@@ -53,7 +53,7 @@ export default function TrustBar() {
       <AnimateOnScroll type="fade-in">
         <div className="max-w-[1380px] mx-auto px-6 md:px-8 flex items-center gap-7 md:gap-36 flex-wrap md:flex-nowrap">
           <p className="font-display text-brand-text text-2xl font-medium w-full md:w-auto text-center md:text-left md:whitespace-nowrap flex-shrink-0">
-            Meet Our Trusted Partners
+            Meet our trusted partners
           </p>
 
           <div className="md:flex-1 overflow-hidden relative">

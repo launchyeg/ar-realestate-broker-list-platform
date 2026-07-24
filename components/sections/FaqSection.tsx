@@ -41,7 +41,7 @@ export default function FaqSection() {
         <AnimateOnScroll type="fade-up">
           <div className="text-center">
             <h2 className="font-display text-4xl md:text-5xl leading-11 md:leading-16 text-brand-text">
-              Frequently Asked Questions
+              Frequently asked questions
             </h2>
           </div>
         </AnimateOnScroll>

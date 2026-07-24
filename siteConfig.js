@@ -292,12 +292,6 @@ const siteConfig = {
       ],
       whyInvest:
         "Aden represents a prime investment opportunity within Sahl Hasheesh's expanding luxury market. Its strategic location, combined with high-end amenities and long-term capital appreciation potential, makes it a premier choice for discerning property investors in Hurghada.",
-      paymentPlan: {
-        downPayment: "10%",
-        installments: "Up to 7 years",
-        delivery: "2027",
-        finishing: "Fully finished",
-      },
     },
     {
       slug: "arc-soma",
@@ -327,12 +321,6 @@ const siteConfig = {
       ],
       whyInvest:
         "Investing in Arc Soma provides entry into one of the Red Sea's most exclusive destinations. Its focus on modern design and proximity to premium leisure amenities ensures high appeal for both long-term residents and luxury holiday seekers, driving consistent capital growth.",
-      paymentPlan: {
-        downPayment: "15%",
-        installments: "Up to 7 years",
-        delivery: "2027",
-        finishing: "Fully finished",
-      },
     },
     {
       slug: "bay-central",
@@ -362,12 +350,6 @@ const siteConfig = {
       ],
       whyInvest:
         "Veranda sits in one of Egypt's highest-demand tourist zones. Its fully managed rental program means your unit generates income even when you're not there — with historical occupancy rates above 75% year-round.",
-      paymentPlan: {
-        downPayment: "10%",
-        installments: "Up to 8 years",
-        delivery: "2026",
-        finishing: "Fully finished",
-      },
     },
     {
       slug: "bay-west-valley",
@@ -397,12 +379,6 @@ const siteConfig = {
       ],
       whyInvest:
         "Bay West Valley represents a premier investment in one of the Red Sea's most sought-after destinations, ensuring high rental demand and long-term asset appreciation in a secure, master-planned community.",
-      paymentPlan: {
-        downPayment: "10%",
-        installments: "6 years",
-        delivery: "2027",
-        finishing: "Fully finished",
-      },
     },
     {
       slug: "blanca",
@@ -432,12 +408,6 @@ const siteConfig = {
       ],
       whyInvest:
         "With its iconic design and strategic position within Soma Bay, Blanca provides a unique opportunity for investors to own a high-yield property in a mature, high-growth luxury destination.",
-      paymentPlan: {
-        downPayment: "10%",
-        installments: "6 years",
-        delivery: "2028",
-        finishing: "Fully finished",
-      },
     },
     {
       slug: "breeze",
@@ -467,12 +437,6 @@ const siteConfig = {
       ],
       whyInvest:
         "Breeze offers an exceptional balance of lifestyle and investment potential, catering to the growing market of vacation home seekers who value both natural beauty and world-class resort facilities.",
-      paymentPlan: {
-        downPayment: "10%",
-        installments: "6 years",
-        delivery: "2027",
-        finishing: "Fully finished",
-      },
     },
     {
       slug: "cala",
@@ -502,12 +466,6 @@ const siteConfig = {
       ],
       whyInvest:
         "Cala is situated in Sahl Hasheesh's premium residential core, providing investors with a stable, high-demand asset that benefits from the area's reputation as a top-tier luxury tourism hotspot.",
-      paymentPlan: {
-        downPayment: "10%",
-        installments: "6 years",
-        delivery: "2027",
-        finishing: "Fully finished",
-      },
     },
     {
       slug: "coves",
@@ -537,12 +495,6 @@ const siteConfig = {
       ],
       whyInvest:
         "Coves targets the ultra-premium niche, offering scarcity and exclusivity in a prime location. This makes it a highly desirable asset for long-term holders seeking significant capital appreciation.",
-      paymentPlan: {
-        downPayment: "10%",
-        installments: "6 years",
-        delivery: "2028",
-        finishing: "Fully finished",
-      },
     },
     {
       slug: "dua",
@@ -572,12 +524,6 @@ const siteConfig = {
       ],
       whyInvest:
         "DUA provides a unique entry point into the established Makadi Heights luxury market, offering high potential for both rental yields and property value appreciation due to its focus on design and location.",
-      paymentPlan: {
-        downPayment: "10%",
-        installments: "6 years",
-        delivery: "2027",
-        finishing: "Fully finished",
-      },
     },
     {
       slug: "golftown",
@@ -606,12 +552,6 @@ const siteConfig = {
       ],
       whyInvest:
         "Golftown leverages the high demand for sports-integrated luxury living in Soma Bay, making it an excellent investment for long-term rental income and consistent capital growth.",
-      paymentPlan: {
-        downPayment: "10%",
-        installments: "6 years",
-        delivery: "2027",
-        finishing: "Fully finished",
-      },
     },
     {
       slug: "il-bayou",
@@ -641,12 +581,6 @@ const siteConfig = {
       ],
       whyInvest:
         "Il Bayou serves as a prestigious address in Sahl Hasheesh, offering investors a rare blend of boutique exclusivity and the stability of a high-growth, high-demand coastal location.",
-      paymentPlan: {
-        downPayment: "10%",
-        installments: "6 years",
-        delivery: "2027",
-        finishing: "Fully finished",
-      },
     },
     {
       slug: "majra",
@@ -676,12 +610,6 @@ const siteConfig = {
       ],
       whyInvest:
         "Majra capitalizes on Hurghada’s year-round popularity, providing investors with a versatile asset that is perfect for short-term vacation rentals and long-term capital appreciation.",
-      paymentPlan: {
-        downPayment: "10%",
-        installments: "6 years",
-        delivery: "2027",
-        finishing: "Fully finished",
-      },
     },
     {
       slug: "makadi-heights",
@@ -711,12 +639,6 @@ const siteConfig = {
       ],
       whyInvest:
         "Makadi Heights is a proven, highly sought-after community that offers consistent rental demand and strong property value, making it an ideal choice for stable, long-term real estate investment.",
-      paymentPlan: {
-        downPayment: "10%",
-        installments: "6 years",
-        delivery: "2027",
-        finishing: "Fully finished",
-      },
     },
     {
       slug: "makadina",
@@ -746,12 +668,6 @@ const siteConfig = {
       ],
       whyInvest:
         "Makadina provides an excellent balance of affordability and luxury lifestyle, attracting a wide range of investors looking for steady returns in one of the Red Sea's most established tourist zones.",
-      paymentPlan: {
-        downPayment: "10%",
-        installments: "6 years",
-        delivery: "2027",
-        finishing: "Fully finished",
-      },
     },
     {
       slug: "mesca",
@@ -781,12 +697,6 @@ const siteConfig = {
       ],
       whyInvest:
         "As a signature development, Mesca offers significant status and capital appreciation potential, making it the top choice for discerning investors seeking premium real estate in Soma Bay.",
-      paymentPlan: {
-        downPayment: "10%",
-        installments: "6 years",
-        delivery: "2028",
-        finishing: "Fully finished",
-      },
     },
     {
       slug: "miramar-residences",
@@ -815,12 +725,6 @@ const siteConfig = {
       ],
       whyInvest:
         "As a prestigious neighborhood by Orascom, it offers high-end luxury appeal and proximity to the most popular hubs in El Gouna, ensuring consistent value.",
-      paymentPlan: {
-        downPayment: "Contact Sales",
-        installments: "Custom plans",
-        delivery: "Ready",
-        finishing: "Fully finished",
-      },
     },
     {
       slug: "nautilus",
@@ -849,12 +753,6 @@ const siteConfig = {
       ],
       whyInvest:
         "Nautilus represents the peak of luxury in Soma Bay, offering scarcity and high-end demand for those seeking the ultimate Red Sea lifestyle.",
-      paymentPlan: {
-        downPayment: "Contact Sales",
-        installments: "Custom plans",
-        delivery: "TBA",
-        finishing: "Fully finished",
-      },
     },
     {
       slug: "ras-soma-travco",
@@ -884,12 +782,6 @@ const siteConfig = {
       ],
       whyInvest:
         "The low building density and massive land footprint make this a rare sustainable investment opportunity with strong long-term growth potential.",
-      paymentPlan: {
-        downPayment: "10%",
-        installments: "6 years",
-        delivery: "2027-2029",
-        finishing: "Fully finished",
-      },
     },
     {
       slug: "reeftown",
@@ -918,12 +810,6 @@ const siteConfig = {
       ],
       whyInvest:
         "Reeftown offers stability and immediate utility, making it an excellent choice for investors looking to generate rental income without waiting for construction.",
-      paymentPlan: {
-        downPayment: "Contact Sales",
-        installments: "Custom",
-        delivery: "Ready",
-        finishing: "Fully finished",
-      },
     },
     {
       slug: "shedwan",
@@ -953,12 +839,6 @@ const siteConfig = {
       ],
       whyInvest:
         "Shedwan’s focus on outdoor wellness and lakefront living makes it highly desirable for both families and short-term vacationers.",
-      paymentPlan: {
-        downPayment: "Contact Sales",
-        installments: "Custom",
-        delivery: "TBA",
-        finishing: "Fully finished",
-      },
     },
     {
       slug: "the-nines",
@@ -987,12 +867,6 @@ const siteConfig = {
       ],
       whyInvest:
         "The unique emphasis on privacy and golf course frontage positions The Nines as a premium, low-density asset in the El Gouna market.",
-      paymentPlan: {
-        downPayment: "Contact Sales",
-        installments: "Custom",
-        delivery: "TBA",
-        finishing: "Fully finished",
-      },
     },
     {
       slug: "the-view-residence",
@@ -1022,12 +896,6 @@ const siteConfig = {
       ],
       whyInvest:
         "The massive range of unit sizes and hotel-serviced model make it an excellent choice for diverse investment strategies in central Hurghada.",
-      paymentPlan: {
-        downPayment: "30%",
-        installments: "4 years",
-        delivery: "Ready",
-        finishing: "Fully finished",
-      },
     },
     {
       slug: "town-walk",
@@ -1057,12 +925,6 @@ const siteConfig = {
       ],
       whyInvest:
         "Being part of the massive, successful Makadi Heights community guarantees high rental demand and ongoing infrastructure support.",
-      paymentPlan: {
-        downPayment: "Contact Sales",
-        installments: "Custom",
-        delivery: "TBA",
-        finishing: "Fully finished",
-      },
     },
     {
       slug: "tuban",
@@ -1092,12 +954,6 @@ const siteConfig = {
       ],
       whyInvest:
         "As the newest and largest flagship district in El Gouna, Tuban offers the best potential for early-stage capital appreciation.",
-      paymentPlan: {
-        downPayment: "15%",
-        installments: "5 years",
-        delivery: "2027",
-        finishing: "Fully finished",
-      },
     },
     {
       slug: "veranda",
@@ -1127,12 +983,6 @@ const siteConfig = {
       ],
       whyInvest:
         "Veranda’s proven rental program and beachfront location make it an ideal set-it-and-forget-it investment for income-focused buyers.",
-      paymentPlan: {
-        downPayment: "10%",
-        installments: "8 years",
-        delivery: "2026",
-        finishing: "Fully finished",
-      },
     },
     {
       slug: "wadi-soma",
@@ -1161,12 +1011,6 @@ const siteConfig = {
       ],
       whyInvest:
         "Wadi Soma targets the luxury segment of the Soma Bay market, offering high-status coastal properties with strong resale value.",
-      paymentPlan: {
-        downPayment: "Contact Sales",
-        installments: "Custom",
-        delivery: "TBA",
-        finishing: "Fully finished",
-      },
     },
   ],
 };

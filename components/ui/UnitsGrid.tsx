@@ -1,15 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import PropertyCard from "@/components/ui/PropertyCard";
 import type { Unit } from "@/types/unit";
+import PropertyCard from "@/components/ui/PropertyCard";
+import AnimateOnScroll from "./AnimateOnScroll";
 
 interface Props {
   units: Unit[];
   initialCount?: number;
 }
 
-export default function UnitsGrid({ units, initialCount = 9 }: Props) {
+export default function UnitsGrid({ units, initialCount = 6 }: Props) {
   const [showAll, setShowAll] = useState(false);
 
   const displayed = showAll ? units : units.slice(0, initialCount);
@@ -18,18 +19,19 @@ export default function UnitsGrid({ units, initialCount = 9 }: Props) {
 
   return (
     <div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {displayed.map((unit) => (
-          <PropertyCard key={unit.id} unit={unit} />
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+        {displayed.map((unit, i) => (
+          <AnimateOnScroll key={i} type="fade-up" delay={i * 100}>
+            <PropertyCard key={unit.id} unit={unit} />
+          </AnimateOnScroll>
         ))}
       </div>
 
-      {/* Show more / Show less */}
       {hasMore && (
         <div className="text-center mt-10">
           <button
             onClick={() => setShowAll(!showAll)}
-            className="inline-flex items-center gap-2 px-8 py-3 border border-stone-300 text-stone-600 text-xs font-semibold tracking-widest uppercase hover:border-[#1B2B3A] hover:text-[#1B2B3A] transition-all rounded-lg"
+            className="inline-flex items-center gap-2 px-8 py-[18px] bg-brand-primary hover:bg-brand-primaryLight text-white text-base font-medium transition-all rounded-xl"
           >
             {showAll ? (
               <>

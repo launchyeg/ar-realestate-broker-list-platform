@@ -120,7 +120,7 @@ export default async function HomePage() {
           <AnimateOnScroll type="fade-up">
             <div className="flex items-center justify-between flex-wrap gap-6">
               <h2 className="font-display text-4xl md:text-5xl leading-11 md:leading-16 text-brand-text">
-                Your trusted real estate partner
+                Prime locations for your home
               </h2>
               <Link
                 href="/destinations"

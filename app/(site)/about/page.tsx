@@ -171,7 +171,7 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {NUMBERS.map((num, i) => (
-              <AnimateOnScroll type="fade-up" delay={i * 100}>
+              <AnimateOnScroll key={i} type="fade-up" delay={i * 100}>
                 <h1 className="font-display text-4xl md:text-8xl leading-10 md:leading-24 text-brand-accent">
                   {num.number}
                 </h1>
@@ -204,11 +204,13 @@ export default function AboutPage() {
         >
           <div className="relative max-w-xl bg-white p-5 md:px-10 md:py-12 rounded-2xl shadow-2xl">
             <h2 className="font-display text-4xl md:text-5xl leading-11 md:leading-16 text-brand-text mb-4">
-              Unlocking your Red Sea coastal lifestyle!
+              Unlocking Your Red Sea Coastal Lifestyle
             </h2>
             <p className="text-brand-muted text-lg leading-7 mt-5 mb-10">
-              Looking for expert guidance or ready to invest? Whether you are
-              buying, selling, or exploring properties.
+              Your journey into the Red Sea’s real estate wonders starts here.
+              Whether you are looking for expert guidance or ready to make your
+              next move, we are committed to turning your coastal aspirations
+              into reality.
             </p>
             <Link
               href="/contact"
@@ -217,11 +219,11 @@ export default function AboutPage() {
               Get in Quick
             </Link>
             <h3 className="font-display text-2xl text-brand-text mt-12 md:mt-24 mb-3">
-              Guiding your investments across Redsea.
+              Ready to Start Your Next Chapter?
             </h3>
             <p className="text-brand-muted text-base leading-7">
-              Need expert assistance or ready for your next chapter? Whether you
-              are buying, selling, or reviewing market options.
+              Our team of dedicated professionals is here to guide your
+              investments across the Red Sea.
             </p>
           </div>
         </AnimateOnScroll>
@@ -239,7 +241,7 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {TRUSTED.map((card, i) => (
-              <AnimateOnScroll type="fade-up" delay={i * 100}>
+              <AnimateOnScroll key={i} type="fade-up" delay={i * 100}>
                 <div className="bg-white p-8 flex flex-col gap-10 md:gap-[72px] rounded-2xl">
                   <Image
                     src={card.image}

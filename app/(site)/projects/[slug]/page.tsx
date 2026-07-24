@@ -1,10 +1,14 @@
 import { notFound } from "next/navigation";
+import { supabase } from "@/lib/supabase";
+import { CircleCheckBig } from "lucide-react";
+import { mapUnit } from "@/lib/mapUnit";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { supabase } from "@/lib/supabase";
-import { mapUnit } from "@/lib/mapUnit";
+import Image from "next/image";
 import siteConfig from "@/siteConfig";
 import UnitsGrid from "@/components/ui/UnitsGrid";
+import TestimonialsSection from "@/components/sections/TestimonialsSection";
+import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 
 export const revalidate = 60;
 interface PaymentPlan {
@@ -32,7 +36,6 @@ interface Project {
   stats: Stat[];
   highlights: string[];
   whyInvest: string;
-  paymentPlan: PaymentPlan;
   gallery: string[];
 }
 
@@ -78,195 +81,148 @@ export default async function ProjectPage({
 
   return (
     <main className="min-h-screen bg-white">
-      {/* ── SECTION 1: HERO ────────────────────────────────────── */}
       <section className="relative h-[90vh] min-h-[600px] flex items-end pb-20 pt-16">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${project.heroImage})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-        <div className="relative max-w-6xl mx-auto px-6 w-full">
-          <div className="mb-4">
-            <Link
-              href={`/destinations/${project.destination}`}
-              className="text-[#C9A96E] text-[10px] font-bold tracking-widest uppercase hover:underline"
-            >
-              {project.destinationLabel}
-            </Link>
-          </div>
-          <h1 className="font-display text-5xl md:text-7xl text-white leading-tight mb-4">
+        <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-black/75 via-black/40 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
+        <div className="relative max-w-[1380px] mx-auto my-auto text-center px-6 md:px-8 w-full">
+          <h1 className="font-display text-4xl md:text-7xl lg:text-[80px] leading-11 md:leading-[92px] text-white mb-4">
             {project.label}
           </h1>
-          <p className="text-white/70 text-lg max-w-xl mb-10">
-            {project.tagline}
-          </p>
-          {/* Stats row */}
-          <div className="flex flex-wrap gap-6">
-            {project.stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="border-l-2 border-[#C9A96E] pl-4"
-              >
-                <p className="text-white font-medium text-base">{stat.value}</p>
-                <p className="text-white/50 text-xs tracking-wide">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
-          </div>
+          <p className="text-white text-xl">{project.tagline}</p>
         </div>
       </section>
 
-      {/* ── SECTION 2: ABOUT ───────────────────────────────────── */}
-      <section className="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-16 items-center">
-        <div>
-          <p className="text-[10px] font-bold tracking-widest uppercase text-stone-400 border-b border-stone-200 pb-3 mb-6">
-            About the project
-          </p>
-          <h2 className="font-display text-3xl md:text-4xl text-stone-900 leading-snug mb-6">
-            About {project.label}
-          </h2>
-          <p className="text-stone-500 text-sm leading-relaxed mb-6">
-            {project.description}
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block bg-[#1B2B3A] text-white text-xs font-medium tracking-widest uppercase px-6 py-3 hover:bg-[#2D4258] transition-colors"
-          >
-            Request brochure
-          </Link>
-        </div>
-        {/* Gallery grid */}
-        <div
-          className="h-80 bg-cover bg-center rounded-sm"
-          style={{ backgroundImage: `url(${project.image})` }}
-        ></div>
-      </section>
-
-      {/* ── SECTION 3: HIGHLIGHTS ──────────────────────────────── */}
-      <section className="bg-stone-50 py-24">
-        <div className="max-w-6xl mx-auto px-6">
-          <p className="text-[10px] font-bold tracking-widest uppercase text-stone-400 mb-3">
-            Project features
-          </p>
-          <h2 className="font-display text-3xl text-stone-900 mb-12">
-            What {project.label} offers
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {project.highlights.map((highlight, i) => (
-              <div
-                key={i}
-                className="bg-white border border-stone-200 p-6 rounded-sm"
-              >
-                <div className="w-8 h-8 rounded-full bg-[#C9A96E]/15 flex items-center justify-center mb-4">
-                  <svg
-                    className="w-4 h-4 text-[#C9A96E]"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                </div>
-                <p className="text-stone-700 text-sm leading-relaxed">
-                  {highlight}
-                </p>
-              </div>
-            ))}
-          </div>
+      <section className="relative bg-white z-10 -mt-6 rounded-t-3xl">
+        <div className="max-w-[1380px] mx-auto px-6 md:px-8 py-10 md:py-[70px] lg:py-[120px]">
+          <AnimateOnScroll type="fade-up" className="max-w-4xl mx-auto">
+            <h2 className="max-w-4xl font-display text-4xl md:text-5xl leading-11 md:leading-16 text-brand-text">
+              About {project.label}
+            </h2>
+            <p className="text-brand-text text-lg leading-8 my-[30px] md:my-[50px] lg:my-[54px]">
+              {project.description}
+            </p>
+            <Image
+              src={project.image}
+              width={500}
+              height={600}
+              alt="Picture of the author"
+              className="w-full bg-cover bg-center rounded-2xl"
+            />
+          </AnimateOnScroll>
         </div>
       </section>
 
-      {/* ── SECTION 4: PAYMENT PLAN + WHY INVEST ──────────────── */}
-      <section className="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-16">
-        {/* Why invest */}
-        <div>
-          <p className="text-[10px] font-bold tracking-widest uppercase text-stone-400 border-b border-stone-200 pb-3 mb-6">
-            Investment case
-          </p>
-          <h2 className="font-display text-3xl text-stone-900 mb-6">
-            Why invest in {project.label}?
-          </h2>
-          <p className="text-stone-500 text-sm leading-relaxed mb-8">
-            {project.whyInvest}
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block bg-[#1B2B3A] text-white text-xs font-medium tracking-widest uppercase px-6 py-3 hover:bg-[#2D4258] transition-colors"
-          >
-            Talk to an advisor
-          </Link>
-        </div>
-
-        {/* Payment plan */}
-        <div>
-          <p className="text-[10px] font-bold tracking-widest uppercase text-stone-400 border-b border-stone-200 pb-3 mb-6">
-            Payment plan
-          </p>
-          <h2 className="font-display text-3xl text-stone-900 mb-8">
-            Flexible financing
-          </h2>
-          <div className="space-y-4">
-            {Object.entries(project.paymentPlan).map(([key, value]) => (
-              <div
-                key={key}
-                className="flex items-center justify-between py-4 border-b border-stone-100"
-              >
-                <span className="text-stone-400 text-xs font-medium tracking-widest uppercase">
-                  {key.replace(/([A-Z])/g, " $1").trim()}
-                </span>
-                <span className="font-display text-xl text-stone-900">
-                  {value}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── SECTION 5: AVAILABLE UNITS ─────────────────────────── */}
-      <section className="bg-stone-50 py-24">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex items-end justify-between mb-12">
-            <div>
-              <p className="text-[10px] font-bold tracking-widest uppercase text-stone-400 mb-3">
-                Units
-              </p>
-              <h2 className="font-display text-3xl text-stone-900">
-                Available in {project.label}
+      <section className="relative bg-brand-surface z-10 -mt-6 rounded-t-3xl">
+        <div className="max-w-[1380px] mx-auto px-6 md:px-8 py-10 md:py-[70px] lg:py-[120px] flex flex-col gap-10 md:gap-16">
+          <AnimateOnScroll type="fade-up">
+            <div className="text-center">
+              <h2 className="font-display text-4xl md:text-5xl leading-11 md:leading-16 text-brand-text">
+                What {project.label} offers
               </h2>
             </div>
-            <span className="text-stone-400 text-sm">
-              {projectUnits.length} propert
-              {projectUnits.length === 1 ? "y" : "ies"}
-            </span>
+          </AnimateOnScroll>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {project.highlights.map((highl, i) => (
+              <AnimateOnScroll key={i} type="fade-up" delay={i * 100}>
+                <div className="bg-white p-8 flex flex-col gap-10  rounded-2xl">
+                  <CircleCheckBig size={32} className="text-brand-accent" />
+                  <p className="text-brand-muted text-base leading-7">
+                    {highl}
+                  </p>
+                </div>
+              </AnimateOnScroll>
+            ))}
           </div>
+        </div>
+      </section>
+
+      <section className="relative -mt-6">
+        <div
+          className="absolute inset-0 bg-cover bg-bottom rounded-t-3xl"
+          style={{
+            backgroundImage: `url(${project.heroImage})`,
+          }}
+        />
+        <div className="absolute inset-0 bg-black/50 rounded-t-3xl" />
+        <AnimateOnScroll
+          type="fade-up"
+          delay={100}
+          className="max-w-[1380px] mx-auto px-6 md:px-8 pt-[60px] pb-[80px] md:pt-[80px] md:pb-[100px] lg:pt-[130px] lg:pb-[160px]"
+        >
+          <div className="relative max-w-4xl mx-auto bg-white p-5 md:p-8 rounded-2xl shadow-2xl">
+            <h2 className="font-display text-4xl md:text-5xl leading-11 md:leading-16 text-brand-text mb-4">
+              Why invest in {project.label}?
+            </h2>
+            <p className="text-brand-muted text-lg leading-7 mt-5 mb-10">
+              {project.whyInvest}
+            </p>
+            <Link
+              href="/contact"
+              className="bg-transparent text-brand-accent border border-[#1629321a] text-base font-medium px-6 py-4 rounded-full hover:border-[#16293237] transition-colors"
+            >
+              Talk to an advisor
+            </Link>
+
+            <div className="flex flex-wrap gap-4 mt-12 md:mt-24">
+              {project.stats.map((stat) => (
+                <div
+                  key={stat.label}
+                  className="bg-brand-surface p-5 rounded-[10px]"
+                >
+                  <p className="font-display text-3xl text-brand-text">
+                    {stat.value}
+                  </p>
+                  <p className="text-brand-muted text-sm mt-1">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </AnimateOnScroll>
+      </section>
+
+      <section className="relative bg-brand-surface z-10 -mt-6 rounded-t-3xl">
+        <div className="max-w-[1380px] mx-auto px-6 md:px-8 pt-[50px] pb-[60px] md:py-[70px] lg:py-[120px]">
+          <AnimateOnScroll type="fade-up">
+            <div className="flex items-end justify-between flex-wrap gap-6 mb-10 md:mb-16">
+              <h2 className="font-display text-4xl md:text-5xl leading-11 md:leading-16 text-brand-text">
+                Available in {project.label}
+              </h2>
+              <span className="text-brand-muted text-base font-medium">
+                {projectUnits.length} propert
+                {projectUnits.length === 1 ? "y" : "ies"}
+              </span>
+            </div>
+          </AnimateOnScroll>
 
           {projectUnits.length === 0 ? (
-            <div className="text-center py-20 border border-dashed border-stone-300 rounded-sm">
-              <p className="text-stone-400 text-lg font-display mb-2">
-                No units listed yet
-              </p>
-              <p className="text-stone-400 text-sm mb-6">
-                Contact us to get the full availability list.
-              </p>
-              <Link
-                href="/contact"
-                className="inline-block bg-[#1B2B3A] text-white text-xs font-medium tracking-widest uppercase px-6 py-3"
-              >
-                Request availability
-              </Link>
-            </div>
+            <AnimateOnScroll type="fade-up">
+              <div className="text-center py-24">
+                <h3 className="font-display text-3xl text-brand-text mb-3">
+                  No properties found
+                </h3>
+                <p className="text-brand-muted text-sm mb-6">
+                  We're adding new units soon. Contact us to be notified.
+                </p>
+                <Link
+                  href="/contact"
+                  className="bg-brand-primary text-white text-base font-medium px-8 py-[18px] rounded-xl hover:bg-brand-primaryLight transition-colors"
+                >
+                  Clear filters
+                </Link>
+              </div>
+            </AnimateOnScroll>
           ) : (
             <UnitsGrid units={projectUnits} />
           )}
         </div>
       </section>
+
+      <TestimonialsSection />
     </main>
   );
 }

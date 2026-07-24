@@ -200,12 +200,14 @@ export default function PropertiesClient({
 
       <section className="relative z-10 -mt-6 rounded-t-3xl bg-white">
         <div className="max-w-[1380px] mx-auto px-6 md:px-8 py-10 md:py-[70px] lg:py-[120px]">
-          <p className="font-display text-brand-text text-[28px] md:text-4xl mb-10 md:mb-16">
-            Search your dream property
-          </p>
+          <AnimateOnScroll type="fade-up">
+            <h2 className="font-display text-brand-text text-4xl md:text-5xl leading-11 md:leading-16 md:text-4xl mb-10 md:mb-16">
+              Search your dream property
+            </h2>
+          </AnimateOnScroll>
 
           {filtered.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
               {filtered.map((unit, i) => (
                 <AnimateOnScroll key={unit.id} type="fade-up" delay={i * 100}>
                   <PropertyCard key={unit.id} unit={unit} />
@@ -213,20 +215,22 @@ export default function PropertiesClient({
               ))}
             </div>
           ) : (
-            <div className="text-center py-24">
-              <h3 className="font-display text-2xl text-stone-800 mb-2">
-                No properties found
-              </h3>
-              <p className="text-stone-400 text-sm mb-6">
-                Try adjusting your filters to see more results.
-              </p>
-              <button
-                onClick={clearFilters}
-                className="inline-block bg-[#1B2B3A] text-white text-xs font-medium tracking-widest uppercase px-6 py-3 hover:bg-[#2D4258] transition-colors rounded-lg"
-              >
-                Clear filters
-              </button>
-            </div>
+            <AnimateOnScroll type="fade-up">
+              <div className="text-center py-24">
+                <h3 className="font-display text-3xl text-brand-text mb-3">
+                  No properties found
+                </h3>
+                <p className="text-brand-muted text-sm mb-6">
+                  Try adjusting your filters to see more results.
+                </p>
+                <button
+                  onClick={clearFilters}
+                  className="bg-brand-primary text-white text-base font-medium px-8 py-[18px] rounded-xl hover:bg-brand-primaryLight transition-colors"
+                >
+                  Clear filters
+                </button>
+              </div>
+            </AnimateOnScroll>
           )}
         </div>
       </section>
