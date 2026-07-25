@@ -12,7 +12,6 @@ export default function ProjectsSlider({ projects }: { projects: Project[] }) {
   const prev = () => setCurrent((i) => (i === 0 ? total - 1 : i - 1));
   const next = () => setCurrent((i) => (i === total - 1 ? 0 : i + 1));
 
-  // Show 3 visible cards
   const visible = [
     projects[current % total],
     projects[(current + 1) % total],
@@ -20,16 +19,17 @@ export default function ProjectsSlider({ projects }: { projects: Project[] }) {
   ];
 
   return (
-    <div>
+    <section>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 md:mb-14">
-        {visible.map((projects, i) => (
+        {visible.map((project, i) => (
           <AnimateOnScroll
-            key={`${projects.slug}-${i}`}
+            key={`${project.slug}-${i}`}
             type="fade-up"
             delay={i * 100}
-            className="min-w-full"
+            // ── Hide 2nd and 3rd on mobile ─────────────────
+            className={`min-w-full ${i > 0 ? "hidden md:block" : ""}`}
           >
-            <ProjectsCard projects={projects} />
+            <ProjectsCard projects={project} />
           </AnimateOnScroll>
         ))}
       </div>
@@ -44,21 +44,6 @@ export default function ProjectsSlider({ projects }: { projects: Project[] }) {
           </button>
         </div>
       </AnimateOnScroll>
-
-      {/* Dots */}
-      {/* <div className="flex justify-center gap-2 mt-5">
-        {projects.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setCurrent(i)}
-            className={`h-1.5 rounded-full transition-all duration-300 ${
-              i === current
-                ? "w-6 bg-[#1B2B3A]"
-                : "w-2 bg-stone-300 hover:bg-stone-400"
-            }`}
-          />
-        ))}
-      </div> */}
-    </div>
+    </section>
   );
 }

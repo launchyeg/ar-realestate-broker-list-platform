@@ -188,7 +188,7 @@ export default function HeroSection() {
                 }`}
               />
             ))}
-            <span className="ml-3 text-white/30 text-xs font-mono">
+            <span className="ml-3 font-display text-white/30 text-xs">
               {String(current + 1).padStart(2, "0")} /{" "}
               {String(SLIDES.length).padStart(2, "0")}
             </span>

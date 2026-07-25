@@ -110,7 +110,7 @@ export default async function DestinationPage({
             <h2 className="max-w-4xl font-display text-4xl md:text-5xl leading-11 md:leading-16 text-brand-text">
               Life in {destination.label}
             </h2>
-            <p className="text-brand-text text-lg leading-8 my-[30px] md:my-[50px] lg:my-[54px]">
+            <p className="text-brand-text text-lg leading-8 my-[30px] md:my-[50px]">
               {destination.description}
             </p>
             <Image
@@ -160,7 +160,7 @@ export default async function DestinationPage({
                 href="/projects"
                 className="text-brand-text/60 hover:text-brand-text text-base font-medium transition-colors flex gap-2"
               >
-                All Projects
+                View all projects
                 <ChevronRight />
               </Link>
             </div>
@@ -234,14 +234,14 @@ export default async function DestinationPage({
                 <h3 className="font-display text-3xl text-brand-text mb-3">
                   No properties found
                 </h3>
-                <p className="text-brand-muted text-sm mb-6">
+                <p className="text-brand-muted text-sm mb-10">
                   We're adding new units soon. Contact us to be notified.
                 </p>
                 <Link
                   href="/contact"
                   className="bg-brand-primary text-white text-base font-medium px-8 py-[18px] rounded-xl hover:bg-brand-primaryLight transition-colors"
                 >
-                  Clear filters
+                  Get in Quick
                 </Link>
               </div>
             </AnimateOnScroll>

@@ -1,6 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 
 interface Props {
   images: string[];
@@ -14,106 +16,97 @@ export default function ImageSlider({
   project,
 }: Props) {
   const [current, setCurrent] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
-  const prev = () => setCurrent((i) => (i === 0 ? images.length - 1 : i - 1));
-  const next = () => setCurrent((i) => (i === images.length - 1 ? 0 : i + 1));
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   if (!images || images.length === 0) return null;
 
+  // ── 1 on mobile, 2 on desktop ─────────────────────────────
+  const slideWidth = isMobile ? 100 : 100 / 2;
+
+  const maxIndex = isMobile
+    ? images.length - 1
+    : Math.max(0, images.length - 2);
+
+  const prev = () => setCurrent((i) => (i <= 0 ? maxIndex : i - 1));
+  const next = () => setCurrent((i) => (i >= maxIndex ? 0 : i + 1));
+
   return (
-    <div className="relative w-full h-72 md:h-[720px] bg-stone-200 overflow-hidden group">
-      {/* ── SLIDES ─────────────────────────────────────────────── */}
-      {images.map((img, i) => (
+    <AnimateOnScroll type="fade-in">
+      <div className="relative w-full h-96 md:h-[90vh] bg-stone-200 overflow-hidden group">
         <div
-          key={i}
-          className={`absolute inset-0 transition-opacity duration-700 ${
-            i === current ? "opacity-100" : "opacity-0"
-          }`}
-          style={{
-            backgroundImage: `url(${img})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
-      ))}
-
-      {/* ── GRADIENT OVERLAY ───────────────────────────────────── */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50" />
-
-      {/* ── BOTTOM LABEL ───────────────────────────────────────── */}
-      <div className="absolute bottom-6 left-6">
-        <p className="text-white/80 text-sm font-medium tracking-widest uppercase">
-          {destinationLabel} · {project}
-        </p>
-      </div>
-
-      {/* ── IMAGE COUNTER ──────────────────────────────────────── */}
-      <div className="absolute bottom-6 right-6">
-        <span className="text-white/60 text-xs font-medium">
-          {current + 1} / {images.length}
-        </span>
-      </div>
-
-      {/* ── ARROWS — only show if more than 1 image ────────────── */}
-      {images.length > 1 && (
-        <>
-          <button
-            onClick={prev}
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/30 hover:bg-black/60 text-white flex items-center justify-center transition-all opacity-0 group-hover:opacity-100"
-            aria-label="Previous image"
-          >
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-          </button>
-          <button
-            onClick={next}
-            className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/30 hover:bg-black/60 text-white flex items-center justify-center transition-all opacity-0 group-hover:opacity-100"
-            aria-label="Next image"
-          >
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </button>
-        </>
-      )}
-
-      {/* ── DOTS ───────────────────────────────────────────────── */}
-      {images.length > 1 && (
-        <div className="absolute bottom-14 left-1/2 -translate-x-1/2 flex gap-2">
-          {images.map((_, i) => (
-            <button
+          className="flex transition-transform duration-500 ease-in-out"
+          style={{ transform: `translateX(-${current * slideWidth}%)` }}
+        >
+          {images.map((img, i) => (
+            <div
               key={i}
-              onClick={() => setCurrent(i)}
-              className={`h-1 rounded-full transition-all duration-300 ${
-                i === current ? "w-6 bg-white" : "w-2 bg-white/40"
-              }`}
-            />
+              className="min-w-full md:min-w-[50%] flex-shrink-0 relative h-[350px] md:h-[90vh]"
+            >
+              <div
+                className="absolute inset-0 bg-cover bg-center"
+                style={{ backgroundImage: `url(${img})` }}
+              />
+            </div>
           ))}
         </div>
-      )}
-    </div>
+
+        <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-black/75 via-black/40 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
+
+        <div className="absolute bottom-16 left-6 pointer-events-none">
+          <p className="text-[#fffc] text-xs md:text-sm font-medium tracking-widest uppercase">
+            {destinationLabel} · {project}
+          </p>
+        </div>
+
+        <div className="absolute bottom-16 right-6 pointer-events-none">
+          <span className="text-[#fffc] text-xs md:text-sm font-medium">
+            {current + 1} / {images.length}
+          </span>
+        </div>
+
+        {images.length > 1 && (
+          <>
+            <button
+              onClick={prev}
+              className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/30 hover:bg-black/60 text-white flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 rounded-full"
+              aria-label="Previous image"
+            >
+              <ChevronLeft size={24} />
+            </button>
+            <button
+              onClick={next}
+              className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/30 hover:bg-black/60 text-white flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 rounded-full"
+              aria-label="Next image"
+            >
+              <ChevronRight size={24} />
+            </button>
+          </>
+        )}
+
+        {images.length > 1 && (
+          <div className="absolute bottom-12 md:bottom-16 left-1/2 -translate-x-1/2 flex gap-2">
+            {Array.from({ length: maxIndex + 1 }).map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrent(i)}
+                className={`h-1 rounded-full transition-all duration-300 ${
+                  i === current
+                    ? "w-6 bg-white"
+                    : "w-2 bg-white/40 hover:bg-white/70"
+                }`}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+    </AnimateOnScroll>
   );
 }

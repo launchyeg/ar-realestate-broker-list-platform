@@ -214,7 +214,7 @@ export default async function ProjectPage({
                   href="/contact"
                   className="bg-brand-primary text-white text-base font-medium px-8 py-[18px] rounded-xl hover:bg-brand-primaryLight transition-colors"
                 >
-                  Clear filters
+                  Get in Quick
                 </Link>
               </div>
             </AnimateOnScroll>

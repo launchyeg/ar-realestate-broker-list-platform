@@ -122,7 +122,7 @@ export default function PropertiesClient({
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
-                    className="absolute left-3 top-1/2 -translate-y-1/2 text-stone-400"
+                    className="absolute left-3 top-1/2 -translate-y-1/2 text-brand-muted"
                   >
                     <circle cx="11" cy="11" r="8" />
                     <path

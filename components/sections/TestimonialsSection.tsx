@@ -86,6 +86,8 @@ export default function TestimonialsSection() {
               key={`${t.id}-${i}`}
               type="fade-up"
               delay={i * 100}
+              // ── Hide 2nd and 3rd on mobile ─────────────────
+              className={i > 0 ? "hidden md:block" : ""}
             >
               <div
                 className={`
@@ -111,10 +113,10 @@ export default function TestimonialsSection() {
                 </p>
 
                 <div>
-                  <p className="font-semibold text-brand-text text-xl leading-7">
+                  <p className="font-display font-semibold text-brand-text text-xl leading-7">
                     {t.name}
                   </p>
-                  <p className="text-brand-muted text-base leading-7 mt-1">
+                  <p className="text-brand-muted text-base leading-7">
                     {t.role}
                   </p>
                 </div>

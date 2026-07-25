@@ -4,10 +4,17 @@ import HeroPageSection from "@/components/sections/HeroPageSection";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description: "How we collect, use and protect your personal data.",
+  title: "Privacy Policy | AR Real Estate Redsea",
+  description:
+    "Learn how AR Real Estate Redsea collects, uses, and protects your personal data when browsing our Red Sea properties.",
   alternates: { canonical: "/privacy" },
-  robots: { index: false }, // privacy pages don't need to be indexed
+  robots: { index: false },
+  openGraph: {
+    title: "Privacy Policy | AR Real Estate Redsea",
+    description:
+      "Learn how AR Real Estate Redsea collects, uses, and protects your personal data.",
+    url: "/privacy",
+  },
 };
 
 export default function PrivacyPage() {

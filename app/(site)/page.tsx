@@ -126,7 +126,7 @@ export default async function HomePage() {
                 href="/destinations"
                 className="text-brand-text/60 hover:text-brand-text text-base font-medium transition-colors flex gap-2"
               >
-                All Destinations
+                View all destinations
                 <ChevronRight />
               </Link>
             </div>

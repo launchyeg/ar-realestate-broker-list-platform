@@ -96,44 +96,40 @@ export default function AboutPage() {
               A journey of passion, expertise, and dedication to your ultimate
               lifestyle.
             </h2>
-          </AnimateOnScroll>
 
-          <AnimateOnScroll
-            type="fade-up"
-            delay={100}
-            className="max-w-3xl mx-auto mt-10 md:mt-[50px] lg:mt-[62px]"
-          >
-            <p className="text-brand-text text-xl leading-8 mb-[30px] md:mb-[50px] lg:mb-[54px]">
-              Your journey into the Red Sea’s real estate wonders starts here.
-              Learn more about who we are, what we stand for, and how we can
-              make your coastal aspirations a reality. A team of dedicated
-              professionals on a mission to turn your dreams into reality,
-              guided by passion, expertise, and an unwavering commitment to
-              excellence.
-            </p>
+            <div className="max-w-3xl mx-auto mt-10 md:mt-[50px] lg:mt-[62px]">
+              <p className="text-brand-text text-xl leading-8 mb-[30px] md:mb-[50px] lg:mb-[54px]">
+                Your journey into the Red Sea’s real estate wonders starts here.
+                Learn more about who we are, what we stand for, and how we can
+                make your coastal aspirations a reality. A team of dedicated
+                professionals on a mission to turn your dreams into reality,
+                guided by passion, expertise, and an unwavering commitment to
+                excellence.
+              </p>
 
-            <div className="flex flex-wrap md:flex-nowrap justify-between gap-6 md:gap-20 lg:gap-[100px]">
-              <div>
-                <h3 className="text-brand-text text-xl font-semibold leading-7 mb-4">
-                  Our Mission
-                </h3>
-                <p className="text-brand-text text-base leading-7">
-                  Our mission is forging enduring connections, preserving the
-                  Red Sea’s natural beauty, and nurturing vibrant coastal
-                  communities. We value excellence, trust, and connection to
-                  deliver a seamless real estate path.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-brand-text text-xl font-semibold leading-7 mb-4">
-                  Our Vision
-                </h3>
-                <p className="text-brand-text text-base leading-7">
-                  AR Real Estate’s vision is rooted in the Red Sea’s captivating
-                  beauty and limitless possibilities. As your trusted partner,
-                  we aim to unlock the coastal lifestyle you’ve always wanted,
-                  blending luxury and nature.
-                </p>
+              <div className="flex flex-wrap md:flex-nowrap justify-between gap-6 md:gap-20 lg:gap-[100px]">
+                <div>
+                  <h3 className="text-brand-text text-xl font-semibold leading-7 mb-4">
+                    Our Mission
+                  </h3>
+                  <p className="text-brand-text text-base leading-7">
+                    Our mission is forging enduring connections, preserving the
+                    Red Sea’s natural beauty, and nurturing vibrant coastal
+                    communities. We value excellence, trust, and connection to
+                    deliver a seamless real estate path.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-brand-text text-xl font-semibold leading-7 mb-4">
+                    Our Vision
+                  </h3>
+                  <p className="text-brand-text text-base leading-7">
+                    AR Real Estate’s vision is rooted in the Red Sea’s
+                    captivating beauty and limitless possibilities. As your
+                    trusted partner, we aim to unlock the coastal lifestyle
+                    you’ve always wanted, blending luxury and nature.
+                  </p>
+                </div>
               </div>
             </div>
           </AnimateOnScroll>

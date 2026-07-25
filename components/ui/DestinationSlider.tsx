@@ -16,7 +16,6 @@ export default function DestinationSlider({
   const prev = () => setCurrent((i) => (i === 0 ? total - 1 : i - 1));
   const next = () => setCurrent((i) => (i === total - 1 ? 0 : i + 1));
 
-  // Show 3 visible cards
   const visible = [
     destinations[current % total],
     destinations[(current + 1) % total],
@@ -24,16 +23,17 @@ export default function DestinationSlider({
   ];
 
   return (
-    <div>
+    <section>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 md:mb-14">
-        {visible.map((destinations, i) => (
+        {visible.map((destination, i) => (
           <AnimateOnScroll
-            key={`${destinations.slug}-${i}`}
+            key={`${destination.slug}-${i}`}
             type="fade-up"
             delay={i * 100}
-            className="min-w-full"
+            // ── Hide 2nd and 3rd on mobile ─────────────────
+            className={`min-w-full ${i > 0 ? "hidden md:block" : ""}`}
           >
-            <DestinationCard destinations={destinations} />
+            <DestinationCard destinations={destination} />
           </AnimateOnScroll>
         ))}
       </div>
@@ -48,6 +48,6 @@ export default function DestinationSlider({
           </button>
         </div>
       </AnimateOnScroll>
-    </div>
+    </section>
   );
 }

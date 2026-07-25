@@ -52,10 +52,10 @@ export default function FaqSection() {
               <div className="">
                 <button
                   onClick={() => setOpen(open === i ? null : i)}
-                  className="w-full flex items-center justify-between p-4 text-left bg-brand-surface rounded-2xl overflow-hidden"
+                  className="w-full flex items-center justify-between p-4 font-display text-left bg-brand-surface rounded-2xl overflow-hidden"
                 >
                   <span
-                    className={`text-lg font-medium leading-8 transition-colors ${
+                    className={`text-xl font-medium leading-8 transition-colors ${
                       open === i ? "text-brand-accent" : "text-brand-text"
                     }`}
                   >

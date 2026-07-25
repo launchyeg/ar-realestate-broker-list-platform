@@ -1,18 +1,27 @@
-import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import type { Unit } from "@/types/unit";
 import { supabase } from "@/lib/supabase";
 import { mapUnit } from "@/lib/mapUnit";
-import siteConfig from "@/siteConfig";
-import ImageSlider from "./ImageSlider";
-import ContactForm from "./ContactForm";
+import { notFound } from "next/navigation";
 import {
   LucideIcon,
-  BedSingle,
+  BedDouble,
   Bath,
   Scaling,
   CalendarDays,
+  ChevronRight,
+  House,
+  Banknote,
+  CircleCheckBig,
 } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
+import siteConfig from "@/siteConfig";
+import ImageSlider from "./ImageSlider";
+import ContactForm from "./ContactForm";
+import GeneralFormSection from "@/components/sections/GeneralFormSection";
+import UnitsGrid from "@/components/ui/UnitsGrid";
+import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 
 export const revalidate = 60;
 
@@ -116,140 +125,203 @@ export default async function PropertyPage({
 
   const unit = mapUnit(raw);
 
+  const { data: rawUnits } = await supabase
+    .from("units")
+    .select("*")
+    .eq("destination", raw.destination)
+    .neq("slug", slug)
+    .order("created_at", { ascending: false });
+
+  const availableUnits = (rawUnits || []).map(mapUnit);
+
+  const STATS = [
+    {
+      icon: <House size={48} className="text-brand-accent" />,
+      label: "Type",
+      value: unit.type,
+    },
+    {
+      icon: <BedDouble size={48} className="text-brand-accent" />,
+      label: "Bedrooms",
+      value: unit.beds,
+    },
+    {
+      icon: <Bath size={48} className="text-brand-accent" />,
+      label: "Bathrooms",
+      value: unit.baths,
+    },
+    {
+      icon: <Scaling size={48} className="text-brand-accent" />,
+      label: "Size",
+      value: `${unit.size} m²`,
+    },
+    ...(siteConfig.features.showPrices
+      ? [
+          {
+            icon: <Banknote size={48} className="text-brand-accent" />,
+            label: "Price",
+            value: `${unit.currency} ${unit.price.toLocaleString("en-US")}`,
+          },
+        ]
+      : [
+          {
+            icon: <Banknote size={48} className="text-brand-accent" />,
+            label: "Price",
+            value: `Contact Sales`,
+          },
+        ]),
+    {
+      icon: <CalendarDays size={48} className="text-brand-accent" />,
+      label: "Delivery",
+      value: unit.deliveryYear ?? "TBA",
+    },
+  ];
+
   return (
-    <main className="min-h-screen bg-[#FAFAF8]">
-      {/* ── Image Slider ─────────────────────────────────────── */}
+    <main>
       <ImageSlider
         images={[unit.coverImage, ...(unit.gallery ?? [])]}
         destinationLabel={unit.destinationLabel}
         project={unit.projectLabel || unit.destinationLabel}
       />
 
-      {/* ── Content Grid ─────────────────────────────────────── */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-24 grid grid-cols-1 lg:grid-cols-3 gap-10">
-        {/* LEFT COLUMN */}
-        <div className="lg:col-span-2 space-y-10">
-          {/* Header */}
-          <div>
-            <div className="flex items-center gap-3 mb-3">
+      <section className="relative bg-white z-10 -mt-6 rounded-t-3xl">
+        <div className="max-w-[1380px] mx-auto mx-auto px-6 md:px-8 pt-[50px] pb-[60px] md:py-[70px] lg:py-[120px] grid grid-cols-1 lg:grid-cols-3 gap-10">
+          <div className="lg:col-span-2 space-y-[60px] md:space-y-20">
+            <AnimateOnScroll type="fade-up">
               {siteConfig.features.showStatusBadge && (
                 <StatusBadge status={unit.status as Unit["status"]} />
               )}
-              <span className="text-xs font-medium text-stone-400 tracking-widest uppercase">
-                {unit.type}
-              </span>
+              <h2 className="font-display text-4xl md:text-5xl leading-11 md:leading-16 text-brand-text mt-3.5 mb-[30px] md:mb-[50px]">
+                {unit.name}
+              </h2>
+              <p className="text-brand-text text-xl leading-8">
+                {unit.description}
+              </p>
+            </AnimateOnScroll>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {STATS.map((stat, i) => (
+                <AnimateOnScroll key={i} type="fade-up" delay={i * 100}>
+                  <div className="bg-white p-6 flex flex-col gap-8 border border-stone-200 rounded-2xl">
+                    {stat.icon}
+                    <div className="space-y-2">
+                      <p className="text-brand-muted text-base leading-7">
+                        {stat.label}
+                      </p>
+                      <h2 className="text-brand-text font-medium text-[28px] leading-11">
+                        {stat.value}
+                      </h2>
+                    </div>
+                  </div>
+                </AnimateOnScroll>
+              ))}
             </div>
 
-            <h1 className="font-display text-3xl md:text-4xl text-stone-900 leading-tight mb-4">
-              {unit.name}
-            </h1>
-
-            {siteConfig.features.showPrices && (
-              <p className="text-2xl font-medium text-[#1B2B3A] mb-6">
-                {unit.currency} {unit.price.toLocaleString("en-US")}
-              </p>
-            )}
-
-            {/* Quick Stats */}
-            <div className="flex flex-wrap gap-3">
-              <StatPill icon={BedSingle} label={`${unit.beds} Bedrooms`} />
-              <StatPill icon={Bath} label={`${unit.baths} Bathrooms`} />
-              <StatPill icon={Scaling} label={`${unit.size} m²`} />
-              {unit.deliveryYear && (
-                <StatPill
-                  icon={CalendarDays}
-                  label={`Delivery ${unit.deliveryYear}`}
-                />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {unit.gallery && unit.gallery.length > 0 ? (
+                unit.gallery.map((imgUrl, i) => (
+                  <AnimateOnScroll key={i} type="fade-up" delay={i * 100}>
+                    <Image
+                      src={imgUrl}
+                      width={500}
+                      height={600}
+                      alt={`Gallery image ${i + 1}`}
+                      className="w-full h-auto object-cover rounded-2xl"
+                    />
+                  </AnimateOnScroll>
+                ))
+              ) : (
+                <p className="text-2xl text-brand-muted">No images available</p>
               )}
             </div>
-          </div>
 
-          <hr className="border-stone-200" />
-
-          {/* Description */}
-          <div>
-            <h2 className="font-display text-xl text-stone-800 mb-4">
-              About this property
-            </h2>
-            <p className="text-stone-600 leading-relaxed text-[15px]">
-              {unit.description}
-            </p>
-          </div>
-
-          {/* Highlights */}
-          {(unit.highlights ?? []).length > 0 && (
-            <div>
-              <h2 className="font-display text-xl text-stone-800 mb-5">
-                Property Highlights
-              </h2>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {(unit.highlights ?? []).length > 0 && (
+              <div>
+                <h2 className="font-display text-4xl md:text-5xl leading-11 md:leading-16 text-brand-text mb-[30px] md:mb-[50px]">
+                  Property Highlights
+                </h2>
                 {(unit.highlights ?? []).map((highlight, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-[#C9A96E]/20 flex items-center justify-center">
-                      <svg
-                        className="w-3 h-3 text-[#C9A96E]"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={2.5}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                    </span>
-                    <span className="text-[14px] text-stone-600 leading-snug">
+                  <div key={i} className="flex items-center gap-2.5 mb-2">
+                    <CircleCheckBig size={22} className="text-brand-accent" />
+                    <p className="text-brand-text text-xl leading-9">
                       {highlight}
-                    </span>
-                  </li>
+                    </p>
+                  </div>
                 ))}
-              </ul>
+              </div>
+            )}
+          </div>
+
+          <div className="lg:col-span-1">
+            <div className="sticky top-24">
+              <AnimateOnScroll type="fade-up">
+                <ContactForm
+                  unit={{
+                    name: unit.name,
+                    slug: unit.slug,
+                    priceLabel: `${unit.currency} ${unit.price.toLocaleString("en-US")}`,
+                  }}
+                />
+              </AnimateOnScroll>
+
+              <div className="bg-brand-primary mt-5 md:mt-8 p-5 md:p-8 rounded-3xl text-center">
+                <p className="text-sm text-[#fffc] tracking-widest mb-1">
+                  Listed by
+                </p>
+                <p className="text-white font-medium text-base">
+                  {siteConfig.brokerName}
+                </p>
+                <p className="text-xs text-[#fffc] mt-1">
+                  License {siteConfig.brokerLicense}
+                </p>
+              </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <GeneralFormSection />
+
+      <section className="relative bg-white z-10 -mt-6 rounded-t-3xl">
+        <div className="max-w-[1380px] mx-auto px-6 md:px-8 pt-[50px] pb-[60px] md:py-[70px] lg:py-[120px]">
+          <AnimateOnScroll type="fade-up">
+            <div className="flex items-center justify-between flex-wrap gap-6 mb-10 md:mb-16">
+              <h2 className="font-display text-4xl md:text-5xl leading-11 md:leading-16 text-brand-text">
+                Your Trusted Real Estate Partner
+              </h2>
+              <Link
+                href="/properties"
+                className="text-brand-text/60 hover:text-brand-text text-base font-medium transition-colors flex gap-2"
+              >
+                Read all stories
+                <ChevronRight />
+              </Link>
+            </div>
+          </AnimateOnScroll>
+
+          {availableUnits.length === 0 ? (
+            <AnimateOnScroll type="fade-up">
+              <div className="text-center py-24">
+                <h3 className="font-display text-3xl text-brand-text mb-3">
+                  No properties found
+                </h3>
+                <p className="text-brand-muted text-sm mb-10">
+                  We're adding new units soon. Contact us to be notified.
+                </p>
+                <Link
+                  href="/contact"
+                  className="bg-brand-primary text-white text-base font-medium px-8 py-[18px] rounded-xl hover:bg-brand-primaryLight transition-colors"
+                >
+                  Get in Quick
+                </Link>
+              </div>
+            </AnimateOnScroll>
+          ) : (
+            <UnitsGrid units={availableUnits} />
           )}
         </div>
-
-        {/* RIGHT COLUMN */}
-        <div className="lg:col-span-1">
-          <div className="sticky top-6">
-            <ContactForm
-              unit={{
-                name: unit.name,
-                slug: unit.slug,
-                priceLabel: `${unit.currency} ${unit.price.toLocaleString("en-US")}`,
-              }}
-            />
-
-            {/* WhatsApp CTA */}
-            {siteConfig.features.enableWhatsApp && (
-              <a
-                href={`https://wa.me/+${siteConfig.contact.whatsapp.replace(/\D/g, "")}?text=Hi, I'm interested in ${unit.name} (${unit.slug})`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-3 flex items-center justify-center gap-2 w-full py-3 rounded-xl border border-emerald-500 text-emerald-600 text-sm font-medium hover:bg-emerald-50 transition-colors"
-              >
-                <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
-                  <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.558 4.11 1.535 5.832L.057 23.527a.75.75 0 00.916.916l5.695-1.478A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.714 9.714 0 01-5.01-1.392l-.36-.213-3.723.967.984-3.622-.234-.373A9.712 9.712 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z" />
-                </svg>
-                Chat on WhatsApp
-              </a>
-            )}
-
-            {/* Broker card */}
-            <div className="mt-4 p-4 rounded-xl bg-[#1B2B3A] text-white text-center">
-              <p className="text-xs text-white/60 tracking-widest uppercase mb-1">
-                Listed by
-              </p>
-              <p className="font-medium text-sm">{siteConfig.brokerName}</p>
-              <p className="text-xs text-white/50 mt-0.5">
-                License {siteConfig.brokerLicense}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      </section>
     </main>
   );
 }
