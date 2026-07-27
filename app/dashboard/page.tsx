@@ -67,11 +67,11 @@ export default async function DashboardPage() {
       {/* ── DESTINATIONS & PROJECTS ────────────────────────────── */}
       <div className="grid md:grid-cols-2 gap-6 mb-6">
         {/* Destinations */}
-        <div className="bg-white rounded-xl border border-stone-200 p-6">
-          <h2 className="font-medium text-stone-800 mb-4 text-sm tracking-wide uppercase">
+        <div className="bg-white rounded-xl border border-stone-200 p-6 space-y-4">
+          <h2 className="font-medium text-stone-800 text-sm tracking-wide uppercase">
             {siteConfig.destinations.length} Destinations
           </h2>
-          <div className="max-h-[336px] overflow-y-auto space-y-2">
+          <div className="max-h-[310px] overflow-y-auto space-y-2">
             {(siteConfig.destinations as any[]).map((d) => {
               const count = allUnits.filter(
                 (u) => u.destination === d.slug,
@@ -105,14 +105,25 @@ export default async function DashboardPage() {
               );
             })}
           </div>
+          <p className="text-sm text-brand-muted">
+            To add a new destination to your account, please contact{" "}
+            <a
+              href="https://aaaportfolio.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-brand-text hover:text-brand-accent transition-colors font-medium"
+            >
+              customer support.
+            </a>
+          </p>
         </div>
 
         {/* Projects */}
-        <div className="bg-white rounded-xl border border-stone-200 p-6">
-          <h2 className="font-medium text-stone-800 mb-4 text-sm tracking-wide uppercase">
+        <div className="bg-white rounded-xl border border-stone-200 p-6 space-y-4">
+          <h2 className="font-medium text-stone-800 text-sm tracking-wide uppercase">
             {siteConfig.projects.length} Projects
           </h2>
-          <div className="max-h-[336px] overflow-y-auto space-y-2">
+          <div className="max-h-[310px] overflow-y-auto space-y-2">
             {(siteConfig.projects as any[]).map((p) => {
               const count = allUnits.filter((u) => u.project === p.slug).length;
               const avail = allUnits.filter(
@@ -143,6 +154,17 @@ export default async function DashboardPage() {
               );
             })}
           </div>
+          <p className="text-sm text-brand-muted">
+            To create and add a new project, please contact{" "}
+            <a
+              href="https://aaaportfolio.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-brand-text hover:text-brand-accent transition-colors font-medium"
+            >
+              customer support.
+            </a>
+          </p>
         </div>
       </div>
 

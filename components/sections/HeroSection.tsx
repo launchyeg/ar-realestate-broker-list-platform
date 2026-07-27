@@ -130,7 +130,7 @@ export default function HeroSection() {
               <div className="flex-1 min-w-[140px]">
                 <CustomSelect
                   value={destination}
-                  placeholder="Any Destination"
+                  placeholder="Destinations"
                   onChange={setDestination}
                   options={[
                     ...(siteConfig.destinations as any[]).map((d) => ({
@@ -143,7 +143,7 @@ export default function HeroSection() {
               <div className="flex-1 min-w-[140px]">
                 <CustomSelect
                   value={listingType}
-                  placeholder="Any Listing"
+                  placeholder="Listing"
                   onChange={setListingType}
                   options={[
                     { value: "primary", label: "Primary" },
@@ -155,7 +155,7 @@ export default function HeroSection() {
               <div className="flex-1 min-w-[140px]">
                 <CustomSelect
                   value={price}
-                  placeholder="Any Price"
+                  placeholder="Prices"
                   onChange={setPrice}
                   options={[
                     { value: "0-2000000", label: "Under EGP 2M" },

@@ -121,7 +121,7 @@ export default function ProjectsClient({ projects }: Props) {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <CustomSelect
                   value={destination}
-                  placeholder="All Destinations"
+                  placeholder="Destinations"
                   onChange={setDestination}
                   options={[
                     ...(siteConfig.destinations as any[]).map((d) => ({
@@ -132,7 +132,7 @@ export default function ProjectsClient({ projects }: Props) {
                 />
                 <CustomSelect
                   value={downpayment}
-                  placeholder="Any Downpayment"
+                  placeholder="Downpayment"
                   onChange={setDownpayment}
                   options={DOWNPAYMENT_OPTIONS}
                 />

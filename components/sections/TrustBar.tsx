@@ -5,18 +5,18 @@ import Image from "next/image";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 
 const PARTNERS = [
-  "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Cala.svg",
-  "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Coves.svg",
-  "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Il%20Bayou.svg",
-  "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Majra.svg",
-  "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Makadi%20Heights.svg",
-  "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Makadina.svg",
-  "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Mesca.svg",
-  "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Miramar%20Residences.svg",
-  "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Nautilus.svg",
-  "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Ras%20Soma.svg",
-  "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Reeftown.svg",
-  "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Shedwan.svg",
+  "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Cala%20W.svg",
+  "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Coves%20W.svg",
+  "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Il%20Bayou%20W.svg",
+  "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Majra%20W.svg",
+  "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Makadi%20Heights%20W.svg",
+  "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Makadina%20W.svg",
+  "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Mesca%20W.svg",
+  "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Miramar%20Residences%20W.svg",
+  "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Nautilus%20W.svg",
+  "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Ras%20Soma%20W.svg",
+  "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Reeftown%20W.svg",
+  "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Shedwan%20W.svg",
 ];
 
 export default function TrustBar() {
@@ -52,7 +52,7 @@ export default function TrustBar() {
     <section className="relative z-10 -mt-6 rounded-t-3xl bg-brand-accent py-[30px] md:pt-14 md:pb-[60px] overflow-hidden">
       <AnimateOnScroll type="fade-in">
         <div className="max-w-[1380px] mx-auto px-6 md:px-8 flex items-center gap-7 md:gap-36 flex-wrap md:flex-nowrap">
-          <p className="font-display text-brand-text text-2xl font-medium w-full md:w-auto text-center md:text-left md:whitespace-nowrap flex-shrink-0">
+          <p className="font-display text-white text-2xl font-medium w-full md:w-auto text-center md:text-left md:whitespace-nowrap flex-shrink-0">
             Meet our trusted partners
           </p>
 

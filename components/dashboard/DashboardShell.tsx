@@ -98,7 +98,7 @@ function LoginScreen({ onLogin }: { onLogin: () => void }) {
         {/* Form */}
         <form
           onSubmit={handleSubmit}
-          className="bg-white rounded-2xl p-8 shadow-2xl space-y-4"
+          className="bg-white rounded-2xl p-8 shadow-2xl space-y-4 mb-4"
         >
           <div>
             <label className="block text-xs font-medium text-stone-500 mb-1.5 uppercase tracking-wide">
@@ -145,7 +145,37 @@ function LoginScreen({ onLogin }: { onLogin: () => void }) {
               "Sign In"
             )}
           </button>
+
+          <div className="flex justify-center">
+            <p>
+              <a
+                href="https://aaaportfolio.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-brand-muted hover:text-brand-text transition-colors font-medium"
+              >
+                Forgot password or username
+              </a>
+            </p>
+          </div>
         </form>
+
+        <div className="flex items-center pt-2">
+          <p className="text-xs text-white/20">
+            Developed by{" "}
+            <a
+              href="https://aaaportfolio.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#C9A96E]/60 hover:text-[#C9A96E] transition-colors font-medium"
+            >
+              Launchy
+            </a>
+          </p>
+          <span className="ml-auto text-right text-xs text-slate-500 font-medium">
+            v 1.0.0
+          </span>
+        </div>
       </div>
     </div>
   );
