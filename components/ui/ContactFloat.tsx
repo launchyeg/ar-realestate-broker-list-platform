@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Phone } from "lucide-react";
 import siteConfig from "@/siteConfig";
 import AnimateOnScroll from "./AnimateOnScroll";
 
@@ -29,11 +30,11 @@ export default function ContactFloat() {
             </svg>
           </div>
           <div>
-            <p className="text-xs font-semibold text-brand-text leading-none mb-0.5">
+            <p className="text-xs font-semibold text-brand-text leading-none mb-1">
               WhatsApp
             </p>
             <p className="text-[11px] text-brand-muted leading-none">
-              {siteConfig.contact.phone}
+              {siteConfig.contact.whatsapp}
             </p>
           </div>
         </a>
@@ -44,23 +45,10 @@ export default function ContactFloat() {
           className="flex items-center gap-3 bg-white rounded-full pl-4 pr-5 py-3 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-0.5 group"
         >
           <div className="w-8 h-8 bg-brand-primary rounded-full flex items-center justify-center flex-shrink-0">
-            <svg
-              width="15"
-              height="15"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="white"
-              strokeWidth="2"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
-              />
-            </svg>
+            <Phone size={15} stroke="white" />
           </div>
           <div>
-            <p className="text-xs font-semibold text-brand-text leading-none mb-0.5">
+            <p className="text-xs font-semibold text-brand-text leading-none mb-1">
               Call Us
             </p>
             <p className="text-[11px] text-brand-muted leading-none">

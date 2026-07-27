@@ -54,7 +54,7 @@ export async function generateMetadata({
     description: unit.description?.slice(0, 160),
     alternates: { canonical: `/properties/${slug}` },
     openGraph: {
-      title: `${unit.name} — ${unit.currency} ${unit.price?.toLocaleString("en-US")}`,
+      title: `${unit.name} | ${unit.currency} ${unit.price?.toLocaleString("en-US")}`,
       description: unit.description?.slice(0, 160),
       url: `/properties/${slug}`,
       images: [

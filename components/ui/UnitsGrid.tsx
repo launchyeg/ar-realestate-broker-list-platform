@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import type { Unit } from "@/types/unit";
 import PropertyCard from "@/components/ui/PropertyCard";
 import AnimateOnScroll from "./AnimateOnScroll";
@@ -36,38 +37,12 @@ export default function UnitsGrid({ units, initialCount = 6 }: Props) {
             {showAll ? (
               <>
                 Show less
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M5 15l7-7 7 7"
-                  />
-                </svg>
+                <ChevronUp size={18} />
               </>
             ) : (
               <>
                 Show {remaining} more
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
+                <ChevronDown size={18} />
               </>
             )}
           </button>

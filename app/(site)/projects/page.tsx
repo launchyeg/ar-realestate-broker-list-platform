@@ -1,25 +1,37 @@
+import { Suspense } from "react";
+import { Metadata } from "next";
 import siteConfig from "@/siteConfig";
-import HeroPageSection from "@/components/sections/HeroPageSection";
-import ProjectsCard from "@/components/ui/ProjectsCard";
-import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
+import ProjectsClient from "./ProjectsClient";
 
-export default function DestinationsPage() {
+export const revalidate = 60;
+
+export const metadata: Metadata = {
+  title: `All Projects | ${siteConfig.brokerName}`,
+  description:
+    "Explore our exclusive real estate projects across Egypt's top destinations.",
+  alternates: { canonical: "/projects" },
+  openGraph: {
+    title: `All Projects | ${siteConfig.brokerName}`,
+    description:
+      "Explore our exclusive real estate projects across Egypt's top destinations.",
+    url: "/projects",
+  },
+};
+
+export default function ProjectsPage() {
+  const projects = siteConfig.projects as any[];
+
   return (
-    <div className="min-h-screen bg-white">
-      <HeroPageSection
-        image="https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/properties/1784164711844-feg8u9wo5d9.png"
-        title="Explore Projects"
-      />
-
-      <section className="relative z-10 -mt-6 rounded-t-3xl bg-white">
-        <div className="max-w-[1380px] mx-auto px-6 md:px-8 py-10 md:py-[70px] lg:py-[120px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
-          {siteConfig.projects.map((pro, i) => (
-            <AnimateOnScroll key={pro.slug} type="fade-up" delay={i * 100}>
-              <ProjectsCard projects={pro} />
-            </AnimateOnScroll>
-          ))}
-        </div>
-      </section>
-    </div>
+    <main>
+      <Suspense
+        fallback={
+          <div className="min-h-screen flex items-center justify-center bg-brand-bg">
+            <div className="w-8 h-8 border-2 border-brand-accent border-t-transparent rounded-full animate-spin" />
+          </div>
+        }
+      >
+        <ProjectsClient projects={projects} />
+      </Suspense>
+    </main>
   );
 }

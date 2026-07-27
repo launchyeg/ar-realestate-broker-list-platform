@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import siteConfig from "@/siteConfig";
 import HeroPageSection from "@/components/sections/HeroPageSection";
 import GeneralFormSection from "@/components/sections/GeneralFormSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
@@ -69,12 +70,12 @@ const NUMBERS = [
 ];
 
 export const metadata: Metadata = {
-  title: "About Us | AR Real Estate Redsea",
+  title: `About Us | ${siteConfig.brokerName}`,
   description:
     "Meet the team behind AR Real Estate Redsea — local experts helping buyers find their dream coastal home with transparent, all-inclusive pricing.",
   alternates: { canonical: "/about" },
   openGraph: {
-    title: "About Us | AR Real Estate Redsea",
+    title: `About Us | ${siteConfig.brokerName}`,
     description:
       "Meet the team behind AR Real Estate Redsea — local experts helping buyers find their dream coastal home.",
     url: "/about",

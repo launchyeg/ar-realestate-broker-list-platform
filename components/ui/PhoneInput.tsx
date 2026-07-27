@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { ChevronDown } from "lucide-react";
 
 const COUNTRIES = [
   { code: "+20", flag: "🇪🇬", name: "Egypt" },
@@ -84,21 +85,11 @@ export default function PhoneInput({
       >
         <span className="text-xl mb-1">{selectedCountry.flag}</span>
         <span className="text-base">{selectedCountry.code}</span>
-        <svg
-          width="12"
-          height="12"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
+
+        <ChevronDown
+          size={16}
           className={`transition-transform duration-200 ${open ? "rotate-180" : ""}`}
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M19 9l-7 7-7-7"
-          />
-        </svg>
+        />
       </div>
 
       {/* ── NUMBER INPUT ─────────────────────────────────── */}
@@ -113,9 +104,9 @@ export default function PhoneInput({
 
       {/* ── DROPDOWN ─────────────────────────────────────── */}
       {open && (
-        <div className="absolute bottom-full left-0 mb-2 w-64 bg-white rounded-xl shadow-2xl border border-stone-100 overflow-hidden z-50">
+        <div className="absolute bottom-full left-0 mb-2 w-64 bg-white rounded-xl shadow-2xl border border-[#52525a1a] overflow-hidden z-50">
           {/* Search */}
-          <div className="p-2 border-b border-stone-100">
+          <div className="p-2 border-b border-[#52525a1a]">
             <input
               type="text"
               value={search}

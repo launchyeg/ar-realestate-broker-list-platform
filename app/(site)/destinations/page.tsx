@@ -1,7 +1,21 @@
+import { Metadata } from "next";
 import siteConfig from "@/siteConfig";
 import HeroPageSection from "@/components/sections/HeroPageSection";
 import DestinationCard from "@/components/ui/DestinationCard";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
+
+export const metadata: Metadata = {
+  title: `All Destinations | ${siteConfig.brokerName}`,
+  description:
+    "Explore our exclusive real estate projects across Egypt's top destinations.",
+  alternates: { canonical: "/destinations" },
+  openGraph: {
+    title: `All Destinations | ${siteConfig.brokerName}`,
+    description:
+      "Explore our exclusive real estate projects across Egypt's top destinations.",
+    url: "/destinations",
+  },
+};
 
 export default function DestinationsPage() {
   return (

@@ -47,7 +47,7 @@ export async function generateMetadata({
     description: destination.description.slice(0, 160),
     alternates: { canonical: `/destinations/${slug}` },
     openGraph: {
-      title: `Properties in ${destination.label} — ${siteConfig.brokerName}`,
+      title: `Properties in ${destination.label} | ${siteConfig.brokerName}`,
       description: destination.description.slice(0, 160),
       url: `/destinations/${slug}`,
       images: [

@@ -102,7 +102,7 @@ export default function HeroSection() {
               transform: animating ? "translateY(16px)" : "translateY(0)",
             }}
           >
-            <h1 className="font-display text-4xl md:text-[84px] text-white leading-tight mb-6 whitespace-pre-line">
+            <h1 className="font-display text-[42px] md:text-[84px] text-white leading-tight mb-6 whitespace-pre-line">
               {slide.title}
             </h1>
           </div>

@@ -2,93 +2,70 @@
 
 import { useState, useMemo } from "react";
 import { useSearchParams } from "next/navigation";
-import { Search } from "lucide-react";
-import type { Unit } from "@/types/unit";
-import PropertyCard from "@/components/ui/PropertyCard";
+import siteConfig, { projects } from "@/siteConfig";
 import CustomSelect from "@/components/dashboard/CustomSelect";
+import ProjectsCard from "@/components/ui/ProjectsCard";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 
 interface Props {
-  units: Unit[];
-  destinations: { slug: string; label: string }[];
-  projects: { slug: string; label: string }[];
+  projects: any[];
 }
 
-const PRICE_RANGES = [
-  { value: "0-2000000", label: "Under EGP 2M" },
-  { value: "2000000-5000000", label: "EGP 2M – 5M" },
-  { value: "5000000-10000000", label: "EGP 5M – 10M" },
-  { value: "10000000-9999999999999", label: "Above EGP 10M" },
+const DOWNPAYMENT_OPTIONS = [
+  { value: "0-10", label: "Up to 10%" },
+  { value: "10-15", label: "10% – 15%" },
+  { value: "15-20", label: "15% – 20%" },
+  { value: "20-30", label: "20% – 30%" },
+  { value: "30", label: "30% and above" },
 ];
 
-const TYPES = [
-  { value: "Villa", label: "Villa" },
-  { value: "Penthouse", label: "Penthouse" },
-  { value: "Apartment", label: "Apartment" },
-  { value: "Studio", label: "Studio" },
-];
-
-const LISTING_TYPES = [
-  { value: "primary", label: "Primary" },
-  { value: "resale", label: "Resale" },
-  { value: "rent", label: "Rent" },
-];
-
-export default function PropertiesClient({
-  units,
-  destinations,
-  projects,
-}: Props) {
+export default function ProjectsClient({ projects }: Props) {
   const searchParams = useSearchParams();
 
+  const [search, setSearch] = useState(searchParams.get("search") || "");
   const [destination, setDestination] = useState(
     searchParams.get("destination") || "",
   );
-  const [project, setProject] = useState(searchParams.get("project") || "");
-  const [priceRange, setPriceRange] = useState(searchParams.get("price") || "");
-  const [type, setType] = useState("");
-  const [listingType, setListingType] = useState(
-    searchParams.get("listingType") || "",
+  const [downpayment, setDownpayment] = useState(
+    searchParams.get("downpayment") || "",
   );
-  const [search, setSearch] = useState("");
 
   const filtered = useMemo(() => {
-    return units.filter((u) => {
+    return projects.filter((p: any) => {
       // Search
       if (
         search &&
-        !u.name.toLowerCase().includes(search.toLowerCase()) &&
-        !u.destinationLabel.toLowerCase().includes(search.toLowerCase())
+        !p.label.toLowerCase().includes(search.toLowerCase()) &&
+        !p.destinationLabel?.toLowerCase().includes(search.toLowerCase())
       ) {
         return false;
       }
       // Destination
-      if (destination && u.destination !== destination) return false;
-      // Project
-      if (project && u.project !== project) return false;
-      // Type
-      if (type && u.type !== type) return false;
-      // Listing type
-      if (listingType && u.listingType !== listingType) return false;
-      // Price range
-      if (priceRange) {
-        const [min, max] = priceRange.split("-").map(Number);
-        if (u.price < min || u.price > max) return false;
+      if (destination && p.destination !== destination) return false;
+      // Downpayment — match last stat value
+      if (downpayment) {
+        const lastStat = p.stats?.[p.stats.length - 1];
+        const statValue = parseInt(
+          lastStat?.value?.toString().replace("%", "").trim(),
+        );
+
+        if (downpayment.includes("-")) {
+          const [min, max] = downpayment.split("-").map(Number);
+          if (statValue < min || statValue > max) return false;
+        } else {
+          if (statValue < parseInt(downpayment)) return false;
+        }
       }
       return true;
     });
-  }, [units, destination, project, priceRange, type, listingType, search]);
+  }, [projects, search, destination, downpayment]);
 
-  const hasFilters =
-    destination || project || priceRange || type || listingType || search;
+  const hasFilters = !!search || !!destination || !!downpayment;
 
   function clearFilters() {
-    setDestination("");
-    setProject("");
-    setPriceRange("");
-    setType("");
-    setListingType("");
     setSearch("");
+    setDestination("");
+    setDownpayment("");
   }
 
   return (
@@ -98,7 +75,7 @@ export default function PropertiesClient({
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url(https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/properties/Screenshot-2026-03-10-131215.png)",
+              "url(https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/properties/1784164711844-feg8u9wo5d9.png)",
           }}
         />
         <div className="absolute inset-0 bg-black/50" />
@@ -106,7 +83,7 @@ export default function PropertiesClient({
           <AnimateOnScroll type="fade-up">
             <div className="max-w-4xl mx-auto text-center mb-10 md:mb-16">
               <h2 className="font-display text-4xl md:text-7xl lg:text-[80px] leading-11 md:leading-[92px] text-white">
-                Find Your Dream Property in the Red Sea
+                Explore Projects
               </h2>
             </div>
           </AnimateOnScroll>
@@ -115,57 +92,49 @@ export default function PropertiesClient({
             <div className="bg-white p-5 md:px-10 md:py-12 rounded-2xl shadow-2xl">
               <div className="mb-5">
                 <div className="relative">
-                  <Search
-                    size={16}
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
                     className="absolute left-3 top-1/2 -translate-y-1/2 text-brand-muted"
-                  />
+                  >
+                    <circle cx="11" cy="11" r="8" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M21 21l-4.35-4.35"
+                    />
+                  </svg>
                   <input
                     type="text"
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
-                    placeholder="Search by name or destination..."
-                    className="w-full pl-10 pr-5 py-3.5 border border-stone-200 rounded-[10px] text-sm focus:outline-none focus:border-[#C9A96E] transition bg-stone-50"
+                    placeholder="Search by project or destination..."
+                    className="w-full pl-10 pr-5 py-3.5 border border-stone-200 rounded-[10px] text-sm focus:outline-none focus:border-brand-accent transition bg-stone-50"
                   />
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <CustomSelect
                   value={destination}
                   placeholder="All Destinations"
                   onChange={setDestination}
                   options={[
-                    ...destinations.map((d) => ({
+                    ...(siteConfig.destinations as any[]).map((d) => ({
                       value: d.slug,
                       label: d.label,
                     })),
                   ]}
                 />
                 <CustomSelect
-                  value={project}
-                  placeholder="All Projects"
-                  onChange={setProject}
-                  options={[
-                    ...projects.map((p) => ({ value: p.slug, label: p.label })),
-                  ]}
-                />
-                <CustomSelect
-                  value={priceRange}
-                  placeholder="Price"
-                  onChange={setPriceRange}
-                  options={PRICE_RANGES}
-                />
-                <CustomSelect
-                  value={type}
-                  placeholder="All Types"
-                  onChange={setType}
-                  options={TYPES}
-                />
-                <CustomSelect
-                  value={listingType}
-                  placeholder="All Listing"
-                  onChange={setListingType}
-                  options={LISTING_TYPES}
+                  value={downpayment}
+                  placeholder="Any Downpayment"
+                  onChange={setDownpayment}
+                  options={DOWNPAYMENT_OPTIONS}
                 />
               </div>
 
@@ -173,11 +142,11 @@ export default function PropertiesClient({
                 <div className="flex items-center justify-between mt-5 pt-5 border-t border-[#52525a1a]">
                   <p className="text-sm font-medium text-brand-text/60">
                     <span className="text-brand-text">{filtered.length}</span>{" "}
-                    {filtered.length === 1 ? "property" : "properties"} found
+                    {filtered.length === 1 ? "project" : "projects"} found
                   </p>
                   <button
                     onClick={clearFilters}
-                    className="text-red-500 hover:text-red-600 text-sm font-medium transition-colors flex gap-2"
+                    className="text-red-500 hover:text-red-600 text-sm font-medium transition-colors"
                   >
                     Clear all filters
                   </button>
@@ -192,15 +161,19 @@ export default function PropertiesClient({
         <div className="max-w-[1380px] mx-auto px-6 md:px-8 py-10 md:py-[70px] lg:py-[120px]">
           <AnimateOnScroll type="fade-up">
             <h2 className="font-display text-brand-text text-4xl md:text-5xl leading-11 md:leading-16 md:text-4xl mb-10 md:mb-16">
-              Search your dream property
+              Discover signature developments
             </h2>
           </AnimateOnScroll>
 
           {filtered.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
-              {filtered.map((unit, i) => (
-                <AnimateOnScroll key={unit.id} type="fade-up" delay={i * 100}>
-                  <PropertyCard unit={unit} />
+              {filtered.map((project, i) => (
+                <AnimateOnScroll
+                  key={project.slug}
+                  type="fade-up"
+                  delay={i * 100}
+                >
+                  <ProjectsCard projects={project} />
                 </AnimateOnScroll>
               ))}
             </div>

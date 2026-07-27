@@ -67,7 +67,7 @@ export default function ImageSlider({
         </div>
 
         <div className="absolute bottom-16 right-6 pointer-events-none">
-          <span className="text-[#fffc] text-xs md:text-sm font-medium">
+          <span className="font-display text-[#fffc] text-xs md:text-sm font-medium">
             {current + 1} / {images.length}
           </span>
         </div>

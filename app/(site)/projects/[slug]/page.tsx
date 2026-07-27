@@ -54,7 +54,7 @@ export async function generateMetadata({
     | undefined;
   if (!project) return {};
   return {
-    title: `${project.label} — ${siteConfig.brokerName}`,
+    title: `${project.label} | ${siteConfig.brokerName}`,
     description: project.description.slice(0, 160),
   };
 }

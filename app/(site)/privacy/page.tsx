@@ -4,13 +4,13 @@ import HeroPageSection from "@/components/sections/HeroPageSection";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | AR Real Estate Redsea",
+  title: `Privacy Policy | ${siteConfig.brokerName}`,
   description:
     "Learn how AR Real Estate Redsea collects, uses, and protects your personal data when browsing our Red Sea properties.",
   alternates: { canonical: "/privacy" },
   robots: { index: false },
   openGraph: {
-    title: "Privacy Policy | AR Real Estate Redsea",
+    title: `Privacy Policy | ${siteConfig.brokerName}`,
     description:
       "Learn how AR Real Estate Redsea collects, uses, and protects your personal data.",
     url: "/privacy",

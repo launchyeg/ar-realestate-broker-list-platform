@@ -1,9 +1,9 @@
 import Link from "next/link";
-import siteConfig from "@/siteConfig";
 import { Metadata } from "next";
 import { supabase } from "@/lib/supabase";
 import { mapUnit } from "@/lib/mapUnit";
 import { ChevronRight } from "lucide-react";
+import siteConfig from "@/siteConfig";
 import HeroSection from "@/components/sections/HeroSection";
 import TrustBar from "@/components/sections/TrustBar";
 import PropertyCard from "@/components/ui/PropertyCard";
@@ -17,12 +17,12 @@ import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "AR Real Estate Redsea — Buy & Invest in Coastal Properties",
+  title: `${siteConfig.brokerName} | Buy & Invest in Coastal Properties`,
   description:
     "Browse luxury villas, apartments, and penthouses across Hurghada, Sahl Hasheesh, El Gouna, and the Red Sea coast with AR Real Estate.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "AR Real Estate Redsea — Buy & Invest in Coastal Properties",
+    title: `${siteConfig.brokerName} | Buy & Invest in Coastal Properties`,
     description:
       "Browse luxury villas, apartments, and penthouses across Egypt's stunning Red Sea coast.",
     url: "/",

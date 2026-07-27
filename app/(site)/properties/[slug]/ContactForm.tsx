@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Check, ShieldCheck } from "lucide-react";
 import siteConfig from "@/siteConfig";
 import PhoneInput from "@/components/ui/PhoneInput";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
@@ -54,19 +55,7 @@ export default function ContactForm({ unit }: Props) {
           <AnimateOnScroll type="fade-up">
             <div className="flex flex-col items-center justify-center">
               <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center mb-4">
-                <svg
-                  className="w-7 h-7 text-emerald-500"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
+                <Check size={30} className="text-emerald-500" />
               </div>
               <p className="font-display text-2xl text-brand-text mb-2">
                 Message sent!
@@ -148,21 +137,7 @@ export default function ContactForm({ unit }: Props) {
               <div className="w-5 h-5 border-2 border-stone-300 rounded flex-shrink-0" />
               <span className="text-sm text-stone-500">I'm not a robot</span>
               <div className="ml-auto text-right">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  className="text-stone-300 mx-auto"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"
-                  />
-                </svg>
+                <ShieldCheck size={24} className="text-stone-300 mx-auto" />
                 <p className="text-[10px] text-brand-muted mt-0.5">
                   reCAPTCHA v3
                 </p>

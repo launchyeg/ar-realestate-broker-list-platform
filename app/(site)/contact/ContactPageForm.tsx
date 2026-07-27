@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Check } from "lucide-react";
 import PhoneInput from "@/components/ui/PhoneInput";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 
@@ -38,19 +39,7 @@ export default function ContactPageForm() {
         <AnimateOnScroll type="fade-up">
           <div className="flex flex-col items-center justify-center">
             <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center mb-4">
-              <svg
-                className="w-7 h-7 text-emerald-500"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
+              <Check size={30} className="text-emerald-500" />
             </div>
             <p className="font-display text-2xl text-brand-text mb-2">
               Message sent!

@@ -280,7 +280,7 @@ const siteConfig = {
         { label: "Location", value: "Makadi Heights" },
         { label: "Delivery", value: "2027" },
         { label: "Units", value: "1" },
-        { label: "Starting Price", value: "EGP 6,500,000" },
+        { label: "Downpayment", value: "10%" },
       ],
       highlights: [
         "Unobstructed views of the Red Sea coast",
@@ -309,7 +309,7 @@ const siteConfig = {
         { label: "Location", value: "Soma Bay" },
         { label: "Delivery", value: "2027" },
         { label: "Units", value: "210" },
-        { label: "Starting Price", value: "EGP 2,500,000" },
+        { label: "Downpayment", value: "10%" },
       ],
       highlights: [
         "Architecturally distinct modern design",
@@ -338,7 +338,7 @@ const siteConfig = {
         { label: "Location", value: "Soma Bay" },
         { label: "Delivery", value: "2026" },
         { label: "Units", value: "1" },
-        { label: "Starting Price", value: "EGP 11,000,000" },
+        { label: "Downpayment", value: "10%" },
       ],
       highlights: [
         "Direct private beach access for all units",
@@ -713,7 +713,7 @@ const siteConfig = {
         { label: "Location", value: "El Gouna" },
         { label: "Developer", value: "Orascom" },
         { label: "Lifestyle", value: "Lagoonfront" },
-        { label: "Unit Types", value: "Studios, Apts, PH" },
+        { label: "Downpayment", value: "10%" },
       ],
       highlights: [
         "Access to Sheraton Miramar hotel facilities",
@@ -741,7 +741,7 @@ const siteConfig = {
         { label: "Location", value: "Soma Bay" },
         { label: "Price", value: "From EGP 77M" },
         { label: "Unit Types", value: "Villas" },
-        { label: "Developer", value: "Soma Bay Real Estate" },
+        { label: "Downpayment", value: "10%" },
       ],
       highlights: [
         "Exclusive peninsula location",
@@ -768,9 +768,9 @@ const siteConfig = {
         "A vast 600-acre development prioritizing nature, where 80% of the land is preserved for greenery and open space to ensure a serene environment.",
       stats: [
         { label: "Location", value: "Ras Soma Travco" },
-        { label: "Down Payment", value: "10%" },
+        { label: "Lifestyle", value: "Active/Green" },
         { label: "Installments", value: "6 Years" },
-        { label: "Delivery", value: "2027-2029" },
+        { label: "Downpayment", value: "10%" },
       ],
       highlights: [
         "Only 20% building density",
@@ -796,9 +796,9 @@ const siteConfig = {
         "A well-established residential enclave within Soma Bay, featuring 52 buildings designed for efficient, turnkey resort living.",
       stats: [
         { label: "Location", value: "Soma Bay" },
-        { label: "Total Units", value: "300 Keys" },
-        { label: "Status", value: "Ready" },
-        { label: "Developer", value: "Soma Bay" },
+        { label: "Lifestyle", value: "Active/Green" },
+        { label: "Installments", value: "6 Years" },
+        { label: "Downpayment", value: "10%" },
       ],
       highlights: [
         "Turnkey project with 300 units",
@@ -827,7 +827,7 @@ const siteConfig = {
         { label: "Location", value: "El Gouna" },
         { label: "Unit Types", value: "1-2 BR Apts" },
         { label: "Area", value: "From 74m2" },
-        { label: "Lifestyle", value: "Active/Green" },
+        { label: "Downpayment", value: "10%" },
       ],
       highlights: [
         "Lakefront views for every unit",
@@ -855,7 +855,7 @@ const siteConfig = {
         { label: "Location", value: "El Gouna" },
         { label: "Developer", value: "Orascom" },
         { label: "Views", value: "Golf Course" },
-        { label: "Unit Types", value: "Villas, Twin/Town" },
+        { label: "Downpayment", value: "10%" },
       ],
       highlights: [
         "12-meter distance between properties",
@@ -882,9 +882,9 @@ const siteConfig = {
         "A luxury resort residential project featuring 150 apartments with 360-degree views, blending urban and oriental architecture.",
       stats: [
         { label: "Location", value: "Hurghada" },
-        { label: "Down Payment", value: "30%" },
-        { label: "Installments", value: "4 Years" },
         { label: "Unit Range", value: "84-873m2" },
+        { label: "Installments", value: "4 Years" },
+        { label: "Downpayment", value: "10%" },
       ],
       highlights: [
         "90% of units feature sea views",
@@ -913,7 +913,7 @@ const siteConfig = {
         { label: "Location", value: "Makadi Heights" },
         { label: "Starting Price", value: "EGP 8.5M" },
         { label: "Unit Types", value: "Apts, Town, Duplex" },
-        { label: "Phase", value: "Makadi Heights" },
+        { label: "Downpayment", value: "10%" },
       ],
       highlights: [
         "Variety of unit sizes (79-152m2)",
@@ -942,7 +942,7 @@ const siteConfig = {
         { label: "Location", value: "El Gouna" },
         { label: "Down Payment", value: "15%" },
         { label: "Installments", value: "5 Years" },
-        { label: "Delivery", value: "2027" },
+        { label: "Downpayment", value: "10%" },
       ],
       highlights: [
         "Unique central cascading waterfalls",
@@ -971,7 +971,7 @@ const siteConfig = {
         { label: "Location", value: "Sahl Hasheesh" },
         { label: "Delivery", value: "2026" },
         { label: "ROI", value: "10% Avg." },
-        { label: "Units", value: "320" },
+        { label: "Downpayment", value: "10%" },
       ],
       highlights: [
         "Direct private beach access",
@@ -999,7 +999,7 @@ const siteConfig = {
         { label: "Location", value: "Soma Bay" },
         { label: "Unit Types", value: "Villas, Duplexes" },
         { label: "Views", value: "Panoramic Sea" },
-        { label: "Developer", value: "Soma Bay" },
+        { label: "Downpayment", value: "10%" },
       ],
       highlights: [
         "Sea-front cliff villas available",

@@ -1,4 +1,5 @@
 import { Suspense } from "react";
+import { Metadata } from "next";
 import { supabase } from "@/lib/supabase";
 import { mapUnit } from "@/lib/mapUnit";
 import siteConfig from "@/siteConfig";
@@ -6,13 +7,13 @@ import PropertiesClient from "./PropertiesClient";
 
 export const revalidate = 60;
 
-export const metadata = {
-  title: "All Properties | AR Real Estate Redsea",
+export const metadata: Metadata = {
+  title: `All Properties |  ${siteConfig.brokerName}`,
   description:
     "Browse all available exclusive properties, beachfront villas, and resort apartments across the Red Sea's top destinations.",
   alternates: { canonical: "/properties" },
   openGraph: {
-    title: "All Properties | AR Real Estate Redsea",
+    title: `All Properties |  ${siteConfig.brokerName}`,
     description:
       "Browse all available properties across Egypt's top Red Sea destinations.",
     url: "/properties",
