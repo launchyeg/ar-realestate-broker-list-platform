@@ -234,12 +234,12 @@ export default async function DestinationPage({
                 <h3 className="font-display text-3xl text-brand-text mb-3">
                   No properties found
                 </h3>
-                <p className="text-brand-muted text-sm mb-10">
+                <p className="text-brand-muted text-sm mb-6">
                   We're adding new units soon. Contact us to be notified.
                 </p>
                 <Link
                   href="/contact"
-                  className="bg-brand-primary text-white text-base font-medium px-8 py-[18px] rounded-xl hover:bg-brand-primaryLight transition-colors"
+                  className="text-brand-text/60 hover:text-brand-text text-base font-medium"
                 >
                   Get in Quick
                 </Link>

@@ -76,7 +76,7 @@ export default function TestimonialsSection() {
           className="mb-10 md:mb-[60px] lg:mb-[74px]"
         >
           <h2 className="font-display text-4xl md:text-5xl leading-11 md:leading-16 text-brand-text">
-            Customers love our findings
+            Our Testimonials
           </h2>
         </AnimateOnScroll>
 

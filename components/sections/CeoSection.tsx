@@ -28,9 +28,9 @@ export default function CeoSection() {
   return (
     <section className="max-w-7xl mx-auto px-6 md:px-8 pb-[40px] md:pb-[70px] lg:pb-[120px]">
       <AnimateOnScroll type="fade-up">
-        <div className="max-w-3xl mx-auto text-center mb-10 md:mb-16">
+        <div className="max-w-4xl mx-auto text-center mb-10 md:mb-16">
           <h2 className="font-display text-4xl md:text-5xl leading-11 md:leading-16 text-brand-text mb-4">
-            Interested in selling or buying?
+            Let's Discuss Your Real Estate Goals
           </h2>
           <p className="text-brand-muted text-base font-medium leading-relaxed">
             Buy or sell your home with us. House prices, expert inspections,

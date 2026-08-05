@@ -20,7 +20,7 @@ export default function HeroPageSection({
         }}
       />
       <div className="absolute inset-0 bg-black/50" />
-      <div className="relative max-w-[1380px] mx-auto text-center px-6 md:px-8 py-[80px] md:pt-[150px] md:pb-[100px] lg:pt-[205px] lg:pb-[155px] w-full">
+      <div className="relative max-w-[1380px] mx-auto text-center px-6 md:px-8 pt-[120px] pb-[80px] md:pt-[150px] md:pb-[100px] lg:pt-[205px] lg:pb-[155px] w-full">
         <AnimateOnScroll type="fade-up">
           <h2 className="font-display text-4xl md:text-7xl lg:text-[80px] leading-11 md:leading-[92px] text-white">
             {title}

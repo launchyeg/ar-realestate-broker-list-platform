@@ -3,15 +3,7 @@ const siteConfig = {
   brokerName: "AR Realestate Redsea",
   brokerTagline: "Curated Homes. Trusted Expertise.",
   brokerLicense: "RE-2024-00123",
-
-  // ── Logo ───────────────────────────────────────────────────
-  logo: {
-    src: "/images/logo.png",
-    alt: "AR Realestate Redsea",
-    width: 160,
-    height: 40,
-    textFallback: "AR Realestate", // shown when src is null
-  },
+  ogImage: "/public/ogImage.png",
 
   // ── Contact Details ────────────────────────────────────────
   contact: {
@@ -36,18 +28,6 @@ const siteConfig = {
     },
   ],
 
-  // ── Theme Colors ───────────────────────────────────────────
-  // theme: {
-  //   primary: "#1B2B3A", // deep navy — main brand color
-  //   primaryLight: "#2D4258", // hover states
-  //   accent: "#CDAA81", // warm gold — CTAs, highlights
-  //   accentLight: "#B49168", // lighter gold for hover
-  //   background: "#FAFAF8", // off-white site background
-  //   surface: "#f7f6f4", // card/panel surfaces
-  //   text: "#0a0915", // primary text
-  //   textMuted: "#52525a", // secondary/muted text
-  // },
-
   // ── Typography ─────────────────────────────────────────────
   fonts: {
     display: "Playfair Display SC",
@@ -56,19 +36,12 @@ const siteConfig = {
 
   // ── SEO & Meta ─────────────────────────────────────────────
   seo: {
-    siteUrl: "https://prestigeproperties.eg",
-    defaultTitle: "Prestige Properties — Curated Homes in Egypt",
+    siteUrl: "https://www.ar-realestate-redsea.com",
+    defaultTitle:
+      "AR Realestate Redsea | Premier Coastal Living in Egypt, Red Sea",
     defaultDescription:
-      "Browse our hand-picked selection of luxury apartments, villas, and penthouses across New Cairo, Sheikh Zayed, and the North Coast.",
-    ogImage: "/og-image.jpg",
-    twitterHandle: "@prestigeprops",
-  },
-
-  // ── Lead Form ──────────────────────────────────────────────
-  leadForm: {
-    heading: "Arrange a Viewing",
-    subheading: "Our team responds within 2 business hours.",
-    ctaLabel: "Send Enquiry",
+      "Discover your dream coastal home with AR Real Estate. Specializing in luxury properties, villas, and seaside apartments across the Red Sea destinations.",
+    ogImage: "/public/ogImage.png",
   },
 
   // ── Feature Flags ──────────────────────────────────────────
@@ -91,8 +64,8 @@ const siteConfig = {
       description:
         "El Gouna is a unique lagoon city built across islands, 22km north of Hurghada. Developed by Orascom, it is entirely self-sustained with its own hospital, airport, international schools, and a vibrant marina — attracting a sophisticated international crowd.",
       stats: [
-        { label: "Projects", value: "5" },
-        { label: "Years Installment", value: "5" },
+        { label: "Projects", value: "8" },
+        { label: "Payment Plant", value: "5" },
         { label: "Downpayment", value: "15%" },
       ],
       highlights: [
@@ -106,30 +79,34 @@ const siteConfig = {
         "El Gouna consistently commands a price premium over other Red Sea destinations. Its self-contained nature, strong community, and international appeal ensure long-term value retention.",
     },
     {
-      slug: "hurghada",
-      label: "Hurghada",
+      slug: "soma-bay",
+      label: "Soma Bay",
       image:
-        "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/sunset-8627419_1280.jpg",
+        "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/somabayimage.jpeg",
       heroImage:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHQnWFGGT8BcAiv-G7c05f63cZynGBPqdp93KjcuTXIw&s=10",
-      tagline: "Egypt's most connected Red Sea city.",
+        "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/somabayhero.jpeg",
+      tagline: "A peninsula of pure luxury.",
       description:
-        "Hurghada is the beating heart of Egypt's Red Sea Riviera. A full-service city with international airport, world-class hospitals, schools, and a thriving expat community — it offers the perfect balance of resort lifestyle and everyday convenience.",
+        "At Somabay, we believe in turning dreams into reality. Our story is one of passion, dedication, and a deep appreciation for the natural beauty that surrounds us. Nestled along Egypt’s Red Sea coastline, Somabay has become synonymous with luxury living and breathtaking landscapes.",
       stats: [
-        { label: "Projects", value: "3" },
-        { label: "Years Installment", value: "4" },
+        { label: "Projects", value: "14" },
+        { label: "Payment Plant", value: "5 or 8 Years" },
         { label: "Downpayment", value: "5%" },
       ],
       highlights: [
-        "Infinty Pools",
-        "Fitness Facilites",
-        "24/7 Security",
-        "Gourmet Dining",
-        "Events",
-        "Paking Facilites",
+        "30 minutes from Hurghada",
+        "School",
+        "Beach Clubs",
+        "Golf Course",
+        "Marina and Waterfront Promenade",
+        "Kids Play Areas",
+        "Water Sports",
+        "Tennis Sport",
+        "Padel Court",
+        "Commercial Area",
       ],
       whyInvest:
-        "Hurghada offers the widest range of property types and price points in Egypt. Its established infrastructure and growing tourism numbers make it a reliable and liquid real estate market.",
+        "Soma Bay represents the top end of the Red Sea market. Limited land supply and an ultra-premium resort offering ensure strong capital preservation and appreciation over time.",
     },
     {
       slug: "makadi-heights",
@@ -143,8 +120,8 @@ const siteConfig = {
         "Makadi Heights sits 30km south of Hurghada in a protected natural bay. Known for its calm, crystal-clear waters and spectacular coral reefs, it is home to several all-inclusive resorts and a growing residential community seeking tranquility.",
       stats: [
         { label: "Projects", value: "3" },
-        { label: "Years Installment", value: "6" },
-        { label: "Downpayment", value: "10%" },
+        { label: "Payment Plant", value: "8 Years" },
+        { label: "Downpayment", value: "15%" },
       ],
       highlights: [
         "Commercial Area",
@@ -158,6 +135,32 @@ const siteConfig = {
         "Makadi Heights offers excellent value compared to more established destinations, with significant upside as infrastructure continues to develop. Ideal for buyers seeking affordable beachfront entry.",
     },
     {
+      slug: "ras-soma",
+      label: "Ras Soma",
+      image:
+        "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/3.png",
+      heroImage:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaBBZHmEhKu5nKZE7zpuFilmPrXbqsfjGxRK0jkCyY1Q&s=10",
+      tagline: "A peninsula of pure luxury.",
+      description:
+        "Nestled on the bay of Ras Abu Soma, Travco Group’s latest destination on the Red Sea is flourishing and ready to be the next flagship town on Egypt’s East Coast. The unique combination of world-class service and years of experience in the hospitality industry, births a one-of-a-kind International residential destination and tourist hot spot, that celebrates nature and all the wonders it has to offer- The Ras Soma resort is primed to become one of the most desirable holiday destinations along the Egyptian Red Sea.",
+      stats: [
+        { label: "Projects", value: "3" },
+        { label: "Payment Plant", value: "6" },
+        { label: "Downpayment", value: "15%" },
+      ],
+      highlights: [
+        "Private beach",
+        "Hospitality",
+        "Landscapes and walkways",
+        "GYM",
+        "2 hotels",
+        "Security and Services",
+      ],
+      whyInvest:
+        "Located on the Red Sea Coast, Ras Soma is a mere 35-minute drive from Hurghada International Airport. We are also conveniently 60 km from Downtown Hurghada. If you are into roadtrips, we are a scenic 4.5 hr drive from Cairo.",
+    },
+    {
       slug: "makadina",
       label: "Makadina",
       image:
@@ -169,7 +172,7 @@ const siteConfig = {
         "Makadina features waterfront serviced homes, a wide array of outdoor experiences from various themed swimmable water features and walkable pathways throughout the development, a clubhouse, padel, tennis, football, volley, and basketball courts, bicycle lanes, kids areas to a wellness center and a variety of outdoor parks. It will also feature outdoor communal areas for residents to hangout, a shopping mall and various F&B and retail outlets",
       stats: [
         { label: "Projects", value: "1" },
-        { label: "Years Installment", value: "8" },
+        { label: "Payment Plant", value: "8" },
         { label: "Downpayment", value: "10%" },
       ],
       highlights: [
@@ -195,8 +198,8 @@ const siteConfig = {
         "Sahl Hasheesh is one of Egypt's most exclusive coastal destinations — a master-planned resort town 18km south of Hurghada. Its crescent bay, pristine beaches, and car-free promenade make it a sanctuary for those seeking luxury without compromise.",
       stats: [
         { label: "Projects", value: "3" },
-        { label: "Years Installment", value: "7" },
-        { label: "Downpayment", value: "15%" },
+        { label: "Payment Plant", value: "8" },
+        { label: "Downpayment", value: "10%" },
       ],
       highlights: [
         "Private car-free promenade along the beach",
@@ -209,56 +212,30 @@ const siteConfig = {
         "Sahl Hasheesh has seen consistent price growth year-on-year, driven by international demand and limited supply. Rental yields of 8–12% make it one of Egypt's strongest investment destinations.",
     },
     {
-      slug: "soma-bay",
-      label: "Soma Bay",
+      slug: "hurghada",
+      label: "Hurghada",
       image:
-        "https://new-projects-media.propertyfinder.com/project/a667643d-c0a9-41e8-a19c-7aa14f193a6d/gallery/image/ARtlyP4jv8PRUJ655fuxVxi3Cu9l_ODWonugtCKAegA=/medium.webp",
+        "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/sunset-8627419_1280.jpg",
       heroImage:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd2N8Pg8VHWQLKbgjOts4eGy8hKrLjYWyg7DpeMJZoZA&s=10",
-      tagline: "A peninsula of pure luxury.",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHQnWFGGT8BcAiv-G7c05f63cZynGBPqdp93KjcuTXIw&s=10",
+      tagline: "Egypt's most connected Red Sea city.",
       description:
-        "At Somabay, we believe in turning dreams into reality. Our story is one of passion, dedication, and a deep appreciation for the natural beauty that surrounds us. Nestled along Egypt’s Red Sea coastline, Somabay has become synonymous with luxury living and breathtaking landscapes.",
-      stats: [
-        { label: "Projects", value: "14" },
-        { label: "Years Installment", value: "7" },
-        { label: "Downpayment", value: "5%" },
-      ],
-      highlights: [
-        "30 minutes from Hurghada",
-        "School",
-        "Beach Clubs",
-        "Golf Course",
-        "Marina and Waterfront Promenade",
-        "Kids Play Areas",
-      ],
-      whyInvest:
-        "Soma Bay represents the top end of the Red Sea market. Limited land supply and an ultra-premium resort offering ensure strong capital preservation and appreciation over time.",
-    },
-    {
-      slug: "ras-soma-travco",
-      label: "Ras Soma Travco",
-      image:
-        "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/3.png",
-      heroImage:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaBBZHmEhKu5nKZE7zpuFilmPrXbqsfjGxRK0jkCyY1Q&s=10",
-      tagline: "A peninsula of pure luxury.",
-      description:
-        "Nestled on the bay of Ras Abu Soma, Travco Group’s latest destination on the Red Sea is flourishing and ready to be the next flagship town on Egypt’s East Coast. The unique combination of world-class service and years of experience in the hospitality industry, births a one-of-a-kind International residential destination and tourist hot spot, that celebrates nature and all the wonders it has to offer- The Ras Soma resort is primed to become one of the most desirable holiday destinations along the Egyptian Red Sea.",
+        "Hurghada is the beating heart of Egypt's Red Sea Riviera. A full-service city with international airport, world-class hospitals, schools, and a thriving expat community — it offers the perfect balance of resort lifestyle and everyday convenience.",
       stats: [
         { label: "Projects", value: "3" },
-        { label: "Years Installment", value: "7" },
+        { label: "Payment Plant", value: "5" },
         { label: "Downpayment", value: "5%" },
       ],
       highlights: [
-        "Private beach",
-        "Hospitality",
-        "Landscapes and walkways",
-        "GYM",
-        "2 hotels",
-        "Security and Services",
+        "Infinty Pools",
+        "Fitness Facilites",
+        "24/7 Security",
+        "Gourmet Dining",
+        "Events",
+        "Paking Facilites",
       ],
       whyInvest:
-        "Located on the Red Sea Coast, Ras Soma is a mere 35-minute drive from Hurghada International Airport. We are also conveniently 60 km from Downtown Hurghada. If you are into roadtrips, we are a scenic 4.5 hr drive from Cairo.",
+        "Hurghada offers the widest range of property types and price points in Egypt. Its established infrastructure and growing tourism numbers make it a reliable and liquid real estate market.",
     },
   ],
 
@@ -279,8 +256,8 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "Makadi Heights" },
         { label: "Delivery", value: "2027" },
-        { label: "Units", value: "1" },
-        { label: "Downpayment", value: "10%" },
+        { label: "Payment Plant", value: "8 Years" },
+        { label: "Downpayment", value: "15%" },
       ],
       highlights: [
         "Unobstructed views of the Red Sea coast",
@@ -292,6 +269,64 @@ const siteConfig = {
       ],
       whyInvest:
         "Aden represents a prime investment opportunity within Sahl Hasheesh's expanding luxury market. Its strategic location, combined with high-end amenities and long-term capital appreciation potential, makes it a premier choice for discerning property investors in Hurghada.",
+    },
+    {
+      slug: "ledge-valley",
+      label: "Ledge Valley",
+      image:
+        "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/Ledge-Valley1.jpeg",
+      heroImage:
+        "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/Ledge-Valley2.jpeg",
+      destination: "makadi-heights",
+      destinationLabel: "Makadi Heights",
+      tagline: "Where nature’s heights meet architectural grace.",
+      description:
+        "Ledge Valley is a sanctuary of serenity, nestled within the natural topography of Makadi Heights. Designed for those who value privacy, the project integrates seamless landscape design with modern, low-impact architecture.",
+      stats: [
+        { label: "Location", value: "Makadi Heights" },
+        { label: "access", value: "Private Beach" },
+        { label: "Payment Plant", value: "8 Years" },
+        { label: "Downpayment", value: "15%" },
+      ],
+      highlights: [
+        "Innovative terraced design for maximum privacy",
+        "Nature-integrated landscaping",
+        "Spacious outdoor living areas",
+        "Quiet, low-density residential community",
+        "Sustainable building practices",
+        "Access to exclusive Makadi Heights beach club",
+      ],
+      whyInvest:
+        "Ledge Valley offers a unique proposition for buyers looking for exclusivity and a deep connection to the environment, making it a highly desirable option for long-term hold appreciation.",
+    },
+    {
+      slug: "siyal-villas",
+      label: "Siyal Villas",
+      image:
+        "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/Ledge-Valley2.jpeg",
+      heroImage:
+        "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/Ledge-Valley3.jpeg",
+      destination: "makadi-heights",
+      destinationLabel: "Makadi Heights",
+      tagline: "Timeless elegance on the shores of Makadi Heights.",
+      description:
+        "Siyal Villas represent the pinnacle of coastal luxury, offering expansive footprints and sophisticated design. Each villa is a masterpiece of light and space, created for refined family living.",
+      stats: [
+        { label: "Location", value: "Makadi Heights" },
+        { label: "access", value: "Private Beach" },
+        { label: "Payment Plant", value: "8 Years" },
+        { label: "Downpayment", value: "15%" },
+      ],
+      highlights: [
+        "Grand standalone villa designs",
+        "Direct, unobstructed sea views",
+        "Private pools and expansive gardens",
+        "High-end finishing and architectural details",
+        "Dedicated concierge services",
+        "Located in the most prestigious sector of Makadi Heights",
+      ],
+      whyInvest:
+        "Siyal Villas are positioned as the elite tier of Makadi Heights real estate. With limited supply and premium demand, they provide an unmatched combination of luxury living and wealth preservation.",
     },
     {
       slug: "arc-soma",
@@ -308,8 +343,8 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "Soma Bay" },
         { label: "Delivery", value: "2027" },
-        { label: "Units", value: "210" },
-        { label: "Downpayment", value: "10%" },
+        { label: "Payment Plant", value: "5 or 8 Years" },
+        { label: "Downpayment", value: "5%" },
       ],
       highlights: [
         "Architecturally distinct modern design",
@@ -323,33 +358,68 @@ const siteConfig = {
         "Investing in Arc Soma provides entry into one of the Red Sea's most exclusive destinations. Its focus on modern design and proximity to premium leisure amenities ensures high appeal for both long-term residents and luxury holiday seekers, driving consistent capital growth.",
     },
     {
-      slug: "bay-central",
-      label: "Bay Central",
+      slug: "blanca-collection",
+      label: "Blanca Collection",
       image:
-        "https://relaxredsea.com/wp-content/uploads/2021/07/WhatsApp-Image-2019-12-07-at-13.50.25.jpeg",
+        "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Blanca-Collection2.jpeg",
       heroImage:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSvwZnUK5pV0foE0ypY7DVTPTskfwOFQ55quxxOB5sRg&s=10",
+        "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Blanca-Collection1.jpeg",
       destination: "soma-bay",
       destinationLabel: "Soma Bay",
-      tagline: "Resort living redefined on the Red Sea.",
+      tagline: "Elevated coastal living with panoramic vistas.",
       description:
-        "Veranda is a beachfront resort residential project nestled within the pristine shores of Sahl Hasheesh. Designed for those who refuse to compromise, every unit enjoys direct beach access, resort-grade amenities, and a rental management program that works while you relax.",
+        "Perched at a natural elevation, Blanca Collection offers an exclusive residential address in Soma Bay, featuring 360° panoramic views of the Red Sea, lush golf courses, and dramatic coastal landscapes.",
       stats: [
         { label: "Location", value: "Soma Bay" },
-        { label: "Delivery", value: "2026" },
-        { label: "Units", value: "1" },
-        { label: "Downpayment", value: "10%" },
+        {
+          label: "Unit Types",
+          value: "Chalets, Penthouses, Standalone Villas",
+        },
+        { label: "Payment Plant", value: "5 or 8 Years" },
+        { label: "Downpayment", value: "5%" },
       ],
       highlights: [
-        "Direct private beach access for all units",
-        "Fully managed rental program available",
-        "Resort pools, spa and fitness facilities",
-        "Furnished and unfurnished options",
-        "Flexible payment plans up to 8 years",
-        "High ROI — avg. 10% annual yield",
+        "Unrivaled natural elevation for unobstructed views",
+        "Diverse range of units from 1-bedroom chalets to private villas",
+        "Contemporary, clean architectural design",
+        "Close proximity to the Cascades Golf Course and ORCA Dive Centre",
+        "Access to world-class Soma Bay amenities and S. Cape Beach",
+        "Secure, gated community with professional management",
       ],
       whyInvest:
-        "Veranda sits in one of Egypt's highest-demand tourist zones. Its fully managed rental program means your unit generates income even when you're not there — with historical occupancy rates above 75% year-round.",
+        "Blanca Collection represents a 'Legacy Asset' in Soma Bay. Its unique elevated position ensures scarcity value and high appreciation potential, making it an ideal choice for investors seeking premium, high-yield coastal property.",
+    },
+    {
+      slug: "blanca-gardens",
+      label: "Blanca Gardens",
+      image:
+        "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/blanca-gardens.jpeg",
+      heroImage:
+        "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/blanca-gardens.jpeg",
+      destination: "soma-bay",
+      destinationLabel: "Soma Bay",
+      tagline: "Elevated coastal living with panoramic vistas.",
+      description:
+        "Perched at a natural elevation, Blanca Collection offers an exclusive residential address in Soma Bay, featuring 360° panoramic views of the Red Sea, lush golf courses, and dramatic coastal landscapes.",
+      stats: [
+        { label: "Location", value: "Soma Bay" },
+        {
+          label: "Unit Types",
+          value: "Chalets, Penthouses, Standalone Villas",
+        },
+        { label: "Payment Plant", value: "5 or 8 Years" },
+        { label: "Downpayment", value: "5%" },
+      ],
+      highlights: [
+        "Unrivaled natural elevation for unobstructed views",
+        "Diverse range of units from 1-bedroom chalets to private villas",
+        "Contemporary, clean architectural design",
+        "Close proximity to the Cascades Golf Course and ORCA Dive Centre",
+        "Access to world-class Soma Bay amenities and S. Cape Beach",
+        "Secure, gated community with professional management",
+      ],
+      whyInvest:
+        "Blanca Collection represents a 'Legacy Asset' in Soma Bay. Its unique elevated position ensures scarcity value and high appreciation potential, making it an ideal choice for investors seeking premium, high-yield coastal property.",
     },
     {
       slug: "bay-west-valley",
@@ -366,8 +436,8 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "Soma Bay" },
         { label: "Projects", value: "3" },
-        { label: "Years Installment", value: "6" },
-        { label: "Downpayment", value: "10%" },
+        { label: "Payment Plant", value: "5 or 8 Years" },
+        { label: "Downpayment", value: "5%" },
       ],
       highlights: [
         "Exclusive access to private beach clubs",
@@ -395,8 +465,8 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "Soma Bay" },
         { label: "Projects", value: "3" },
-        { label: "Years Installment", value: "6" },
-        { label: "Downpayment", value: "10%" },
+        { label: "Payment Plant", value: "5 or 8 Years" },
+        { label: "Downpayment", value: "5%" },
       ],
       highlights: [
         "Prime waterfront location in Soma Bay",
@@ -410,22 +480,22 @@ const siteConfig = {
         "With its iconic design and strategic position within Soma Bay, Blanca provides a unique opportunity for investors to own a high-yield property in a mature, high-growth luxury destination.",
     },
     {
-      slug: "breeze",
-      label: "Breeze",
+      slug: "coral-coves",
+      label: "Coral Coves",
       image:
-        "https://somabay.com/wp-content/uploads/Somabreeze-1-1-1-495x400.png",
+        "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Coral-Coves2.jpeg",
       heroImage:
-        "https://somabay.com/wp-content/uploads/Sombreeze-3-1030x579.jpeg",
+        "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Coral-Coves.jpeg",
       destination: "soma-bay",
       destinationLabel: "Soma Bay",
-      tagline: "Where the sea breeze meets refined living.",
+      tagline: "Where the sea coral coves meets refined living.",
       description:
-        "Breeze captures the essence of coastal relaxation with spacious units designed for light, air, and comfort, situated in the vibrant and established community of Soma Bay.",
+        "Coral Coves captures the essence of coastal relaxation with spacious units designed for light, air, and comfort, situated in the vibrant and established community of Soma Bay.",
       stats: [
         { label: "Location", value: "Soma Bay" },
         { label: "Projects", value: "3" },
-        { label: "Years Installment", value: "6" },
-        { label: "Downpayment", value: "10%" },
+        { label: "Payment Plant", value: "5 or 8 Years" },
+        { label: "Downpayment", value: "5%" },
       ],
       highlights: [
         "Spacious open-plan living arrangements",
@@ -436,7 +506,7 @@ const siteConfig = {
         "Professional property management services",
       ],
       whyInvest:
-        "Breeze offers an exceptional balance of lifestyle and investment potential, catering to the growing market of vacation home seekers who value both natural beauty and world-class resort facilities.",
+        "Coral Coves offers an exceptional balance of lifestyle and investment potential, catering to the growing market of vacation home seekers who value both natural beauty and world-class resort facilities.",
     },
     {
       slug: "cala",
@@ -453,7 +523,7 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "Sahl Hasheesh" },
         { label: "Projects", value: "3" },
-        { label: "Years Installment", value: "6" },
+        { label: "Payment Plant", value: "7" },
         { label: "Downpayment", value: "10%" },
       ],
       highlights: [
@@ -482,8 +552,8 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "Soma Bay" },
         { label: "Projects", value: "3" },
-        { label: "Years Installment", value: "6" },
-        { label: "Downpayment", value: "10%" },
+        { label: "Payment Plant", value: "5 or 8 Years" },
+        { label: "Downpayment", value: "5%" },
       ],
       highlights: [
         "Intimate and private residential clusters",
@@ -511,8 +581,8 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "Makadi Heights" },
         { label: "Projects", value: "3" },
-        { label: "Years Installment", value: "6" },
-        { label: "Downpayment", value: "10%" },
+        { label: "Payment Plant", value: "8 Years" },
+        { label: "Downpayment", value: "15%" },
       ],
       highlights: [
         "Modern minimalist architectural design",
@@ -539,8 +609,8 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "Soma Bay" },
         { label: "Projects", value: "3" },
-        { label: "Years Installment", value: "6" },
-        { label: "Downpayment", value: "10%" },
+        { label: "Payment Plant", value: "5 or 8 Years" },
+        { label: "Downpayment", value: "5%" },
       ],
       highlights: [
         "Direct views of championship golf courses",
@@ -568,8 +638,8 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "Sahl Hasheesh" },
         { label: "Projects", value: "3" },
-        { label: "Years Installment", value: "6" },
-        { label: "Downpayment", value: "10%" },
+        { label: "Payment Plant", value: "6" },
+        { label: "Downpayment", value: "15%" },
       ],
       highlights: [
         "Boutique residential community design",
@@ -581,64 +651,6 @@ const siteConfig = {
       ],
       whyInvest:
         "Il Bayou serves as a prestigious address in Sahl Hasheesh, offering investors a rare blend of boutique exclusivity and the stability of a high-growth, high-demand coastal location.",
-    },
-    {
-      slug: "majra",
-      label: "Majra",
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7G-CB7ldbPA15ByyCnUauLug5udiBD-_qiJmvfxSOV-A4mu84aESggHyK&s=10",
-      heroImage:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfMWdQ1YBnrFOYQXQm4WHG0iFM3Ltps1H6vkhSou6CDEaa_odR1yb0J3c&s=10",
-      destination: "hurghada",
-      destinationLabel: "Hurghada",
-      tagline: "Dynamic urban-resort living in Hurghada.",
-      description:
-        "Majra integrates the vibrancy of city living with resort-style relaxation, providing residents with modern residences in the thriving coastal hub of Hurghada.",
-      stats: [
-        { label: "Location", value: "Hurghada" },
-        { label: "Projects", value: "3" },
-        { label: "Years Installment", value: "6" },
-        { label: "Downpayment", value: "10%" },
-      ],
-      highlights: [
-        "Central location near Hurghada attractions",
-        "Dynamic urban-resort lifestyle",
-        "Modern residential unit designs",
-        "Integrated retail and entertainment zones",
-        "Convenient access to the city's marina",
-        "Excellent investment for seasonal rentals",
-      ],
-      whyInvest:
-        "Majra capitalizes on Hurghada’s year-round popularity, providing investors with a versatile asset that is perfect for short-term vacation rentals and long-term capital appreciation.",
-    },
-    {
-      slug: "makadi-heights",
-      label: "Makadi Heights",
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5Bj3QO2FS69Ar_HXaUg0DV8Qdty24A8wIUljR8CW_DQwB03UF_tpWRIQ&s=10",
-      heroImage:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRarr6RYQCLrjbF6GGy87iz5X2_ayQdQfxS_AjqYic_aQ&s",
-      destination: "makadi-heights",
-      destinationLabel: "Makadi Heights",
-      tagline: "Elevation, sun, and sea in Makadi Heights.",
-      description:
-        "Makadi Heights is an integrated community built on elevated ground, offering panoramic views, diverse activities, and a self-sufficient lifestyle in the heart of Makadi Heights.",
-      stats: [
-        { label: "Location", value: "Makadi Heights" },
-        { label: "Projects", value: "3" },
-        { label: "Years Installment", value: "6" },
-        { label: "Downpayment", value: "10%" },
-      ],
-      highlights: [
-        "Elevated site with panoramic views",
-        "Fully integrated community services",
-        "Wide range of recreational amenities",
-        "Extensive parks and pedestrian paths",
-        "Convenient access to private beach clubs",
-        "Family-centric resort environment",
-      ],
-      whyInvest:
-        "Makadi Heights is a proven, highly sought-after community that offers consistent rental demand and strong property value, making it an ideal choice for stable, long-term real estate investment.",
     },
     {
       slug: "makadina",
@@ -655,7 +667,7 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "Makadina" },
         { label: "Projects", value: "3" },
-        { label: "Years Installment", value: "6" },
+        { label: "Payment Plant", value: "6" },
         { label: "Downpayment", value: "10%" },
       ],
       highlights: [
@@ -684,8 +696,8 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "Soma Bay" },
         { label: "Projects", value: "3" },
-        { label: "Years Installment", value: "6" },
-        { label: "Downpayment", value: "10%" },
+        { label: "Payment Plant", value: "5 or 8 Years" },
+        { label: "Downpayment", value: "5%" },
       ],
       highlights: [
         "Iconic modern design and architecture",
@@ -697,6 +709,241 @@ const siteConfig = {
       ],
       whyInvest:
         "As a signature development, Mesca offers significant status and capital appreciation potential, making it the top choice for discerning investors seeking premium real estate in Soma Bay.",
+    },
+    {
+      slug: "fanadir-shores",
+      label: "Fanadir Shores",
+      image:
+        "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Fanadir2.jpg",
+      heroImage:
+        "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/Fanadir1.jpg",
+      destination: "el-gouna",
+      destinationLabel: "El Gouna",
+      tagline:
+        "Ultra luxury living next to Fanadir Marina with direct Red Sea views.",
+      description:
+        "FANADIR SHORES - Ultra Luxury represents the pinnacle of elite coastal living right next to Fanadir Marina. Featuring an exclusive collection of only 57 expansive 2-4 BR apartments with private lagoon access and massive outdoor spaces.",
+      stats: [
+        { label: "Unit Types", value: "Apartments 2-4 BR (57 Units Total)" },
+        { label: "Delivery", value: "Q3 2028 (2 Years)" },
+        { label: "Payment Plant", value: "5 Years" },
+        { label: "Downpayment", value: "15%" },
+      ],
+      highlights: [
+        "Prime ultra-luxury setting next to Fanadir Marina with direct Red Sea waterfront",
+        "Extremely limited collection of only 57 total units ensuring ultimate exclusivity",
+        "Massive floor plans ranging from 268-337 sqm with private gardens up to 160 sqm",
+        "Private lagoon access and world-class marina lifestyle infrastructure",
+        "Scheduled delivery by Q3 2028 with premier scarcity-driven appreciation",
+        "The absolute crown jewel for high-net-worth real estate portfolios",
+      ],
+      whyInvest:
+        "Fanadir Shores stands as the most prestigious ultra-luxury development in El Gouna, offering unrivaled scarcity, elite demographics, and unmatched long-term wealth preservation.",
+    },
+    {
+      slug: "kamaran",
+      label: "kamaran",
+      image:
+        "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/kamaran2.jpg",
+      heroImage:
+        "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/kamaran1.jpg",
+      destination: "el-gouna",
+      destinationLabel: "El Gouna",
+      tagline: "Boho chic entry living in central El Gouna near Downtown.",
+      description:
+        "KAMARAN - Boho Chic Entry brings a vibrant, relaxed lifestyle to central El Gouna near Downtown. Featuring chalet studios, 1BR, and 2BR residences with gorgeous boho aesthetics and private garden options.",
+      stats: [
+        { label: "Unit Types", value: "Chalet Studio, 1BR, 2BR" },
+        { label: "Delivery", value: "1 & 2 Years (Fastest Entry)" },
+        { label: "Payment Plant", value: "5 Years" },
+        { label: "Downpayment", value: "15%" },
+      ],
+      highlights: [
+        "Prime central location near El Gouna Downtown",
+        "Distinctive boho chic architectural style and natural ambiance",
+        "Variety of compact and spacious units with 25-107 sqm private gardens",
+        "Fastest delivery timeline (1 & 2 years options)",
+        "Exceptional best-entry price point for high rental demand",
+        "Ideal for short-term holiday rentals and personal getaways",
+      ],
+      whyInvest:
+        "Kamaran offers the fastest delivery and most accessible entry pricing in central El Gouna, ensuring immediate rental utilization and high yield potential.",
+    },
+    {
+      slug: "north-bay-highland",
+      label: "North Bay Highland",
+      image:
+        "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/NorthBayHighland1.jpg",
+      heroImage:
+        "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/NorthBayHighland2.jpg",
+      destination: "el-gouna",
+      destinationLabel: "El Gouna",
+      tagline: "North waterfront, open-to-sea living designed by Legorreta.",
+      description:
+        "NORTH BAY HIGHLAND - by Legorreta is a masterclass in architectural pedigree, featuring spectacular north waterfront, open-to-sea views with private boat docks. Offering luxury 3BR lofts, 3BR twin villas, and grand 4BR standalone villas.",
+      stats: [
+        { label: "Unit Types", value: "Lofts, Twin Villas, Standalone Villas" },
+        { label: "Delivery", value: "Q3 2028 (2 Years)" },
+        { label: "Payment Plant", value: "5 Years" },
+        { label: "Downpayment", value: "15%" },
+      ],
+      highlights: [
+        "Prime north waterfront location with open-to-sea views and private boat docks",
+        "Iconic architectural design by the renowned Legorreta studio",
+        "Spacious 3BR lofts, 3BR twin villas, and 4BR standalone villas with huge gardens",
+        "Unmatched architectural pedigree and elite community status",
+        "Secure delivery by Q3 2028",
+        "Exceptional long-term capital appreciation and prestige value",
+      ],
+      whyInvest:
+        "North Bay Highland offers legendary architectural design combined with prime open-to-sea waterfront positioning, making it one of the absolute premier trophy assets in El Gouna.",
+    },
+    {
+      slug: "tuban-islands",
+      label: "Tuban Islands (Tuban 1)",
+      image:
+        "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/TUBAN%20ISLANDS2.jpg",
+      heroImage:
+        "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/TUBAN%20ISLANDS1.jpg",
+      destination: "el-gouna",
+      destinationLabel: "El Gouna",
+      tagline:
+        "Exclusive island living experience on Tuban Islands / Art Island.",
+      description:
+        "TUBAN ISLANDS (Tuban 1) offers a unique island living experience featuring a diverse selection of 2-3BR apartments, middle/corner townhouses, and expansive standalone villas with generous garden spaces.",
+      stats: [
+        { label: "Location", value: "Tuban Islands / Art Island" },
+        { label: "Delivery", value: "2 Years (39 Units Inventory)" },
+        { label: "Payment Plant", value: "5 Years" },
+        { label: "Downpayment", value: "15%" },
+      ],
+      highlights: [
+        "Uniquely positioned on Tuban Islands / Art Island with waterfront views",
+        "Diverse inventory ranging from 112-156 sqm apartments to luxury villas",
+        "Spacious townhouses and standalone villas with massive private gardens",
+        "Largest inventory offering with 39 available units",
+        "Quick 2-year delivery timeline",
+        "Premium master-planned community infrastructure",
+      ],
+      whyInvest:
+        "Tuban Islands provides a rare island-style community living option with deep liquidity and variety, making it one of the most sought-after phases for diverse investment budgets.",
+    },
+    {
+      slug: "tuban-marina-island",
+      label: "Tuban Marina Island",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYINmZv4sj09BN-ZyNWyVsocCHSwTrMU_Yl59fQnjdAFbL_ikOS_z3MBo&s=10",
+      heroImage:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdGlpRou0YaEMnc_9xGOI1V3DriVolizj3awVVxbcMvc0XK-qOmP7uw06T&s=10",
+      destination: "el-gouna",
+      destinationLabel: "El Gouna",
+      tagline: "The largest district in El Gouna.",
+      description:
+        "Launched in 2024, this 1,000,000 sqm district features signature cascading waterfalls along its central waterway and a mix of premium residences.",
+      stats: [
+        { label: "Location", value: "El Gouna" },
+        { label: "Down Payment", value: "15%" },
+        { label: "Payment Plant", value: "5 Years" },
+        { label: "Downpayment", value: "15%" },
+      ],
+      highlights: [
+        "Unique central cascading waterfalls",
+        "Largest district in El Gouna",
+        "Waterfront promenade and boat docks",
+        "Boutique hotel and luxury senior living",
+        "Fully finished with AC and cabinetry",
+        "Quarterly installments over 5 years",
+      ],
+      whyInvest:
+        "As the newest and largest flagship district in El Gouna, Tuban offers the best potential for early-stage capital appreciation.",
+    },
+    {
+      slug: "nuba",
+      label: "Nuba",
+      image:
+        "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/NUBA1.png",
+      heroImage:
+        "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/NUBA2.png",
+      destination: "el-gouna",
+      destinationLabel: "El Gouna",
+      tagline:
+        "Quiet pocket near downtown & beach with premium serviced living.",
+      description:
+        "NUBA - Serviced Apartments offers a serene boutique living experience in a quiet pocket close to both downtown and the beach. Featuring exquisite 1BR and 2BR serviced apartments with private garden options and luxury resort management.",
+      stats: [
+        { label: "Location", value: "El Gouna" },
+        { label: "Delivery", value: "2 Years" },
+        { label: "Payment Plant", value: "5 Years" },
+        { label: "Downpayment", value: "15%" },
+      ],
+      highlights: [
+        "Quiet, private location near downtown and beach",
+        "Fully serviced luxury apartments with hotel management",
+        "Spacious 1BR options with private gardens (32-35 sqm)",
+        "Generous 110 sqm 2BR floor plans",
+        "Furnished option available upon request",
+        "High rental yield potential through managed services",
+      ],
+      whyInvest:
+        "NUBA combines the lifestyle of fully serviced hospitality with the strong capital appreciation of El Gouna, making it an exceptional turnkey investment for rental returns.",
+    },
+    {
+      slug: "shedwan",
+      label: "Shedwan",
+      image:
+        "https://elgounahomes.com/wp-content/uploads/2022/02/Screenshot-2024-09-18-at-10-26-30-Shedwan-Brochure_TypeABC-Final-Digital-Medium-Res.pdf.png",
+      heroImage:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVsPHhZfrZJyAUO7WeXy-KkarP7YRYorlWjbnP1qcGuw&s=10",
+      destination: "el-gouna",
+      destinationLabel: "El Gouna",
+      tagline: "Lakefront tranquility in El Gouna.",
+      description:
+        "A 419,000 sqm development centered around a 125,000 sqm lake, offering a high-end active lifestyle with extensive green corridors.",
+      stats: [
+        { label: "Location", value: "El Gouna" },
+        { label: "Unit Types", value: "1-2 BR Apts" },
+        { label: "Payment Plant", value: "5 Years" },
+        { label: "Downpayment", value: "15%" },
+      ],
+      highlights: [
+        "Lakefront views for every unit",
+        "3.1 km cycling track and jogging lanes",
+        "Outdoor gym and yoga spaces",
+        "22,000 sqm landscaped park",
+        "Dog park and family amenities",
+        "Fully finished modern interiors",
+      ],
+      whyInvest:
+        "Shedwan’s focus on outdoor wellness and lakefront living makes it highly desirable for both families and short-term vacationers.",
+    },
+    {
+      slug: "siba",
+      label: "Siba",
+      image:
+        "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/SIBA.jfif",
+      heroImage:
+        "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/SIBA2.webp",
+      destination: "el-gouna",
+      destinationLabel: "El Gouna",
+      tagline: "Exclusive multi-architect villas located near North Bay.",
+      description:
+        "SIBA - Multi-Architect Villas represents the peak of architectural creativity and coastal luxury. Situated in a prime corridor near North Bay, offering exquisite 3BR twin and standalone villas with high-end finishes and limited availability.",
+      stats: [
+        { label: "Unit Types", value: "Twin & Standalone Villas 3BR" },
+        { label: "Delivery", value: "2 Years (Limited Units)" },
+        { label: "Payment Plant", value: "5 Years" },
+        { label: "Downpayment", value: "15%" },
+      ],
+      highlights: [
+        "Prime corridor location near North Bay",
+        "Designed by multiple renowned architects for unique aesthetics",
+        "Spacious 3BR twin villas (164-166 sqm) and standalone options (161 sqm)",
+        "Private pools, lush landscaping, and exceptional outdoor spaces",
+        "High investment value with very limited unit availability",
+        "Flexible delivery timeline within 2 years",
+      ],
+      whyInvest:
+        "SIBA offers ultimate exclusivity, prestige architecture, and strong scarcity value in a premier Red Sea location, making it an elite legacy holding.",
     },
     {
       slug: "miramar-residences",
@@ -727,120 +974,6 @@ const siteConfig = {
         "As a prestigious neighborhood by Orascom, it offers high-end luxury appeal and proximity to the most popular hubs in El Gouna, ensuring consistent value.",
     },
     {
-      slug: "nautilus",
-      label: "Nautilus",
-      image: "https://somabay.com/wp-content/uploads/NAUTILUS-pic8-495x400.jpg",
-      heroImage:
-        "https://somabay-homes.com/wp-content/uploads/2025/02/nautilus-somabay57-1170x785.jpg?83e451&83e451",
-      destination: "soma-bay",
-      destinationLabel: "Soma Bay",
-      tagline: "Premium peninsula living in Soma Bay.",
-      description:
-        "A sophisticated residential neighborhood featuring signature villas designed for seamless indoor-outdoor living along the private Soma Bay peninsula.",
-      stats: [
-        { label: "Location", value: "Soma Bay" },
-        { label: "Price", value: "From EGP 77M" },
-        { label: "Unit Types", value: "Villas" },
-        { label: "Downpayment", value: "10%" },
-      ],
-      highlights: [
-        "Exclusive peninsula location",
-        "Private beach access with day beds",
-        "Signature and Prime villa layouts",
-        "Access to The Social Lab hub",
-        "On-site retail, dining, and clinics",
-        "Modern floor-to-ceiling sea views",
-      ],
-      whyInvest:
-        "Nautilus represents the peak of luxury in Soma Bay, offering scarcity and high-end demand for those seeking the ultimate Red Sea lifestyle.",
-    },
-    {
-      slug: "ras-soma-travco",
-      label: "Ras Soma Travco",
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMv0l8vlNpEna97xXOUp-qrm3V7bxiZ7TXJ9NoMzRstw&s=10",
-      heroImage:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSGuK1y4_ueHBu69ugY4V1BvmfNQeaDPCjkNFRC7e1r_bHXhxEo0K58L0B&s=10",
-      destination: "ras-soma-travco",
-      destinationLabel: "Ras Soma Travco",
-      tagline: "Sustainable luxury on the Red Sea coast.",
-      description:
-        "A vast 600-acre development prioritizing nature, where 80% of the land is preserved for greenery and open space to ensure a serene environment.",
-      stats: [
-        { label: "Location", value: "Ras Soma Travco" },
-        { label: "Lifestyle", value: "Active/Green" },
-        { label: "Installments", value: "6 Years" },
-        { label: "Downpayment", value: "10%" },
-      ],
-      highlights: [
-        "Only 20% building density",
-        "Diverse units from 70m2 apartments",
-        "High-end clubhouse and cultural zones",
-        "Accessible 6-year payment plans",
-        "Smart spatial planning for privacy",
-        "Prime coastal waterfront location",
-      ],
-      whyInvest:
-        "The low building density and massive land footprint make this a rare sustainable investment opportunity with strong long-term growth potential.",
-    },
-    {
-      slug: "reeftown",
-      label: "Reeftown",
-      image: "https://somabay.com/wp-content/uploads/Reef-Town-1-710x375.webp",
-      heroImage:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM9eMJoSq4h-x92ftp8XvO_KAfBFMJvL82QczGn-4Ylw&s=10",
-      destination: "soma-bay",
-      destinationLabel: "Soma Bay",
-      tagline: "Turnkey comfort in Soma Bay.",
-      description:
-        "A well-established residential enclave within Soma Bay, featuring 52 buildings designed for efficient, turnkey resort living.",
-      stats: [
-        { label: "Location", value: "Soma Bay" },
-        { label: "Lifestyle", value: "Active/Green" },
-        { label: "Installments", value: "6 Years" },
-        { label: "Downpayment", value: "10%" },
-      ],
-      highlights: [
-        "Turnkey project with 300 units",
-        "Efficient residential building design",
-        "Access to all Soma Bay amenities",
-        "Prime coastal community setting",
-        "Proven infrastructure standards",
-        "Ideal for immediate rental income",
-      ],
-      whyInvest:
-        "Reeftown offers stability and immediate utility, making it an excellent choice for investors looking to generate rental income without waiting for construction.",
-    },
-    {
-      slug: "shedwan",
-      label: "Shedwan",
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVsPHhZfrZJyAUO7WeXy-KkarP7YRYorlWjbnP1qcGuw&s=10",
-      heroImage:
-        "https://elgounahomes.com/wp-content/uploads/2022/02/Screenshot-2024-09-18-at-10-26-30-Shedwan-Brochure_TypeABC-Final-Digital-Medium-Res.pdf.png",
-      destination: "el-gouna",
-      destinationLabel: "El Gouna",
-      tagline: "Lakefront tranquility in El Gouna.",
-      description:
-        "A 419,000 sqm development centered around a 125,000 sqm lake, offering a high-end active lifestyle with extensive green corridors.",
-      stats: [
-        { label: "Location", value: "El Gouna" },
-        { label: "Unit Types", value: "1-2 BR Apts" },
-        { label: "Area", value: "From 74m2" },
-        { label: "Downpayment", value: "10%" },
-      ],
-      highlights: [
-        "Lakefront views for every unit",
-        "3.1 km cycling track and jogging lanes",
-        "Outdoor gym and yoga spaces",
-        "22,000 sqm landscaped park",
-        "Dog park and family amenities",
-        "Fully finished modern interiors",
-      ],
-      whyInvest:
-        "Shedwan’s focus on outdoor wellness and lakefront living makes it highly desirable for both families and short-term vacationers.",
-    },
-    {
       slug: "the-nines",
       label: "The Nines",
       image:
@@ -867,6 +1000,243 @@ const siteConfig = {
       ],
       whyInvest:
         "The unique emphasis on privacy and golf course frontage positions The Nines as a premium, low-density asset in the El Gouna market.",
+    },
+    {
+      slug: "nautilus",
+      label: "Nautilus",
+      image: "https://somabay.com/wp-content/uploads/NAUTILUS-pic8-495x400.jpg",
+      heroImage:
+        "https://somabay-homes.com/wp-content/uploads/2025/02/nautilus-somabay57-1170x785.jpg?83e451&83e451",
+      destination: "soma-bay",
+      destinationLabel: "Soma Bay",
+      tagline: "Premium peninsula living in Soma Bay.",
+      description:
+        "A sophisticated residential neighborhood featuring signature villas designed for seamless indoor-outdoor living along the private Soma Bay peninsula.",
+      stats: [
+        { label: "Location", value: "Soma Bay" },
+        { label: "Price", value: "From EGP 77M" },
+        { label: "Payment Plant", value: "5 or 8 Years" },
+        { label: "Downpayment", value: "5%" },
+      ],
+      highlights: [
+        "Exclusive peninsula location",
+        "Private beach access with day beds",
+        "Signature and Prime villa layouts",
+        "Access to The Social Lab hub",
+        "On-site retail, dining, and clinics",
+        "Modern floor-to-ceiling sea views",
+      ],
+      whyInvest:
+        "Nautilus represents the peak of luxury in Soma Bay, offering scarcity and high-end demand for those seeking the ultimate Red Sea lifestyle.",
+    },
+    {
+      slug: "one-7-residence",
+      label: "One 7 Residence",
+      image:
+        "https://hurghadiansproperty.com/wp-content/uploads/2024/12/11-1024x689.webp",
+      heroImage:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUbk80XwRMW2fwBRKjcdhowvrSItcMRPH0_ntyZFxOQrg4wVZGGoQArcw&s=10",
+      destination: "hurghada",
+      destinationLabel: "Hurghada",
+      tagline: "Where coastal serenity meets city convenience.",
+      description:
+        "One 7 Residence is a premium residential community located at KM 17 on the Village Road in Hurghada. Nestled between Hurghada and Sahl Hasheesh, it offers an oasis-inspired lifestyle with lagoon-style pools, lush landscapes, and a diverse range of homes.",
+      stats: [
+        { label: "Location", value: "Village Road, Hurghada" },
+        {
+          label: "Unit Types",
+          value: "Studios, Apartments, Penthouses, Villas",
+        },
+        { label: "Views", value: "Lagoons, Gardens, Sea & Mountains" },
+        { label: "Downpayment", value: "15%" },
+      ],
+      highlights: [
+        "Prime location between Hurghada and Sahl Hasheesh",
+        "Lagoon-style swimming pools and sandy beach areas",
+        "Integrated commercial mall and clubhouse",
+        "Private gardens and pool options for villas",
+        "Secure gated community with 24/7 services",
+        "Close proximity to Senzo Mall and the Airport",
+      ],
+      whyInvest:
+        "One 7 offers a unique investment opportunity due to its strategic location on the vibrant Village Road, catering to both holidaymakers and those seeking a permanent residence with high rental potential.",
+    },
+    {
+      slug: "lake-villas",
+      label: "Lake Villas",
+      image:
+        "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/3.png",
+      heroImage:
+        "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/LakeVillas.png",
+      destination: "ras-soma",
+      destinationLabel: "Ras Soma",
+      tagline:
+        "Serene waterfront luxury surrounded by pristine lakes in Ras Soma.",
+      description:
+        "Lake Villas in Ras Soma offers an exclusive collection of luxury standalone and semi-detached villas seamlessly integrated with breathtaking crystal-clear water lagoons and lush green landscapes, offering ultimate privacy and serenity.",
+      stats: [
+        { label: "Location", value: "Ras Soma Waterfront" },
+        { label: "Unit Types", value: "Luxury Waterfront Villas" },
+        { label: "Installments", value: "6 Years" },
+        { label: "Downpayment", value: "15%" },
+      ],
+      highlights: [
+        "Stunning direct views over crystal-clear private lakes",
+        "Spacious villa layouts designed for maximum natural light and privacy",
+        "Low density community surrounded by expansive greenery",
+        "Direct access to walking promenades and water activities",
+        "Flexible 6-year payment plan with 10% downpayment",
+        "World-class community infrastructure and 24/7 gated security",
+      ],
+      whyInvest:
+        "Lake Villas provides a rare blend of waterside luxury and privacy within Ras Soma, ensuring high capital appreciation and exceptional lifestyle value.",
+    },
+    {
+      slug: "marina-gate",
+      label: "Marina Gate",
+      image:
+        "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/MarinaGate1.png",
+      heroImage:
+        "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/MarinaGate2.png",
+      destination: "ras-soma",
+      destinationLabel: "Ras Soma",
+      tagline:
+        "The vibrant gateway to coastal sailing and upscale retail living.",
+      description:
+        "Marina Gate in Ras Soma positions residents at the heartbeat of the coastal town, combining chic residential apartments and townhomes with direct proximity to the vibrant marina promenade, dining, and yacht docks.",
+      stats: [
+        { label: "Location", value: "Marina District, Ras Soma" },
+        { label: "Unit Types", value: "Marina Residences & Townhomes" },
+        { label: "Installments", value: "6 Years" },
+        { label: "Downpayment", value: "15%" },
+      ],
+      highlights: [
+        "Pivotal position right at the entrance of the Ras Soma Marina",
+        "Walking distance to gourmet restaurants, cafes, and boutique retail",
+        "Sleek contemporary architecture with expansive terraces",
+        "Unmatched rental demand and liquidity potential",
+        "Convenient 6-year payment installment plan",
+        "Integrated marina-front community lifestyle",
+      ],
+      whyInvest:
+        "Marina Gate acts as the commercial and social epicenter of Ras Soma, making it the top choice for investors seeking high rental yields and lively urban coastal living.",
+    },
+    {
+      slug: "the-condos",
+      label: "The Condos",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMv0l8vlNpEna97xXOUp-qrm3V7bxiZ7TXJ9NoMzRstw&s=10",
+      heroImage:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSGuK1y4_ueHBu69ugY4V1BvmfNQeaDPCjkNFRC7e1r_bHXhxEo0K58L0B&s=10",
+      destination: "ras-soma",
+      destinationLabel: "Ras Soma",
+      tagline:
+        "Modern resort-style apartment living designed for effortless holidays.",
+      description:
+        "The Condos in Ras Soma delivers contemporary, maintenance-free coastal apartments tailored for ultimate relaxation, featuring resort-style pools, landscaped community courtyards, and close proximity to the beach.",
+      stats: [
+        { label: "Location", value: "Ras Soma Resort Center" },
+        { label: "Unit Types", value: "1BR, 2BR & 3BR" },
+        { label: "Installments", value: "6 Years" },
+        { label: "Downpayment", value: "15%" },
+      ],
+      highlights: [
+        "Fully serviced, contemporary low-rise apartment buildings",
+        "Private resort-style swimming pools and sun decks",
+        "Efficient layouts ranging from cozy 1BR units to spacious 3BR family homes",
+        "Proximity to pristine sandy beaches and central amenities",
+        "Accessible 6-year payment schedule with 10% downpayment",
+        "Turnkey property management options available",
+      ],
+      whyInvest:
+        "The Condos offer an accessible entry point into the lucrative Ras Soma market, combining lower initial capital outlay with strong short-term vacation rental potential.",
+    },
+    {
+      slug: "reeftown",
+      label: "Reeftown",
+      image: "https://somabay.com/wp-content/uploads/Reef-Town-1-710x375.webp",
+      heroImage:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM9eMJoSq4h-x92ftp8XvO_KAfBFMJvL82QczGn-4Ylw&s=10",
+      destination: "soma-bay",
+      destinationLabel: "Soma Bay",
+      tagline: "Turnkey comfort in Soma Bay.",
+      description:
+        "A well-established residential enclave within Soma Bay, featuring 52 buildings designed for efficient, turnkey resort living.",
+      stats: [
+        { label: "Location", value: "Soma Bay" },
+        { label: "Lifestyle", value: "Active/Green" },
+        { label: "Payment Plant", value: "5 or 8 Years" },
+        { label: "Downpayment", value: "5%" },
+      ],
+      highlights: [
+        "Turnkey project with 300 units",
+        "Efficient residential building design",
+        "Access to all Soma Bay amenities",
+        "Prime coastal community setting",
+        "Proven infrastructure standards",
+        "Ideal for immediate rental income",
+      ],
+      whyInvest:
+        "Reeftown offers stability and immediate utility, making it an excellent choice for investors looking to generate rental income without waiting for construction.",
+    },
+    {
+      slug: "red-hills-resort",
+      label: "Red Hills Resort",
+      image:
+        "https://redhillssahlhasheesh.com/wp-content/uploads/2025/12/9.jpeg",
+      heroImage:
+        "https://redhillssahlhasheesh.com/wp-content/uploads/2025/12/9.jpeg",
+      destination: "sahl-hasheesh",
+      destinationLabel: "Sahl Hasheesh",
+      tagline: "Where modern luxury meets Red Sea serenity.",
+      description:
+        "Red Hills Sahl Hasheesh is a premium residential and resort-style project located in the prestigious Sahl Hasheesh area on Egypt’s Red Sea coast, offering a perfect combination of modern luxury, natural beauty, and a serene lifestyle.",
+      stats: [
+        { label: "Location", value: "Sahl Hasheesh" },
+        { label: "Unit Types", value: "Luxury Apartments, Villas" },
+        { label: "Payment Plant", value: "6 Years" },
+        { label: "Downpayment", value: "10%" },
+      ],
+      highlights: [
+        "Breathtaking views of the Red Sea",
+        "Lush landscaped gardens throughout",
+        "Resort-style swimming pools",
+        "Prime Sahl Hasheesh location",
+        "Modern architectural design",
+        "Secure gated community",
+      ],
+      whyInvest:
+        "Red Hills offers a unique living experience blending comfort, relaxation, and elegance in one of the most sought-after coastal destinations on the Red Sea, ensuring high quality of life and long-term investment potential.",
+    },
+    {
+      slug: "riva-hurghada",
+      label: "Riva",
+      image:
+        "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/1.webp",
+      heroImage:
+        "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/2.webp",
+      destination: "hurghada",
+      destinationLabel: "Hurghada",
+      tagline:
+        "Where coastal serenity meets modern city convenience in Hurghada.",
+      description:
+        "Riva is an exclusive residential destination in Hurghada, designed to provide residents with an oasis of calm and luxury. Featuring contemporary architecture, lush landscaping, and direct access to vibrant coastal amenities.",
+      stats: [
+        { label: "Location", value: "Hurghada" },
+        { label: "Unit Types", value: "Luxury Apartments & Suites" },
+        { label: "Payment Plan", value: "5 Years" },
+        { label: "Downpayment", value: "15%" },
+      ],
+      highlights: [
+        "Prime coastal location in Hurghada with easy city access",
+        "Modern, open-plan architectural design with high-end finishes",
+        "Scenic pool views and landscaped green spaces",
+        "Gated community with 24/7 security and property management",
+        "Flexible 5-year installment plan with 15% downpayment",
+        "High potential for holiday rentals and capital appreciation",
+      ],
+      whyInvest:
+        "Riva offers a fantastic opportunity to own a premium coastal home in Hurghada, balancing strong rental demand with a relaxed resort-style environment.",
     },
     {
       slug: "the-view-residence",
@@ -912,8 +1282,8 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "Makadi Heights" },
         { label: "Starting Price", value: "EGP 8.5M" },
-        { label: "Unit Types", value: "Apts, Town, Duplex" },
-        { label: "Downpayment", value: "10%" },
+        { label: "Payment Plant", value: "8 Years" },
+        { label: "Downpayment", value: "15%" },
       ],
       highlights: [
         "Variety of unit sizes (79-152m2)",
@@ -925,35 +1295,6 @@ const siteConfig = {
       ],
       whyInvest:
         "Being part of the massive, successful Makadi Heights community guarantees high rental demand and ongoing infrastructure support.",
-    },
-    {
-      slug: "tuban",
-      label: "Tuban",
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYINmZv4sj09BN-ZyNWyVsocCHSwTrMU_Yl59fQnjdAFbL_ikOS_z3MBo&s=10",
-      heroImage:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdGlpRou0YaEMnc_9xGOI1V3DriVolizj3awVVxbcMvc0XK-qOmP7uw06T&s=10",
-      destination: "el-gouna",
-      destinationLabel: "El Gouna",
-      tagline: "The largest district in El Gouna.",
-      description:
-        "Launched in 2024, this 1,000,000 sqm district features signature cascading waterfalls along its central waterway and a mix of premium residences.",
-      stats: [
-        { label: "Location", value: "El Gouna" },
-        { label: "Down Payment", value: "15%" },
-        { label: "Installments", value: "5 Years" },
-        { label: "Downpayment", value: "10%" },
-      ],
-      highlights: [
-        "Unique central cascading waterfalls",
-        "Largest district in El Gouna",
-        "Waterfront promenade and boat docks",
-        "Boutique hotel and luxury senior living",
-        "Fully finished with AC and cabinetry",
-        "Quarterly installments over 5 years",
-      ],
-      whyInvest:
-        "As the newest and largest flagship district in El Gouna, Tuban offers the best potential for early-stage capital appreciation.",
     },
     {
       slug: "veranda",
@@ -970,8 +1311,8 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "Sahl Hasheesh" },
         { label: "Delivery", value: "2026" },
-        { label: "ROI", value: "10% Avg." },
-        { label: "Downpayment", value: "10%" },
+        { label: "Payment Plant", value: "6 Years" },
+        { label: "Downpayment", value: "15%" },
       ],
       highlights: [
         "Direct private beach access",
@@ -985,11 +1326,11 @@ const siteConfig = {
         "Veranda’s proven rental program and beachfront location make it an ideal set-it-and-forget-it investment for income-focused buyers.",
     },
     {
-      slug: "wadi-soma",
-      label: "Wadi Soma",
+      slug: "wadi-jebal",
+      label: "Wadi Jebal",
       image: "https://somabay.com/wp-content/uploads/Wadi-Soma-1-1-495x400.jpg",
       heroImage:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRw1W9xXNqeOrtUGuzWXbQq2FGWt3SEUHws0sPCpDCqWZOYNBtzRen-DjQ&s=10",
+        "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/Wadi.jpeg",
       destination: "soma-bay",
       destinationLabel: "Soma Bay",
       tagline: "Refined coastal villas and lodges.",
@@ -998,8 +1339,8 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "Soma Bay" },
         { label: "Unit Types", value: "Villas, Duplexes" },
-        { label: "Views", value: "Panoramic Sea" },
-        { label: "Downpayment", value: "10%" },
+        { label: "Payment Plant", value: "5 or 8 Years" },
+        { label: "Downpayment", value: "5%" },
       ],
       highlights: [
         "Sea-front cliff villas available",

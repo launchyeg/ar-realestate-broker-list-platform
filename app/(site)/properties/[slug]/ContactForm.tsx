@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Check, ShieldCheck } from "lucide-react";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import siteConfig from "@/siteConfig";
 import PhoneInput from "@/components/ui/PhoneInput";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
@@ -21,20 +22,29 @@ export default function ContactForm({ unit }: Props) {
   );
   const [status, setStatus] = useState<Status>("idle");
 
+  const { executeRecaptcha } = useGoogleReCaptcha();
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setStatus("sending");
 
-    const payload = {
-      name,
-      phone,
-      email,
-      message,
-      unit: unit.slug,
-      timestamp: new Date().toISOString(),
-    };
-
     try {
+      if (!executeRecaptcha) {
+        throw new Error("ReCaptcha not ready");
+      }
+
+      const token = await executeRecaptcha("contact_form");
+
+      const payload = {
+        name,
+        phone,
+        email,
+        message,
+        unit: unit.slug,
+        recaptchaToken: token,
+        timestamp: new Date().toISOString(),
+      };
+
       const res = await fetch("/api/enquiry", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -69,10 +79,10 @@ export default function ContactForm({ unit }: Props) {
       ) : (
         <div>
           <h3 className="font-display text-3xl text-brand-text mb-2">
-            {siteConfig.leadForm.heading}
+            Arrange a Viewing
           </h3>
           <p className="text-base font-medium text-brand-muted leading-7 mb-6">
-            {siteConfig.leadForm.subheading}
+            Our team will respond as quickly as possible.
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-5">
@@ -133,21 +143,18 @@ export default function ContactForm({ unit }: Props) {
               />
             </div>
 
-            <div className="bg-stone-50 border border-stone-200 rounded-xl p-3 flex items-center gap-3">
-              <div className="w-5 h-5 border-2 border-stone-300 rounded flex-shrink-0" />
-              <span className="text-sm text-stone-500">I'm not a robot</span>
-              <div className="ml-auto text-right">
-                <ShieldCheck size={24} className="text-stone-300 mx-auto" />
-                <p className="text-[10px] text-brand-muted mt-0.5">
-                  reCAPTCHA v3
-                </p>
+            <div className="bg-stone-50 border border-stone-200 rounded-xl p-3 flex items-center justify-between">
+              <div className="flex items-center gap-2 text-xs text-stone-500">
+                <ShieldCheck size={18} className="text-emerald-600" />
+                <span>Protected by Google reCAPTCHA</span>
               </div>
+              <p className="text-[10px] text-brand-muted">v3 Active</p>
             </div>
 
             <button
               type="submit"
               disabled={status === "sending"}
-              className="w-full px-8 py-3.5 bg-brand-primary text-white text-base font-medium rounded-full hover:bg-brand-primaryLight transition-colors disabled:opacity-60"
+              className="w-full px-8 py-3.5 bg-brand-primary text-white text-base font-medium rounded-full hover:bg-brand-primaryLight transition-colors disabled:opacity-60 flex items-center justify-center gap-2"
             >
               {status === "sending" ? (
                 <>
@@ -155,7 +162,7 @@ export default function ContactForm({ unit }: Props) {
                   Sending...
                 </>
               ) : (
-                <>{siteConfig.leadForm.ctaLabel}</>
+                <>Send Enquiry</>
               )}
             </button>
 

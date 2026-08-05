@@ -40,7 +40,7 @@ export default async function HomePage() {
   const destination = (siteConfig.destinations as any[]).filter((p) => p.slug);
 
   return (
-    <div className="min-h-screen bg-white font-sans">
+    <main>
       <HeroSection />
 
       <TrustBar />
@@ -141,6 +141,6 @@ export default async function HomePage() {
       <GeneralFormSection />
 
       <FaqSection />
-    </div>
+    </main>
   );
 }

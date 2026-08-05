@@ -43,7 +43,7 @@ const ProjectsCard = ({ projects }: ProjectsCardProps) => {
               <h4 className="text-sm text-brand-text font-medium mb-1">
                 {projects.destinationLabel}
               </h4>
-              <p className="text-sm text-brand-muted font-medium">
+              <p className="text-sm text-brand-muted font-medium truncate">
                 {projects.tagline}
               </p>
             </div>

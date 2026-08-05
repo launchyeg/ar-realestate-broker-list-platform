@@ -102,7 +102,7 @@ export default function PropertiesClient({
           }}
         />
         <div className="absolute inset-0 bg-black/50" />
-        <div className="max-w-[1380px] mx-auto px-6 md:px-8 py-[80px] md:pt-[150px] md:pb-[100px] lg:pt-[205px] lg:pb-[155px]">
+        <div className="max-w-[1380px] mx-auto px-6 md:px-8 pt-[120px] pb-[80px] md:pt-[150px] md:pb-[100px] lg:pt-[205px] lg:pb-[155px]">
           <AnimateOnScroll type="fade-up">
             <div className="max-w-4xl mx-auto text-center mb-10 md:mb-16">
               <h2 className="font-display text-4xl md:text-7xl lg:text-[80px] leading-11 md:leading-[92px] text-white">
@@ -132,7 +132,7 @@ export default function PropertiesClient({
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
                 <CustomSelect
                   value={destination}
-                  placeholder="All Destinations"
+                  placeholder="Destinations"
                   onChange={setDestination}
                   options={[
                     ...destinations.map((d) => ({
@@ -143,7 +143,7 @@ export default function PropertiesClient({
                 />
                 <CustomSelect
                   value={project}
-                  placeholder="All Projects"
+                  placeholder="Projects"
                   onChange={setProject}
                   options={[
                     ...projects.map((p) => ({ value: p.slug, label: p.label })),
@@ -157,13 +157,13 @@ export default function PropertiesClient({
                 />
                 <CustomSelect
                   value={type}
-                  placeholder="All Types"
+                  placeholder="Types"
                   onChange={setType}
                   options={TYPES}
                 />
                 <CustomSelect
                   value={listingType}
-                  placeholder="All Listing"
+                  placeholder="Listing"
                   onChange={setListingType}
                   options={LISTING_TYPES}
                 />

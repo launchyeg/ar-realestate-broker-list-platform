@@ -93,7 +93,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
-      <div className="relative max-w-[1380px] mx-auto px-6 md:px-8 w-full">
+      <div className="relative z-20 max-w-[1380px] mx-auto px-6 md:px-8 w-full">
         <AnimateOnScroll type="fade-up">
           <div
             className="transition-all duration-500 delay-75 max-w-[890px]"

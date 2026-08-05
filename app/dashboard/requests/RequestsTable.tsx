@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import * as XLSX from "xlsx";
 
 interface Request {
   id: string;
@@ -39,8 +40,65 @@ export default function RequestsTable({ requests }: { requests: Request[] }) {
     });
   }
 
+  function exportToExcel() {
+    const data = (list || []).map((r: any) => ({
+      Name: r.name || "—",
+      Phone: r.phone || "—",
+      Email: r.email || "—",
+      Unit: r.unit === "contact-page" ? "Contact Page" : r.unit || "—",
+      Message: r.message || "—",
+      Status: r.read ? "Read" : "Unread",
+      Date: new Date(r.submitted_at).toLocaleDateString("en-GB", {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+      }),
+    }));
+
+    const worksheet = XLSX.utils.json_to_sheet(data);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Requests");
+    XLSX.writeFile(
+      workbook,
+      `requests-${new Date().toISOString().slice(0, 10)}.xlsx`,
+    );
+  }
+
   return (
-    <>
+    <section>
+      <div className="flex items-center justify-between mb-8">
+        <div>
+          <h1 className="font-display text-3xl text-stone-800 mb-1">
+            Requests
+          </h1>
+          <p className="text-stone-400 text-sm">
+            {(requests || []).length} total enquiries
+          </p>
+        </div>
+
+        {/* Export button */}
+        <button
+          onClick={exportToExcel}
+          className="flex items-center gap-2 px-4 py-2.5 bg-[#1B2B3A] text-white text-xs font-semibold tracking-widest uppercase rounded-lg hover:bg-[#2D4258] transition-colors"
+        >
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"
+            />
+          </svg>
+          Export Excel
+        </button>
+      </div>
+
       <div className="bg-white rounded-xl border border-stone-200 overflow-x-auto">
         <table className="min-w-[900px] w-full text-sm">
           <thead className="bg-stone-50 border-b border-stone-200">
@@ -242,6 +300,6 @@ export default function RequestsTable({ requests }: { requests: Request[] }) {
           </div>
         </div>
       )}
-    </>
+    </section>
   );
 }

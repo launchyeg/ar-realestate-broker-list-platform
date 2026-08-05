@@ -185,7 +185,7 @@ export default function Navbar() {
         <div className="max-w-[1380px] mx-auto px-6 md:px-8 flex items-center justify-between h-[72px] md:h-[85px]">
           <Link href="/" className="flex-shrink-0">
             <Image
-              src={scrolled ? "/ARLogo-3.png" : "/ARLogo-1.png"}
+              src={scrolled ? "/ARLogo-3.png" : "/ARLogo-2n.png"}
               alt={siteConfig.brokerName}
               width={140}
               height={40}
@@ -212,7 +212,7 @@ export default function Navbar() {
                   : "text-white hover:text-white/80"
               }`}
             >
-              About
+              About us
             </Link>
             <NavDropdown
               label="Destinations"
@@ -221,23 +221,23 @@ export default function Navbar() {
               scrolled={scrolled}
               vewAllCta="/destinations"
             />
-            <NavDropdown
-              label="All Listing"
-              items={listingItems}
-              onClose={() => {}}
-              scrolled={scrolled}
-              vewAllCta="/properties"
-            />
             <Link
-              href="/properties"
+              href="/projects"
               className={`text-base font-medium transition-colors ${
                 scrolled
                   ? "text-brand-text/70 hover:text-brand-text"
                   : "text-white hover:text-white/80"
               }`}
             >
-              Properties
+              Projects
             </Link>
+            <NavDropdown
+              label="Listing"
+              items={listingItems}
+              onClose={() => {}}
+              scrolled={scrolled}
+              vewAllCta="/properties"
+            />
             <Link
               href="/contact"
               className={`text-base font-medium transition-colors ${
@@ -246,7 +246,7 @@ export default function Navbar() {
                   : "text-white hover:text-white/80"
               }`}
             >
-              Contact
+              Contact us
             </Link>
           </nav>
           <div className="flex items-center gap-5">
@@ -343,7 +343,7 @@ export default function Navbar() {
             onClick={() => setSidebarOpen(false)}
             className="block text-brand-text text-sm font-medium py-4 border-b border-[#52525a1a] hover:text-brand-accent transition-colors"
           >
-            About
+            About us
           </Link>
           <MobileAccordion
             label="Destinations"
@@ -351,12 +351,13 @@ export default function Navbar() {
             vewAllCta="/destinations"
             onClose={() => setSidebarOpen(false)}
           />
-          <MobileAccordion
-            label="All Listing"
-            items={listingItems}
-            vewAllCta="/properties"
-            onClose={() => setSidebarOpen(false)}
-          />
+          <Link
+            href="/projects"
+            onClick={() => setSidebarOpen(false)}
+            className="block text-brand-text text-sm font-medium py-4 border-b border-[#52525a1a] hover:text-brand-accent transition-colors"
+          >
+            Projects
+          </Link>
           <Link
             href="/properties"
             onClick={() => setSidebarOpen(false)}
@@ -364,19 +365,25 @@ export default function Navbar() {
           >
             Properties
           </Link>
+          <MobileAccordion
+            label="Listing"
+            items={listingItems}
+            vewAllCta="/properties"
+            onClose={() => setSidebarOpen(false)}
+          />
           <Link
             href="/contact"
             onClick={() => setSidebarOpen(false)}
             className="block text-brand-text text-sm font-medium py-4 border-b border-[#52525a1a] hover:text-brand-accent transition-colors"
           >
-            Contact
+            Contact us
           </Link>
         </nav>
         <div className="px-6 py-6 border-t border-[#52525a1a] space-y-3">
           <Link
             href="/properties"
             onClick={() => setSidebarOpen(false)}
-            className="flex items-center justify-center gap-2 w-full py-3 bg-brand-accent text-white text-sm font-medium tracking-wider rounded-full hover:bg-brand-accentLight transition-colors"
+            className="flex items-center justify-center gap-2 w-full py-3 bg-brand-primary text-white text-sm font-medium tracking-wider rounded-full hover:bg-brand-primaryLight transition-colors"
           >
             Explore Properties
           </Link>

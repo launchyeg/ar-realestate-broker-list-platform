@@ -86,7 +86,7 @@ function LoginScreen({ onLogin }: { onLogin: () => void }) {
         {/* Logo */}
         <div className="flex justify-center mb-8">
           <Image
-            src="/ARLogo-2.png"
+            src="/ARLogo-2n.png"
             alt={siteConfig.brokerName}
             width={140}
             height={40}
@@ -228,7 +228,7 @@ export default function DashboardShell({
         <div className="px-6 py-6 border-b border-white/10">
           <Link href="/dashboard" onClick={() => setSidebarOpen(false)}>
             <Image
-              src="/ARLogo-2.png"
+              src="/ARLogo-2n.png"
               alt={siteConfig.brokerName}
               width={140}
               height={40}

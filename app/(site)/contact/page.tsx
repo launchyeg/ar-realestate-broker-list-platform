@@ -24,7 +24,7 @@ export default function ContactPage() {
     <main>
       <HeroPageSection
         image="https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/properties/1784212336762-wyb9jurmdgm.jpg"
-        title="Contact"
+        title="Contact us"
       />
 
       <section className="relative bg-white z-10 -mt-6 rounded-t-3xl">

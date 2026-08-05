@@ -1,5 +1,6 @@
 import "../globals.css";
 import { Metadata } from "next";
+import RecaptchaProvider from "@/components/providers/RecaptchaProvider";
 import siteConfig from "@/siteConfig";
 import Navbar from "@/components/layout/Navbar";
 import CtaBanner from "@/components/sections/CtaBanner";
@@ -69,20 +70,23 @@ export const metadata: Metadata = {
     title: siteConfig.seo.defaultTitle,
     description: siteConfig.seo.defaultDescription,
     images: [siteConfig.seo.ogImage],
-    creator: siteConfig.seo.twitterHandle,
   },
 
   // ── Icons ─────────────────────────────────────────────────
-  // icons: {
-  //   icon: "/favicon.ico",
-  //   shortcut: "/favicon-16x16.png",
-  //   apple: "/apple-touch-icon.png",
-  // },
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/icon.png",
+  },
 
   // ── Verification (add your codes from Google/Bing) ────────
   verification: {
-    google: "your-google-verification-code",
-    // bing: "your-bing-verification-code",
+    google: "ObyOV5UmPjPz3sJJgJHmpt8d6NJ5m4CLHRS9GuO2jT4",
+  },
+
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
   },
 };
 
@@ -114,23 +118,26 @@ export default function RootLayout({
               openingHours: "Mo-Su 09:00-20:00",
               priceRange: "EGP 1,000,000 — EGP 20,000,000",
               areaServed: [
-                "Hurghada",
-                "Sahl Hasheesh",
                 "El Gouna",
-                "Soma Bay",
+                "Hurghada",
                 "Makadi Heights",
-                "Egypt",
+                "Makadina",
+                "Sahl Hasheesh",
+                "Soma Bay",
+                "Ras Soma Travco",
               ],
             }),
           }}
         />
       </head>
       <body>
-        <Navbar />
-        <main>{children}</main>
-        <CtaBanner />
-        <Footer />
-        <ContactFloat />
+        <RecaptchaProvider>
+          <Navbar />
+          <main>{children}</main>
+          <CtaBanner />
+          <Footer />
+          <ContactFloat />
+        </RecaptchaProvider>
       </body>
     </html>
   );

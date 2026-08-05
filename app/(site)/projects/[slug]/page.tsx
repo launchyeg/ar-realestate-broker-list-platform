@@ -88,7 +88,7 @@ export default async function ProjectPage({
         />
         <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-black/75 via-black/40 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
-        <div className="relative max-w-[1380px] mx-auto text-center px-6 md:px-8 py-[80px] md:pt-[150px] md:pb-[100px] lg:pt-[205px] lg:pb-[155px] w-full">
+        <div className="relative max-w-[1380px] mx-auto text-center px-6 md:px-8 pt-[120px] pb-[80px] md:pt-[150px] md:pb-[100px] lg:pt-[205px] lg:pb-[155px] w-full">
           <AnimateOnScroll type="fade-up">
             <h1 className="font-display text-4xl md:text-7xl lg:text-[80px] leading-11 md:leading-[92px] text-white mb-4">
               {project.label}
@@ -212,7 +212,7 @@ export default async function ProjectPage({
                 </p>
                 <Link
                   href="/contact"
-                  className="bg-brand-primary text-white text-base font-medium px-8 py-[18px] rounded-xl hover:bg-brand-primaryLight transition-colors"
+                  className="text-brand-text/60 hover:text-brand-text text-base font-medium"
                 >
                   Get in Quick
                 </Link>

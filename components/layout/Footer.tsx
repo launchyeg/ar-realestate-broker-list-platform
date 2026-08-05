@@ -80,7 +80,7 @@ const Footer = () => {
                     href="/about"
                     className="hover:text-brand-text transition-colors"
                   >
-                    About
+                    About us
                   </Link>
                 </li>
                 <li>
@@ -112,7 +112,7 @@ const Footer = () => {
                     href="/contact"
                     className="hover:text-brand-text transition-colors"
                   >
-                    Contact Us
+                    Contact us
                   </Link>
                 </li>
               </ul>

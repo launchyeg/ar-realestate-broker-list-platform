@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Check } from "lucide-react";
+import { Check, ShieldCheck } from "lucide-react";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import Link from "next/link";
 import siteConfig from "@/siteConfig";
 import PhoneInput from "../ui/PhoneInput";
@@ -16,11 +17,27 @@ export default function GeneralFormSection() {
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<Status>("idle");
 
+  const { executeRecaptcha } = useGoogleReCaptcha();
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setStatus("sending");
-    const payload = { name, phone, email, message };
+
     try {
+      if (!executeRecaptcha) {
+        throw new Error("ReCaptcha not ready");
+      }
+
+      const token = await executeRecaptcha("general_form_section");
+
+      const payload = {
+        name,
+        phone,
+        email,
+        message,
+        recaptchaToken: token,
+      };
+
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -154,6 +171,14 @@ export default function GeneralFormSection() {
                 />
               </div>
 
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-3 flex items-center justify-between">
+                <div className="flex items-center gap-2 text-xs text-white/80">
+                  <ShieldCheck size={18} className="text-emerald-400" />
+                  <span>Protected by Google reCAPTCHA</span>
+                </div>
+                <p className="text-[10px] text-white/60">v3 Active</p>
+              </div>
+
               {status === "error" && (
                 <p className="text-xs text-red-400">
                   Something went wrong. Please try again.
@@ -164,9 +189,16 @@ export default function GeneralFormSection() {
                 <button
                   type="submit"
                   disabled={status === "sending"}
-                  className="px-8 py-3.5 bg-brand-primary text-white text-base font-medium rounded-full hover:bg-brand-primaryLight transition-colors disabled:opacity-60"
+                  className="px-8 py-3.5 bg-brand-primary text-white text-base font-medium rounded-full hover:bg-brand-primaryLight transition-colors disabled:opacity-60 flex items-center justify-center gap-2"
                 >
-                  {status === "sending" ? "Sending…" : "Get a Quote"}
+                  {status === "sending" ? (
+                    <>
+                      <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                      Sending…
+                    </>
+                  ) : (
+                    "Get a Quote"
+                  )}
                 </button>
               </div>
             </form>
