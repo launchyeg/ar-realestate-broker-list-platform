@@ -45,7 +45,7 @@ export default function RequestsTable({ requests }: { requests: Request[] }) {
       Name: r.name || "—",
       Phone: r.phone || "—",
       Email: r.email || "—",
-      Unit: r.unit === "contact-page" ? "Contact Page" : r.unit || "—",
+      From: r.unit === "contact-page" ? "Website Form" : r.unit || "—",
       Message: r.message || "—",
       Status: r.read ? "Read" : "Unread",
       Date: new Date(r.submitted_at).toLocaleDateString("en-GB", {
@@ -145,7 +145,7 @@ export default function RequestsTable({ requests }: { requests: Request[] }) {
                   >
                     {req.unit === "contact-page"
                       ? "Website Form"
-                      : req.unit || "General enquiry"}
+                      : req.unit || "Website Form"}
                   </Link>
                 </td>
                 <td className="px-5 py-4 text-stone-400 text-xs">
