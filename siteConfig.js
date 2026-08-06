@@ -1252,7 +1252,7 @@ const siteConfig = {
         "A luxury resort residential project featuring 150 apartments with 360-degree views, blending urban and oriental architecture.",
       stats: [
         { label: "Location", value: "Hurghada" },
-        { label: "Unit Range", value: "84-873m2" },
+        { label: "Unit Range", value: "84-873 m2" },
         { label: "Payment Plan", value: "5 Years" },
         { label: "Downpayment", value: "10%" },
       ],
