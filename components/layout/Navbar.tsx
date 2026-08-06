@@ -358,13 +358,6 @@ export default function Navbar() {
           >
             Projects
           </Link>
-          <Link
-            href="/properties"
-            onClick={() => setSidebarOpen(false)}
-            className="block text-brand-text text-sm font-medium py-4 border-b border-[#52525a1a] hover:text-brand-accent transition-colors"
-          >
-            Properties
-          </Link>
           <MobileAccordion
             label="Listing"
             items={listingItems}

@@ -65,7 +65,7 @@ const siteConfig = {
         "El Gouna is a unique lagoon city built across islands, 22km north of Hurghada. Developed by Orascom, it is entirely self-sustained with its own hospital, airport, international schools, and a vibrant marina — attracting a sophisticated international crowd.",
       stats: [
         { label: "Projects", value: "8" },
-        { label: "Payment Plant", value: "5" },
+        { label: "Payment Plan", value: "5" },
         { label: "Downpayment", value: "15%" },
       ],
       highlights: [
@@ -90,7 +90,7 @@ const siteConfig = {
         "At Somabay, we believe in turning dreams into reality. Our story is one of passion, dedication, and a deep appreciation for the natural beauty that surrounds us. Nestled along Egypt’s Red Sea coastline, Somabay has become synonymous with luxury living and breathtaking landscapes.",
       stats: [
         { label: "Projects", value: "14" },
-        { label: "Payment Plant", value: "5 or 8 Years" },
+        { label: "Payment Plan", value: "5 or 8 Years" },
         { label: "Downpayment", value: "5%" },
       ],
       highlights: [
@@ -120,7 +120,7 @@ const siteConfig = {
         "Makadi Heights sits 30km south of Hurghada in a protected natural bay. Known for its calm, crystal-clear waters and spectacular coral reefs, it is home to several all-inclusive resorts and a growing residential community seeking tranquility.",
       stats: [
         { label: "Projects", value: "3" },
-        { label: "Payment Plant", value: "8 Years" },
+        { label: "Payment Plan", value: "8 Years" },
         { label: "Downpayment", value: "15%" },
       ],
       highlights: [
@@ -146,7 +146,7 @@ const siteConfig = {
         "Nestled on the bay of Ras Abu Soma, Travco Group’s latest destination on the Red Sea is flourishing and ready to be the next flagship town on Egypt’s East Coast. The unique combination of world-class service and years of experience in the hospitality industry, births a one-of-a-kind International residential destination and tourist hot spot, that celebrates nature and all the wonders it has to offer- The Ras Soma resort is primed to become one of the most desirable holiday destinations along the Egyptian Red Sea.",
       stats: [
         { label: "Projects", value: "3" },
-        { label: "Payment Plant", value: "6" },
+        { label: "Payment Plan", value: "6" },
         { label: "Downpayment", value: "15%" },
       ],
       highlights: [
@@ -172,7 +172,7 @@ const siteConfig = {
         "Makadina features waterfront serviced homes, a wide array of outdoor experiences from various themed swimmable water features and walkable pathways throughout the development, a clubhouse, padel, tennis, football, volley, and basketball courts, bicycle lanes, kids areas to a wellness center and a variety of outdoor parks. It will also feature outdoor communal areas for residents to hangout, a shopping mall and various F&B and retail outlets",
       stats: [
         { label: "Projects", value: "1" },
-        { label: "Payment Plant", value: "8" },
+        { label: "Payment Plan", value: "8" },
         { label: "Downpayment", value: "10%" },
       ],
       highlights: [
@@ -198,7 +198,7 @@ const siteConfig = {
         "Sahl Hasheesh is one of Egypt's most exclusive coastal destinations — a master-planned resort town 18km south of Hurghada. Its crescent bay, pristine beaches, and car-free promenade make it a sanctuary for those seeking luxury without compromise.",
       stats: [
         { label: "Projects", value: "3" },
-        { label: "Payment Plant", value: "8" },
+        { label: "Payment Plan", value: "8" },
         { label: "Downpayment", value: "10%" },
       ],
       highlights: [
@@ -223,7 +223,7 @@ const siteConfig = {
         "Hurghada is the beating heart of Egypt's Red Sea Riviera. A full-service city with international airport, world-class hospitals, schools, and a thriving expat community — it offers the perfect balance of resort lifestyle and everyday convenience.",
       stats: [
         { label: "Projects", value: "3" },
-        { label: "Payment Plant", value: "5" },
+        { label: "Payment Plan", value: "5" },
         { label: "Downpayment", value: "5%" },
       ],
       highlights: [
@@ -256,7 +256,7 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "Makadi Heights" },
         { label: "Delivery", value: "2027" },
-        { label: "Payment Plant", value: "8 Years" },
+        { label: "Payment Plan", value: "8 Years" },
         { label: "Downpayment", value: "15%" },
       ],
       highlights: [
@@ -285,7 +285,7 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "Makadi Heights" },
         { label: "access", value: "Private Beach" },
-        { label: "Payment Plant", value: "8 Years" },
+        { label: "Payment Plan", value: "8 Years" },
         { label: "Downpayment", value: "15%" },
       ],
       highlights: [
@@ -314,7 +314,7 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "Makadi Heights" },
         { label: "access", value: "Private Beach" },
-        { label: "Payment Plant", value: "8 Years" },
+        { label: "Payment Plan", value: "8 Years" },
         { label: "Downpayment", value: "15%" },
       ],
       highlights: [
@@ -343,7 +343,7 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "Soma Bay" },
         { label: "Delivery", value: "2027" },
-        { label: "Payment Plant", value: "5 or 8 Years" },
+        { label: "Payment Plan", value: "5 or 8 Years" },
         { label: "Downpayment", value: "5%" },
       ],
       highlights: [
@@ -375,7 +375,7 @@ const siteConfig = {
           label: "Unit Types",
           value: "Chalets, Penthouses, Standalone Villas",
         },
-        { label: "Payment Plant", value: "5 or 8 Years" },
+        { label: "Payment Plan", value: "5 or 8 Years" },
         { label: "Downpayment", value: "5%" },
       ],
       highlights: [
@@ -407,7 +407,7 @@ const siteConfig = {
           label: "Unit Types",
           value: "Chalets, Penthouses, Standalone Villas",
         },
-        { label: "Payment Plant", value: "5 or 8 Years" },
+        { label: "Payment Plan", value: "5 or 8 Years" },
         { label: "Downpayment", value: "5%" },
       ],
       highlights: [
@@ -436,7 +436,7 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "Soma Bay" },
         { label: "Projects", value: "3" },
-        { label: "Payment Plant", value: "5 or 8 Years" },
+        { label: "Payment Plan", value: "5 or 8 Years" },
         { label: "Downpayment", value: "5%" },
       ],
       highlights: [
@@ -465,7 +465,7 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "Soma Bay" },
         { label: "Projects", value: "3" },
-        { label: "Payment Plant", value: "5 or 8 Years" },
+        { label: "Payment Plan", value: "5 or 8 Years" },
         { label: "Downpayment", value: "5%" },
       ],
       highlights: [
@@ -494,7 +494,7 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "Soma Bay" },
         { label: "Projects", value: "3" },
-        { label: "Payment Plant", value: "5 or 8 Years" },
+        { label: "Payment Plan", value: "5 or 8 Years" },
         { label: "Downpayment", value: "5%" },
       ],
       highlights: [
@@ -523,7 +523,7 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "Sahl Hasheesh" },
         { label: "Projects", value: "3" },
-        { label: "Payment Plant", value: "7" },
+        { label: "Payment Plan", value: "7" },
         { label: "Downpayment", value: "10%" },
       ],
       highlights: [
@@ -552,7 +552,7 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "Soma Bay" },
         { label: "Projects", value: "3" },
-        { label: "Payment Plant", value: "5 or 8 Years" },
+        { label: "Payment Plan", value: "5 or 8 Years" },
         { label: "Downpayment", value: "5%" },
       ],
       highlights: [
@@ -581,7 +581,7 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "Makadi Heights" },
         { label: "Projects", value: "3" },
-        { label: "Payment Plant", value: "8 Years" },
+        { label: "Payment Plan", value: "8 Years" },
         { label: "Downpayment", value: "15%" },
       ],
       highlights: [
@@ -609,7 +609,7 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "Soma Bay" },
         { label: "Projects", value: "3" },
-        { label: "Payment Plant", value: "5 or 8 Years" },
+        { label: "Payment Plan", value: "5 or 8 Years" },
         { label: "Downpayment", value: "5%" },
       ],
       highlights: [
@@ -638,7 +638,7 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "Sahl Hasheesh" },
         { label: "Projects", value: "3" },
-        { label: "Payment Plant", value: "6" },
+        { label: "Payment Plan", value: "6" },
         { label: "Downpayment", value: "15%" },
       ],
       highlights: [
@@ -667,7 +667,7 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "Makadina" },
         { label: "Projects", value: "3" },
-        { label: "Payment Plant", value: "6" },
+        { label: "Payment Plan", value: "6" },
         { label: "Downpayment", value: "10%" },
       ],
       highlights: [
@@ -696,7 +696,7 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "Soma Bay" },
         { label: "Projects", value: "3" },
-        { label: "Payment Plant", value: "5 or 8 Years" },
+        { label: "Payment Plan", value: "5 or 8 Years" },
         { label: "Downpayment", value: "5%" },
       ],
       highlights: [
@@ -726,7 +726,7 @@ const siteConfig = {
       stats: [
         { label: "Unit Types", value: "Apartments 2-4 BR (57 Units Total)" },
         { label: "Delivery", value: "Q3 2028 (2 Years)" },
-        { label: "Payment Plant", value: "5 Years" },
+        { label: "Payment Plan", value: "5 Years" },
         { label: "Downpayment", value: "15%" },
       ],
       highlights: [
@@ -755,7 +755,7 @@ const siteConfig = {
       stats: [
         { label: "Unit Types", value: "Chalet Studio, 1BR, 2BR" },
         { label: "Delivery", value: "1 & 2 Years (Fastest Entry)" },
-        { label: "Payment Plant", value: "5 Years" },
+        { label: "Payment Plan", value: "5 Years" },
         { label: "Downpayment", value: "15%" },
       ],
       highlights: [
@@ -784,7 +784,7 @@ const siteConfig = {
       stats: [
         { label: "Unit Types", value: "Lofts, Twin Villas, Standalone Villas" },
         { label: "Delivery", value: "Q3 2028 (2 Years)" },
-        { label: "Payment Plant", value: "5 Years" },
+        { label: "Payment Plan", value: "5 Years" },
         { label: "Downpayment", value: "15%" },
       ],
       highlights: [
@@ -814,7 +814,7 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "Tuban Islands / Art Island" },
         { label: "Delivery", value: "2 Years (39 Units Inventory)" },
-        { label: "Payment Plant", value: "5 Years" },
+        { label: "Payment Plan", value: "5 Years" },
         { label: "Downpayment", value: "15%" },
       ],
       highlights: [
@@ -843,7 +843,7 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "El Gouna" },
         { label: "Down Payment", value: "15%" },
-        { label: "Payment Plant", value: "5 Years" },
+        { label: "Payment Plan", value: "5 Years" },
         { label: "Downpayment", value: "15%" },
       ],
       highlights: [
@@ -873,7 +873,7 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "El Gouna" },
         { label: "Delivery", value: "2 Years" },
-        { label: "Payment Plant", value: "5 Years" },
+        { label: "Payment Plan", value: "5 Years" },
         { label: "Downpayment", value: "15%" },
       ],
       highlights: [
@@ -902,7 +902,7 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "El Gouna" },
         { label: "Unit Types", value: "1-2 BR Apts" },
-        { label: "Payment Plant", value: "5 Years" },
+        { label: "Payment Plan", value: "5 Years" },
         { label: "Downpayment", value: "15%" },
       ],
       highlights: [
@@ -931,7 +931,7 @@ const siteConfig = {
       stats: [
         { label: "Unit Types", value: "Twin & Standalone Villas 3BR" },
         { label: "Delivery", value: "2 Years (Limited Units)" },
-        { label: "Payment Plant", value: "5 Years" },
+        { label: "Payment Plan", value: "5 Years" },
         { label: "Downpayment", value: "15%" },
       ],
       highlights: [
@@ -1015,7 +1015,7 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "Soma Bay" },
         { label: "Price", value: "From EGP 77M" },
-        { label: "Payment Plant", value: "5 or 8 Years" },
+        { label: "Payment Plan", value: "5 or 8 Years" },
         { label: "Downpayment", value: "5%" },
       ],
       highlights: [
@@ -1077,7 +1077,7 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "Ras Soma Waterfront" },
         { label: "Unit Types", value: "Luxury Waterfront Villas" },
-        { label: "Installments", value: "6 Years" },
+        { label: "Payment Plan", value: "6 Years" },
         { label: "Downpayment", value: "15%" },
       ],
       highlights: [
@@ -1107,7 +1107,7 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "Marina District, Ras Soma" },
         { label: "Unit Types", value: "Marina Residences & Townhomes" },
-        { label: "Installments", value: "6 Years" },
+        { label: "Payment Plan", value: "6 Years" },
         { label: "Downpayment", value: "15%" },
       ],
       highlights: [
@@ -1137,7 +1137,7 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "Ras Soma Resort Center" },
         { label: "Unit Types", value: "1BR, 2BR & 3BR" },
-        { label: "Installments", value: "6 Years" },
+        { label: "Payment Plan", value: "6 Years" },
         { label: "Downpayment", value: "15%" },
       ],
       highlights: [
@@ -1165,7 +1165,7 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "Soma Bay" },
         { label: "Lifestyle", value: "Active/Green" },
-        { label: "Payment Plant", value: "5 or 8 Years" },
+        { label: "Payment Plan", value: "5 or 8 Years" },
         { label: "Downpayment", value: "5%" },
       ],
       highlights: [
@@ -1194,7 +1194,7 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "Sahl Hasheesh" },
         { label: "Unit Types", value: "Luxury Apartments, Villas" },
-        { label: "Payment Plant", value: "6 Years" },
+        { label: "Payment Plan", value: "6 Years" },
         { label: "Downpayment", value: "10%" },
       ],
       highlights: [
@@ -1253,7 +1253,7 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "Hurghada" },
         { label: "Unit Range", value: "84-873m2" },
-        { label: "Installments", value: "4 Years" },
+        { label: "Payment Plan", value: "5 Years" },
         { label: "Downpayment", value: "10%" },
       ],
       highlights: [
@@ -1282,7 +1282,7 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "Makadi Heights" },
         { label: "Starting Price", value: "EGP 8.5M" },
-        { label: "Payment Plant", value: "8 Years" },
+        { label: "Payment Plan", value: "8 Years" },
         { label: "Downpayment", value: "15%" },
       ],
       highlights: [
@@ -1311,7 +1311,7 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "Sahl Hasheesh" },
         { label: "Delivery", value: "2026" },
-        { label: "Payment Plant", value: "6 Years" },
+        { label: "Payment Plan", value: "6 Years" },
         { label: "Downpayment", value: "15%" },
       ],
       highlights: [
@@ -1339,7 +1339,7 @@ const siteConfig = {
       stats: [
         { label: "Location", value: "Soma Bay" },
         { label: "Unit Types", value: "Villas, Duplexes" },
-        { label: "Payment Plant", value: "5 or 8 Years" },
+        { label: "Payment Plan", value: "5 or 8 Years" },
         { label: "Downpayment", value: "5%" },
       ],
       highlights: [
