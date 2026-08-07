@@ -41,7 +41,7 @@ export default function CeoSection() {
       </AnimateOnScroll>
 
       <AnimateOnScroll type="scale-in" delay={100}>
-        <div className="relative rounded-3xl overflow-hidden aspect-video max-w-6xl mx-auto shadow-2xl">
+        <div className="relative rounded-3xl overflow-hidden aspect-[4/5] md:aspect-video max-w-6xl mx-auto shadow-2xl">
           {BG_SLIDES.map((src, i) => (
             <div
               key={i}
