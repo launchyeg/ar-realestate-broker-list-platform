@@ -82,7 +82,7 @@ export default function ContactPage() {
                     </div>
                     <div className="flex items-center gap-4">
                       <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center shrink-0">
-                        <MapPin className="w-5 h-5 text-brand-text" />
+                        <Mail className="w-5 h-5 text-brand-text" />
                       </div>
                       <a
                         href={`mailto:${siteConfig.contact.email}`}
@@ -94,7 +94,7 @@ export default function ContactPage() {
                     </div>
                     <div className="flex items-center gap-4">
                       <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center shrink-0">
-                        <Mail className="w-5 h-5 text-brand-text" />
+                        <MapPin className="w-5 h-5 text-brand-text" />
                       </div>
                       <a
                         href={`mailto:${siteConfig.contact.googleMapsUrl}`}

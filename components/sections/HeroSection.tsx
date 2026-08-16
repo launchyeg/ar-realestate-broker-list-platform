@@ -9,7 +9,7 @@ import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 const SLIDES = [
   {
     image:
-      "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/ar-adu-3.png",
+      "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/somabayhero.jpeg",
     title: "AR Realestate Find Your Dream Home in Red Sea",
     subtitle:
       "Stop wasting time with complicated search filters and discover your perfect coastal retreat through our intuitive, lightning-fast discovery tool.",
