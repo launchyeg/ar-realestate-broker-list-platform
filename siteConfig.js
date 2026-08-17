@@ -390,8 +390,8 @@ const siteConfig = {
         "Blanca Collection represents a 'Legacy Asset' in Soma Bay. Its unique elevated position ensures scarcity value and high appreciation potential, making it an ideal choice for investors seeking premium, high-yield coastal property.",
     },
     {
-      slug: "blanca-gardens",
-      label: "Blanca Gardens",
+      slug: "blanca-gardens-1",
+      label: "Blanca Gardens 1",
       image:
         "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/blanca-gardens.jpeg",
       heroImage:
@@ -451,8 +451,8 @@ const siteConfig = {
         "Bay West Valley represents a premier investment in one of the Red Sea's most sought-after destinations, ensuring high rental demand and long-term asset appreciation in a secure, master-planned community.",
     },
     {
-      slug: "blanca",
-      label: "Blanca",
+      slug: "blanca-gardens-2",
+      label: "Blanca Gardens 2",
       image:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfUfKCy1-314yFukBADcKXCWQyE_WIFrz1QOi9XVDIOH1Yk7wYL99d6YE&s=10",
       heroImage:
