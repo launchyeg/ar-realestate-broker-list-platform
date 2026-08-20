@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { Search } from "lucide-react";
 import type { Unit } from "@/types/unit";
@@ -51,6 +51,13 @@ export default function PropertiesClient({
     searchParams.get("listingType") || "",
   );
   const [search, setSearch] = useState("");
+
+  useEffect(() => {
+    setDestination(searchParams.get("destination") || "");
+    setProject(searchParams.get("project") || "");
+    setListingType(searchParams.get("listingType") || "");
+    setPriceRange(searchParams.get("price") || "");
+  }, [searchParams]);
 
   const filtered = useMemo(() => {
     return units.filter((u) => {
