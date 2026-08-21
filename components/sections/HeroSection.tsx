@@ -9,7 +9,7 @@ import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 const SLIDES = [
   {
     image:
-      "https://tjwcefkkahkcxwljdbky.supabase.co/storage/v1/object/public/property-images/general/somabayhero.jpeg",
+      "https://aqarproperty.com/wp-content/uploads/2025/08/The-View-Hurghada-residence-1.webp",
     title: "AR Realestate Find Your Dream Home in Red Sea",
     subtitle:
       "Stop wasting time with complicated search filters and discover your perfect coastal retreat through our intuitive, lightning-fast discovery tool.",
